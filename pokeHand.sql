@@ -10,7 +10,8 @@ CREATE TABLE trainer (
     id INT IDENTITY(1,1),
     name NVARCHAR(50) NOT NULL,
     age INT NOT NULL,
-    vocation NVARCHAR(50) NOT NULL
+    vocation NVARCHAR(50) NOT NULL,
+    CONSTRAINT pk_trainer PRIMARY KEY (id)
 );
 GO
 
@@ -54,7 +55,7 @@ CREATE TABLE trainer_pokemon (
     pokemon_id INT NOT NULL,
     CONSTRAINT pk_trainer_pokemon PRIMARY KEY (id),
     CONSTRAINT fk_trainer_id FOREIGN KEY (trainer_id) REFERENCES trainer (id),
-    CONSTRAINT fk_pokemon_id FOREIGN KEY (pokemon_id) REFERENCES pokemon (id)
+    CONSTRAINT fk_pokemon_id1 FOREIGN KEY (pokemon_id) REFERENCES pokemon (id)
 );
 GO
 
@@ -64,7 +65,7 @@ CREATE TABLE type_pokemon (
     pokemon_id INT NOT NULL,
     type_id INT NOT NULL,
     CONSTRAINT pk_type_pokemon PRIMARY KEY (id),
-    CONSTRAINT fk_pokemon_id FOREIGN KEY (pokemon_id) REFERENCES pokemon (id),
+    CONSTRAINT fk_pokemon_id2 FOREIGN KEY (pokemon_id) REFERENCES pokemon (id),
     CONSTRAINT fk_type_id FOREIGN KEY (type_id) REFERENCES type (id)
 );
 GO
@@ -75,8 +76,8 @@ CREATE TABLE pokemon_weakness (
     pokemon_id INT NOT NULL,
     type_id INT NOT NULL,
     CONSTRAINT pk_pokemon_weakness PRIMARY KEY (id),
-    CONSTRAINT fk_pokemon_id FOREIGN KEY (pokemon_id) REFERENCES pokemon (id),
-    CONSTRAINT fk_type_id FOREIGN KEY (type_id) REFERENCES type (id)
+    CONSTRAINT fk_pokemon_id3 FOREIGN KEY (pokemon_id) REFERENCES pokemon (id),
+    CONSTRAINT fk_type_id1 FOREIGN KEY (type_id) REFERENCES type (id)
 );
 GO
 
@@ -86,8 +87,8 @@ CREATE TABLE attack_pokemon (
     pokemon_id INT NOT NULL,
     attack_id INT NOT NULL,
     CONSTRAINT pk_attack_pokemon PRIMARY KEY (id),
-    CONSTRAINT fk_pokemon_id FOREIGN KEY (pokemon_id) REFERENCES pokemon (id),
-    CONSTRAINT fk_attack_id FOREIGN KEY (attack_id) REFERENCES attack (id),
+    CONSTRAINT fk_pokemon_id4 FOREIGN KEY (pokemon_id) REFERENCES pokemon (id),
+    CONSTRAINT fk_attack_id1 FOREIGN KEY (attack_id) REFERENCES attack (id),
 );
 GO
 
@@ -97,8 +98,8 @@ CREATE TABLE type_effective (
     attack_id INT NOT NULL,
     type_id INT NOT NULL,
     CONSTRAINT pk_type_effective PRIMARY KEY (id),
-    CONSTRAINT fk_attack_id FOREIGN KEY (attack_id) REFERENCES attack (id),
-    CONSTRAINT fk_type_id FOREIGN KEY (type_id) REFERENCES type (id)
+    CONSTRAINT fk_attack_id2 FOREIGN KEY (attack_id) REFERENCES attack (id),
+    CONSTRAINT fk_type_id2 FOREIGN KEY (type_id) REFERENCES type (id)
 );
 GO
 
@@ -108,7 +109,7 @@ CREATE TABLE type_attack (
     attack_id INT NOT NULL,
     type_id INT NOT NULL,
     CONSTRAINT pk_type_attack PRIMARY KEY (id),
-    CONSTRAINT fk_attack_id FOREIGN KEY (attack_id) REFERENCES attack (id),
-    CONSTRAINT fk_type_id FOREIGN KEY (type_id) REFERENCES type (id)
+    CONSTRAINT fk_attack_id3 FOREIGN KEY (attack_id) REFERENCES attack (id),
+    CONSTRAINT fk_type_id3 FOREIGN KEY (type_id) REFERENCES type (id)
 );
 GO
