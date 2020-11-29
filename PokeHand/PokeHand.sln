@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeHand", "PokeHand\PokeHand.csproj", "{5130F950-B545-43EF-A1C0-B85BE74D9CE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5130F950-B545-43EF-A1C0-B85BE74D9CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5130F950-B545-43EF-A1C0-B85BE74D9CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5130F950-B545-43EF-A1C0-B85BE74D9CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5130F950-B545-43EF-A1C0-B85BE74D9CE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2E055D0-3A32-4098-93B4-AB8A11C23E99}
+	EndGlobalSection
+EndGlobal
