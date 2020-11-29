@@ -140,6 +140,7 @@
             this.Controls.Add(this.dataSection);
             this.Controls.Add(this.mainSection);
             this.Controls.Add(this.logoText);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainScreen";
             this.Text = "PokeHand";
             this.mainSection.ResumeLayout(false);
