@@ -1,6 +1,6 @@
 ﻿namespace PokeHand
 {
-    partial class Form1
+    partial class MainScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,138 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
+            this.logoText = new System.Windows.Forms.Label();
+            this.mainSection = new System.Windows.Forms.GroupBox();
+            this.modifyProfileButton = new System.Windows.Forms.Button();
+            this.viewProfileButton = new System.Windows.Forms.Button();
+            this.attacksButton = new System.Windows.Forms.Button();
+            this.pokemonsButton = new System.Windows.Forms.Button();
+            this.dataSection = new System.Windows.Forms.GroupBox();
+            this.typesButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mainSection.SuspendLayout();
+            this.dataSection.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // logoText
+            // 
+            this.logoText.AutoSize = true;
+            this.logoText.Font = new System.Drawing.Font("Pokemon Solid", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.logoText.Location = new System.Drawing.Point(201, 117);
+            this.logoText.Name = "logoText";
+            this.logoText.Size = new System.Drawing.Size(271, 101);
+            this.logoText.TabIndex = 1;
+            this.logoText.Text = "PokeHand v1.0";
+            // 
+            // mainSection
+            // 
+            this.mainSection.Controls.Add(this.modifyProfileButton);
+            this.mainSection.Controls.Add(this.viewProfileButton);
+            this.mainSection.Location = new System.Drawing.Point(158, 228);
+            this.mainSection.Name = "mainSection";
+            this.mainSection.Size = new System.Drawing.Size(175, 141);
+            this.mainSection.TabIndex = 2;
+            this.mainSection.TabStop = false;
+            this.mainSection.Text = "Perfil";
+            // 
+            // modifyProfileButton
+            // 
+            this.modifyProfileButton.Location = new System.Drawing.Point(19, 75);
+            this.modifyProfileButton.Name = "modifyProfileButton";
+            this.modifyProfileButton.Size = new System.Drawing.Size(136, 29);
+            this.modifyProfileButton.TabIndex = 1;
+            this.modifyProfileButton.Text = "Modificar Pefil";
+            this.modifyProfileButton.UseVisualStyleBackColor = true;
+            // 
+            // viewProfileButton
+            // 
+            this.viewProfileButton.Location = new System.Drawing.Point(19, 40);
+            this.viewProfileButton.Name = "viewProfileButton";
+            this.viewProfileButton.Size = new System.Drawing.Size(136, 29);
+            this.viewProfileButton.TabIndex = 0;
+            this.viewProfileButton.Text = "Meu Perfil";
+            this.viewProfileButton.UseVisualStyleBackColor = true;
+            // 
+            // attacksButton
+            // 
+            this.attacksButton.Location = new System.Drawing.Point(19, 60);
+            this.attacksButton.Name = "attacksButton";
+            this.attacksButton.Size = new System.Drawing.Size(136, 29);
+            this.attacksButton.TabIndex = 1;
+            this.attacksButton.Text = "Ataques";
+            this.attacksButton.UseVisualStyleBackColor = true;
+            // 
+            // pokemonsButton
+            // 
+            this.pokemonsButton.Location = new System.Drawing.Point(19, 25);
+            this.pokemonsButton.Name = "pokemonsButton";
+            this.pokemonsButton.Size = new System.Drawing.Size(136, 29);
+            this.pokemonsButton.TabIndex = 0;
+            this.pokemonsButton.Text = "Pokémons";
+            this.pokemonsButton.UseVisualStyleBackColor = true;
+            // 
+            // dataSection
+            // 
+            this.dataSection.Controls.Add(this.typesButton);
+            this.dataSection.Controls.Add(this.attacksButton);
+            this.dataSection.Controls.Add(this.pokemonsButton);
+            this.dataSection.Location = new System.Drawing.Point(339, 228);
+            this.dataSection.Name = "dataSection";
+            this.dataSection.Size = new System.Drawing.Size(175, 141);
+            this.dataSection.TabIndex = 3;
+            this.dataSection.TabStop = false;
+            this.dataSection.Text = "Dados";
+            // 
+            // typesButton
+            // 
+            this.typesButton.Location = new System.Drawing.Point(19, 95);
+            this.typesButton.Name = "typesButton";
+            this.typesButton.Size = new System.Drawing.Size(136, 29);
+            this.typesButton.TabIndex = 2;
+            this.typesButton.Text = "Tipos";
+            this.typesButton.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(272, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // MainScreen
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(673, 396);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.dataSection);
+            this.Controls.Add(this.mainSection);
+            this.Controls.Add(this.logoText);
+            this.Name = "MainScreen";
+            this.Text = "PokeHand";
+            this.mainSection.ResumeLayout(false);
+            this.dataSection.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+        private System.Windows.Forms.Label logoText;
+        private System.Windows.Forms.GroupBox mainSection;
+        private System.Windows.Forms.Button viewProfileButton;
+        private System.Windows.Forms.Button modifyProfileButton;
+        private System.Windows.Forms.Button attacksButton;
+        private System.Windows.Forms.Button pokemonsButton;
+        private System.Windows.Forms.GroupBox dataSection;
+        private System.Windows.Forms.Button typesButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
