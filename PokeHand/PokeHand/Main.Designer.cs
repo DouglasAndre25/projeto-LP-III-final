@@ -47,7 +47,7 @@
             // 
             this.logoText.AutoSize = true;
             this.logoText.Font = new System.Drawing.Font("Pokemon Solid", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.logoText.Location = new System.Drawing.Point(201, 117);
+            this.logoText.Location = new System.Drawing.Point(257, 199);
             this.logoText.Name = "logoText";
             this.logoText.Size = new System.Drawing.Size(271, 101);
             this.logoText.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             this.mainSection.Controls.Add(this.modifyProfileButton);
             this.mainSection.Controls.Add(this.viewProfileButton);
-            this.mainSection.Location = new System.Drawing.Point(158, 228);
+            this.mainSection.Location = new System.Drawing.Point(214, 310);
             this.mainSection.Name = "mainSection";
             this.mainSection.Size = new System.Drawing.Size(175, 141);
             this.mainSection.TabIndex = 2;
@@ -105,7 +105,7 @@
             this.dataSection.Controls.Add(this.typesButton);
             this.dataSection.Controls.Add(this.attacksButton);
             this.dataSection.Controls.Add(this.pokemonsButton);
-            this.dataSection.Location = new System.Drawing.Point(339, 228);
+            this.dataSection.Location = new System.Drawing.Point(395, 310);
             this.dataSection.Name = "dataSection";
             this.dataSection.Size = new System.Drawing.Size(175, 141);
             this.dataSection.TabIndex = 3;
@@ -120,11 +120,12 @@
             this.typesButton.TabIndex = 2;
             this.typesButton.Text = "Tipos";
             this.typesButton.UseVisualStyleBackColor = true;
+            this.typesButton.Click += new System.EventHandler(this.typesButton_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(272, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(328, 109);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(128, 128);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -135,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 396);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataSection);
             this.Controls.Add(this.mainSection);

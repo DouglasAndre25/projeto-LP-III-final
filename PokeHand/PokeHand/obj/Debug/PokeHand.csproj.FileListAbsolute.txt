@@ -8,3 +8,4 @@ C:\Users\Kauan Rocha\Documents\GitHub\projeto-LP-III-final\PokeHand\PokeHand\obj
 C:\Users\Kauan Rocha\Documents\GitHub\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.exe
 C:\Users\Kauan Rocha\Documents\GitHub\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.pdb
 C:\Users\Kauan Rocha\Documents\GitHub\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.MainScreen.resources
+C:\Users\Kauan Rocha\Documents\GitHub\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.Types.resources

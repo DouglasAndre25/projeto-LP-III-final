@@ -17,5 +17,9 @@ namespace PokeHand
             InitializeComponent();
         }
 
+        private void typesButton_Click(object sender, EventArgs e) 
+        {
+            new Types().Show();
+        }
     }
 }
