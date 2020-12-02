@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,5 +23,120 @@ namespace PokeHand {
 
         }
 
+        private void UpdateTypes()
+        {
+            this.typeTableAdapter.Fill(this.pokeHandDataSet.type);
+        }
+
+        private void ClearFields()
+        {
+            inputTypeAddName.Clear();
+            inputTypeAddName.Focus();
+        }
+
+        private void addTypeButton_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection;
+            SqlCommand command;
+
+            string connectionString = Properties.Settings.Default.PokeHandConnectionString;
+            connection = new SqlConnection(connectionString);
+
+            command = new SqlCommand(
+                "INSERT INTO type (name) VALUES (@name)", connection
+            );
+
+            command.Parameters.Add("@name", System.Data.SqlDbType.NVarChar);
+            command.Parameters["@name"].Value = inputTypeAddName.Text;
+
+            try
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message, "Erro ao abrir a conexão com o Banco de Dados",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message, "Erro ao executar o comando SQL",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            finally
+            {
+                connection.Close();
+
+                MessageBox.Show("Tipo Cadastrado!", "Tipo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.UpdateTypes();
+                this.ClearFields();
+            }
+        }
+
+        private void searchTypeButton_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection;
+            SqlCommand command;
+            SqlDataReader reader;
+
+            string connectionString = Properties.Settings.Default.PokeHandConnectionString;
+            connection = new SqlConnection(connectionString);
+
+            command = new SqlCommand(
+                "SELECT name FROM type WHERE name LIKE '%@name%'", connection
+            );
+
+            command.Parameters.Add("@name", System.Data.SqlDbType.NVarChar);
+            command.Parameters["@name"].Value = inputTypeAddName.Text;
+
+            try
+            {
+
+                try
+                {
+                    connection.Open();
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message, "Erro ao abrir a conexão com o Banco de Dados",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                try
+                {
+                    reader = command.ExecuteReader();
+
+                    MessageBox.Show(reader.Read().ToString(), "Erro ao executar o comando SQL",
+                      MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (reader.Read())
+                    {
+                       
+                    }
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message, "Erro ao executar o comando SQL",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }

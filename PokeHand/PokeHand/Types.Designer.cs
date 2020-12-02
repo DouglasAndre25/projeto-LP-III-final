@@ -35,6 +35,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Types));
             this.typesControl = new System.Windows.Forms.TabControl();
             this.searchType = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelTypeSearchName = new System.Windows.Forms.Label();
+            this.inputTypeSearchName = new System.Windows.Forms.TextBox();
             this.typeSearchGridView = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -57,11 +60,10 @@
             this.attackBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.attackTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.attackTableAdapter();
             this.typeTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.typeTableAdapter();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelTypeSearchName = new System.Windows.Forms.Label();
-            this.inputTypeSearchName = new System.Windows.Forms.TextBox();
+            this.searchTypeButton = new System.Windows.Forms.Button();
             this.typesControl.SuspendLayout();
             this.searchType.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeSearchGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokeHandDataSetBindingSource)).BeginInit();
@@ -72,7 +74,6 @@
             this.deleteType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeDeleteGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackBindingSource)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // typesControl
@@ -98,6 +99,38 @@
             this.searchType.TabIndex = 0;
             this.searchType.Text = "Buscar Tipo";
             this.searchType.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.searchTypeButton);
+            this.groupBox1.Controls.Add(this.labelTypeSearchName);
+            this.groupBox1.Controls.Add(this.inputTypeSearchName);
+            this.groupBox1.Location = new System.Drawing.Point(23, 23);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(20, 20, 20, 10);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(696, 76);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros";
+            // 
+            // labelTypeSearchName
+            // 
+            this.labelTypeSearchName.AutoSize = true;
+            this.labelTypeSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTypeSearchName.Location = new System.Drawing.Point(10, 20);
+            this.labelTypeSearchName.Margin = new System.Windows.Forms.Padding(20, 20, 20, 2);
+            this.labelTypeSearchName.Name = "labelTypeSearchName";
+            this.labelTypeSearchName.Size = new System.Drawing.Size(48, 16);
+            this.labelTypeSearchName.TabIndex = 3;
+            this.labelTypeSearchName.Text = "Nome:";
+            // 
+            // inputTypeSearchName
+            // 
+            this.inputTypeSearchName.Location = new System.Drawing.Point(10, 40);
+            this.inputTypeSearchName.Margin = new System.Windows.Forms.Padding(20, 2, 20, 20);
+            this.inputTypeSearchName.Name = "inputTypeSearchName";
+            this.inputTypeSearchName.Size = new System.Drawing.Size(365, 20);
+            this.inputTypeSearchName.TabIndex = 2;
             // 
             // typeSearchGridView
             // 
@@ -131,8 +164,9 @@
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 332;
             // 
             // typeBindingSource
             // 
@@ -171,6 +205,7 @@
             this.addTypeButton.TabIndex = 2;
             this.addTypeButton.Text = "Adicionar";
             this.addTypeButton.UseVisualStyleBackColor = true;
+            this.addTypeButton.Click += new System.EventHandler(this.addTypeButton_Click);
             // 
             // labelTypeAddName
             // 
@@ -353,36 +388,15 @@
             // 
             this.typeTableAdapter.ClearBeforeFill = true;
             // 
-            // groupBox1
+            // searchTypeButton
             // 
-            this.groupBox1.Controls.Add(this.labelTypeSearchName);
-            this.groupBox1.Controls.Add(this.inputTypeSearchName);
-            this.groupBox1.Location = new System.Drawing.Point(23, 23);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(20, 20, 20, 10);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(696, 76);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros";
-            // 
-            // labelTypeSearchName
-            // 
-            this.labelTypeSearchName.AutoSize = true;
-            this.labelTypeSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTypeSearchName.Location = new System.Drawing.Point(10, 20);
-            this.labelTypeSearchName.Margin = new System.Windows.Forms.Padding(20, 20, 20, 2);
-            this.labelTypeSearchName.Name = "labelTypeSearchName";
-            this.labelTypeSearchName.Size = new System.Drawing.Size(48, 16);
-            this.labelTypeSearchName.TabIndex = 3;
-            this.labelTypeSearchName.Text = "Nome:";
-            // 
-            // inputTypeSearchName
-            // 
-            this.inputTypeSearchName.Location = new System.Drawing.Point(10, 40);
-            this.inputTypeSearchName.Margin = new System.Windows.Forms.Padding(20, 2, 20, 20);
-            this.inputTypeSearchName.Name = "inputTypeSearchName";
-            this.inputTypeSearchName.Size = new System.Drawing.Size(365, 20);
-            this.inputTypeSearchName.TabIndex = 2;
+            this.searchTypeButton.Location = new System.Drawing.Point(409, 37);
+            this.searchTypeButton.Name = "searchTypeButton";
+            this.searchTypeButton.Size = new System.Drawing.Size(84, 23);
+            this.searchTypeButton.TabIndex = 4;
+            this.searchTypeButton.Text = "Buscar";
+            this.searchTypeButton.UseVisualStyleBackColor = true;
+            this.searchTypeButton.Click += new System.EventHandler(this.searchTypeButton_Click);
             // 
             // Types
             // 
@@ -397,6 +411,8 @@
             this.Load += new System.EventHandler(this.Types_Load);
             this.typesControl.ResumeLayout(false);
             this.searchType.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeSearchGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokeHandDataSetBindingSource)).EndInit();
@@ -409,8 +425,6 @@
             this.deleteType.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.typeDeleteGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackBindingSource)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -429,7 +443,6 @@
         private PokeHandDataSetTableAdapters.attackTableAdapter attackTableAdapter;
         private System.Windows.Forms.BindingSource typeBindingSource;
         private PokeHandDataSetTableAdapters.typeTableAdapter typeTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label labelTypeAddName;
         private System.Windows.Forms.TextBox inputTypeAddName;
         private System.Windows.Forms.Button addTypeButton;
@@ -444,5 +457,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label labelTypeSearchName;
         private System.Windows.Forms.TextBox inputTypeSearchName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button searchTypeButton;
     }
 }

@@ -9,3 +9,14 @@ C:\Users\Kauan Rocha\Documents\GitHub\projeto-LP-III-final\PokeHand\PokeHand\obj
 C:\Users\Kauan Rocha\Documents\GitHub\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.pdb
 C:\Users\Kauan Rocha\Documents\GitHub\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.MainScreen.resources
 C:\Users\Kauan Rocha\Documents\GitHub\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.Types.resources
+C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\bin\Debug\PokeHand.exe.config
+C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\bin\Debug\PokeHand.exe
+C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\bin\Debug\PokeHand.pdb
+C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.csprojAssemblyReference.cache
+C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.MainScreen.resources
+C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.Properties.Resources.resources
+C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.Types.resources
+C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.csproj.GenerateResource.cache
+C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.csproj.CoreCompileInputs.cache
+C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.exe
+C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.pdb
