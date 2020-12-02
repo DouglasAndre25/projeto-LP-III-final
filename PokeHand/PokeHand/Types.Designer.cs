@@ -36,10 +36,10 @@
             this.typesControl = new System.Windows.Forms.TabControl();
             this.searchType = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.searchTypeButton = new System.Windows.Forms.Button();
             this.labelTypeSearchName = new System.Windows.Forms.Label();
             this.inputTypeSearchName = new System.Windows.Forms.TextBox();
             this.typeSearchGridView = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokeHandDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokeHandDataSet = new PokeHand.PokeHandDataSet();
@@ -49,18 +49,21 @@
             this.inputTypeAddName = new System.Windows.Forms.TextBox();
             this.modifyType = new System.Windows.Forms.TabPage();
             this.typeModifyGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modifyTypeButton = new System.Windows.Forms.Button();
             this.labelTypeModifyName = new System.Windows.Forms.Label();
             this.inputTypeModifyName = new System.Windows.Forms.TextBox();
             this.deleteType = new System.Windows.Forms.TabPage();
             this.typeDeleteGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deleteTypeButton = new System.Windows.Forms.Button();
             this.attackBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.attackTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.attackTableAdapter();
             this.typeTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.typeTableAdapter();
-            this.searchTypeButton = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeModifyGridViewId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeModifyGridViewName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDeleteGridViewId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDeleteGridViewName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typesControl.SuspendLayout();
             this.searchType.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -113,6 +116,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
+            // searchTypeButton
+            // 
+            this.searchTypeButton.Location = new System.Drawing.Point(409, 37);
+            this.searchTypeButton.Name = "searchTypeButton";
+            this.searchTypeButton.Size = new System.Drawing.Size(84, 23);
+            this.searchTypeButton.TabIndex = 4;
+            this.searchTypeButton.Text = "Buscar";
+            this.searchTypeButton.UseVisualStyleBackColor = true;
+            this.searchTypeButton.Click += new System.EventHandler(this.searchTypeButton_Click);
+            // 
             // labelTypeSearchName
             // 
             this.labelTypeSearchName.AutoSize = true;
@@ -134,6 +147,9 @@
             // 
             // typeSearchGridView
             // 
+            this.typeSearchGridView.AllowUserToAddRows = false;
+            this.typeSearchGridView.AllowUserToDeleteRows = false;
+            this.typeSearchGridView.AllowUserToOrderColumns = true;
             this.typeSearchGridView.AutoGenerateColumns = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -145,6 +161,7 @@
             this.typeSearchGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.typeSearchGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.typeSearchGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
             this.nameDataGridViewTextBoxColumn});
             this.typeSearchGridView.DataSource = this.typeBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -158,15 +175,9 @@
             this.typeSearchGridView.Location = new System.Drawing.Point(23, 129);
             this.typeSearchGridView.Margin = new System.Windows.Forms.Padding(20);
             this.typeSearchGridView.Name = "typeSearchGridView";
+            this.typeSearchGridView.ReadOnly = true;
             this.typeSearchGridView.Size = new System.Drawing.Size(375, 322);
             this.typeSearchGridView.TabIndex = 0;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 332;
             // 
             // typeBindingSource
             // 
@@ -241,6 +252,9 @@
             // 
             // typeModifyGridView
             // 
+            this.typeModifyGridView.AllowUserToAddRows = false;
+            this.typeModifyGridView.AllowUserToDeleteRows = false;
+            this.typeModifyGridView.AllowUserToOrderColumns = true;
             this.typeModifyGridView.AutoGenerateColumns = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -252,7 +266,8 @@
             this.typeModifyGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.typeModifyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.typeModifyGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1});
+            this.typeModifyGridViewId,
+            this.typeModifyGridViewName});
             this.typeModifyGridView.DataSource = this.typeBindingSource;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
@@ -265,6 +280,7 @@
             this.typeModifyGridView.Location = new System.Drawing.Point(20, 20);
             this.typeModifyGridView.Margin = new System.Windows.Forms.Padding(20);
             this.typeModifyGridView.Name = "typeModifyGridView";
+            this.typeModifyGridView.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -275,12 +291,7 @@
             this.typeModifyGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.typeModifyGridView.Size = new System.Drawing.Size(375, 259);
             this.typeModifyGridView.TabIndex = 6;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn1.HeaderText = "name";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.typeModifyGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.typeModifyGridView_CellContentClick);
             // 
             // modifyTypeButton
             // 
@@ -291,6 +302,7 @@
             this.modifyTypeButton.TabIndex = 5;
             this.modifyTypeButton.Text = "Modificar";
             this.modifyTypeButton.UseVisualStyleBackColor = true;
+            this.modifyTypeButton.Click += new System.EventHandler(this.modifyTypeButton_Click);
             // 
             // labelTypeModifyName
             // 
@@ -324,6 +336,8 @@
             // 
             // typeDeleteGridView
             // 
+            this.typeDeleteGridView.AllowUserToAddRows = false;
+            this.typeDeleteGridView.AllowUserToDeleteRows = false;
             this.typeDeleteGridView.AutoGenerateColumns = false;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -335,7 +349,8 @@
             this.typeDeleteGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.typeDeleteGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.typeDeleteGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2});
+            this.typeDeleteGridViewId,
+            this.typeDeleteGridViewName});
             this.typeDeleteGridView.DataSource = this.typeBindingSource;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
@@ -348,6 +363,7 @@
             this.typeDeleteGridView.Location = new System.Drawing.Point(20, 20);
             this.typeDeleteGridView.Margin = new System.Windows.Forms.Padding(20);
             this.typeDeleteGridView.Name = "typeDeleteGridView";
+            this.typeDeleteGridView.ReadOnly = true;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -358,12 +374,7 @@
             this.typeDeleteGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.typeDeleteGridView.Size = new System.Drawing.Size(375, 365);
             this.typeDeleteGridView.TabIndex = 10;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.typeDeleteGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.typeDeleteGridView_CellContentClick);
             // 
             // deleteTypeButton
             // 
@@ -374,6 +385,7 @@
             this.deleteTypeButton.TabIndex = 9;
             this.deleteTypeButton.Text = "Excluir";
             this.deleteTypeButton.UseVisualStyleBackColor = true;
+            this.deleteTypeButton.Click += new System.EventHandler(this.deleteTypeButton_Click);
             // 
             // attackBindingSource
             // 
@@ -388,15 +400,54 @@
             // 
             this.typeTableAdapter.ClearBeforeFill = true;
             // 
-            // searchTypeButton
+            // Column1
             // 
-            this.searchTypeButton.Location = new System.Drawing.Point(409, 37);
-            this.searchTypeButton.Name = "searchTypeButton";
-            this.searchTypeButton.Size = new System.Drawing.Size(84, 23);
-            this.searchTypeButton.TabIndex = 4;
-            this.searchTypeButton.Text = "Buscar";
-            this.searchTypeButton.UseVisualStyleBackColor = true;
-            this.searchTypeButton.Click += new System.EventHandler(this.searchTypeButton_Click);
+            this.Column1.DataPropertyName = "id";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 332;
+            // 
+            // typeModifyGridViewId
+            // 
+            this.typeModifyGridViewId.DataPropertyName = "id";
+            this.typeModifyGridViewId.HeaderText = "id";
+            this.typeModifyGridViewId.MinimumWidth = 32;
+            this.typeModifyGridViewId.Name = "typeModifyGridViewId";
+            this.typeModifyGridViewId.ReadOnly = true;
+            this.typeModifyGridViewId.Width = 32;
+            // 
+            // typeModifyGridViewName
+            // 
+            this.typeModifyGridViewName.DataPropertyName = "name";
+            this.typeModifyGridViewName.HeaderText = "name";
+            this.typeModifyGridViewName.Name = "typeModifyGridViewName";
+            this.typeModifyGridViewName.ReadOnly = true;
+            this.typeModifyGridViewName.Width = 300;
+            // 
+            // typeDeleteGridViewId
+            // 
+            this.typeDeleteGridViewId.DataPropertyName = "id";
+            this.typeDeleteGridViewId.HeaderText = "id";
+            this.typeDeleteGridViewId.Name = "typeDeleteGridViewId";
+            this.typeDeleteGridViewId.ReadOnly = true;
+            this.typeDeleteGridViewId.Width = 32;
+            // 
+            // typeDeleteGridViewName
+            // 
+            this.typeDeleteGridViewName.DataPropertyName = "name";
+            this.typeDeleteGridViewName.HeaderText = "name";
+            this.typeDeleteGridViewName.Name = "typeDeleteGridViewName";
+            this.typeDeleteGridViewName.ReadOnly = true;
+            this.typeDeleteGridViewName.Width = 300;
             // 
             // Types
             // 
@@ -450,14 +501,17 @@
         private System.Windows.Forms.Label labelTypeModifyName;
         private System.Windows.Forms.TextBox inputTypeModifyName;
         private System.Windows.Forms.DataGridView typeModifyGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridView typeDeleteGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button deleteTypeButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label labelTypeSearchName;
         private System.Windows.Forms.TextBox inputTypeSearchName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button searchTypeButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeModifyGridViewId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeModifyGridViewName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDeleteGridViewId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDeleteGridViewName;
     }
 }

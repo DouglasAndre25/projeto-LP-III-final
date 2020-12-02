@@ -11,6 +11,11 @@ using System.Windows.Forms;
 
 namespace PokeHand {
     public partial class Types : Form {
+
+
+        private string modifyTypeSelectedIndex;
+        private string deleteTypeSelectedIndex;
+
         public Types() {
             InitializeComponent();
         }
@@ -95,11 +100,129 @@ namespace PokeHand {
             connection = new SqlConnection(connectionString);
 
             command = new SqlCommand(
-                "SELECT name FROM type WHERE name LIKE '%@name%'", connection
+                "SELECT name FROM type WHERE name LIKE '%[" + "@name" + "]%'", connection
             );
 
             command.Parameters.Add("@name", System.Data.SqlDbType.NVarChar);
             command.Parameters["@name"].Value = inputTypeAddName.Text;
+
+
+            try 
+            {
+
+                try
+                {
+                    connection.Open();
+                }
+                catch(Exception error)
+                {
+                    MessageBox.Show(error.Message, "Erro ao abrir a conexão com o Banco de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                try
+                {
+                    reader = command.ExecuteReader();
+                    
+                    DataTable dt = new DataTable();
+
+                    typeSearchGridView.DataSource = dt;                    
+                }
+                catch(Exception error)
+                {
+                    MessageBox.Show(error.Message, "Erro ao executar o comando SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+            }
+            finally 
+            {
+                connection.Close();
+            }
+
+           
+        }
+
+        private void typeModifyGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.modifyTypeSelectedIndex = this.typeModifyGridView.Rows[e.RowIndex].Cells["typeModifyGridViewId"].Value.ToString();
+            inputTypeModifyName.Text = this.typeModifyGridView.Rows[e.RowIndex].Cells["typeModifyGridViewName"].Value.ToString();
+        }
+
+        private void modifyTypeButton_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection;
+            SqlCommand command;
+
+            string connectionString = Properties.Settings.Default.PokeHandConnectionString;
+            connection = new SqlConnection(connectionString);
+
+            command = new SqlCommand(
+                "UPDATE type SET name=@name WHERE id=@id", connection
+            );
+
+            command.Parameters.Add("@name", System.Data.SqlDbType.NVarChar);
+            command.Parameters["@name"].Value = inputTypeModifyName.Text;
+
+            command.Parameters.Add("@id", System.Data.SqlDbType.NVarChar);
+            command.Parameters["@id"].Value = this.modifyTypeSelectedIndex;
+
+            try
+            {
+
+                try
+                {
+                    connection.Open();
+                }
+                catch(Exception error) 
+                {
+                    MessageBox.Show(error.Message, "Erro ao abrir a conexão com o Banco de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch(Exception error)
+                {
+                    MessageBox.Show(error.Message, "Erro ao executar o comando SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+            }
+            finally
+            {
+                connection.Close();
+
+                MessageBox.Show("Tipo Alterado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                inputTypeModifyName.Clear();
+
+                this.UpdateTypes();
+            }
+
+        }
+
+        private void typeDeleteGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.deleteTypeSelectedIndex = this.typeDeleteGridView.Rows[e.RowIndex].Cells["typeDeleteGridViewId"].Value.ToString();
+        }
+
+        private void deleteTypeButton_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection;
+            SqlCommand command;
+
+            string connectionString = Properties.Settings.Default.PokeHandConnectionString;
+            connection = new SqlConnection(connectionString);
+
+            command = new SqlCommand(
+                "DELETE FROM type WHERE id = @id", connection
+            );
+
+            command.Parameters.Add("@id", System.Data.SqlDbType.NVarChar);
+            command.Parameters["@id"].Value = this.deleteTypeSelectedIndex;
 
             try
             {
@@ -110,32 +233,28 @@ namespace PokeHand {
                 }
                 catch (Exception error)
                 {
-                    MessageBox.Show(error.Message, "Erro ao abrir a conexão com o Banco de Dados",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(error.Message, "Erro ao abrir a conexão com o Banco de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 try
                 {
-                    reader = command.ExecuteReader();
-
-                    MessageBox.Show(reader.Read().ToString(), "Erro ao executar o comando SQL",
-                      MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    if (reader.Read())
-                    {
-                       
-                    }
+                    command.ExecuteNonQuery();
                 }
                 catch (Exception error)
                 {
-                    MessageBox.Show(error.Message, "Erro ao executar o comando SQL",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(error.Message, "Erro ao executar o comando SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
             }
             finally
             {
                 connection.Close();
+
+                MessageBox.Show("Tipo excluído!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.UpdateTypes();
             }
         }
     }
