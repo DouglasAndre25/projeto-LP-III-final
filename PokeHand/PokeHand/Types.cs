@@ -15,9 +15,11 @@ namespace PokeHand {
 
         private string modifyTypeSelectedIndex;
         private string deleteTypeSelectedIndex;
+        private SqlService sqlService;
 
         public Types() {
             InitializeComponent();
+            sqlService = new SqlService();
         }
 
         private void Types_Load(object sender, EventArgs e) {
@@ -41,50 +43,22 @@ namespace PokeHand {
 
         private void addTypeButton_Click(object sender, EventArgs e)
         {
-            SqlConnection connection;
-            SqlCommand command;
-
-            string connectionString = Properties.Settings.Default.PokeHandConnectionString;
-            connection = new SqlConnection(connectionString);
-
-            command = new SqlCommand(
-                "INSERT INTO type (name) VALUES (@name)", connection
-            );
-
-            command.Parameters.Add("@name", System.Data.SqlDbType.NVarChar);
-            command.Parameters["@name"].Value = inputTypeAddName.Text;
-
             try
             {
                 try
                 {
-                    connection.Open();
+                    SqlParameter[] parameters = {
+                        new SqlParameter("@name", System.Data.SqlDbType.NVarChar, inputTypeAddName.Text)
+                    };
+                    sqlService.InsertCommand("INSERT1 INTO type (name) VALUES (@name)", parameters);
+                    MessageBox.Show("Tipo Cadastrado!", "Tipo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception error)
-                {
-                    MessageBox.Show(error.Message, "Erro ao abrir a conexão com o Banco de Dados",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                try
-                {
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception error)
-                {
-                    MessageBox.Show(error.Message, "Erro ao executar o comando SQL",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                catch(Exception error) { }
             }
             finally
             {
-                connection.Close();
-
-                MessageBox.Show("Tipo Cadastrado!", "Tipo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                sqlService.CloseConnection();
                 this.UpdateTypes();
                 this.ClearFields();
             }
