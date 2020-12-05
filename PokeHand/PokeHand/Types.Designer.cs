@@ -49,21 +49,21 @@
             this.inputTypeAddName = new System.Windows.Forms.TextBox();
             this.modifyType = new System.Windows.Forms.TabPage();
             this.typeModifyGridView = new System.Windows.Forms.DataGridView();
+            this.typeModifyGridViewId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeModifyGridViewName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modifyTypeButton = new System.Windows.Forms.Button();
             this.labelTypeModifyName = new System.Windows.Forms.Label();
             this.inputTypeModifyName = new System.Windows.Forms.TextBox();
             this.deleteType = new System.Windows.Forms.TabPage();
             this.typeDeleteGridView = new System.Windows.Forms.DataGridView();
+            this.typeDeleteGridViewId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDeleteGridViewName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deleteTypeButton = new System.Windows.Forms.Button();
             this.attackBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.attackTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.attackTableAdapter();
             this.typeTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.typeTableAdapter();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeModifyGridViewId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeModifyGridViewName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDeleteGridViewId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDeleteGridViewName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typesControl.SuspendLayout();
             this.searchType.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -293,6 +293,23 @@
             this.typeModifyGridView.TabIndex = 6;
             this.typeModifyGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.typeModifyGridView_CellContentClick);
             // 
+            // typeModifyGridViewId
+            // 
+            this.typeModifyGridViewId.DataPropertyName = "id";
+            this.typeModifyGridViewId.HeaderText = "id";
+            this.typeModifyGridViewId.MinimumWidth = 32;
+            this.typeModifyGridViewId.Name = "typeModifyGridViewId";
+            this.typeModifyGridViewId.ReadOnly = true;
+            this.typeModifyGridViewId.Width = 32;
+            // 
+            // typeModifyGridViewName
+            // 
+            this.typeModifyGridViewName.DataPropertyName = "name";
+            this.typeModifyGridViewName.HeaderText = "name";
+            this.typeModifyGridViewName.Name = "typeModifyGridViewName";
+            this.typeModifyGridViewName.ReadOnly = true;
+            this.typeModifyGridViewName.Width = 300;
+            // 
             // modifyTypeButton
             // 
             this.modifyTypeButton.Location = new System.Drawing.Point(20, 399);
@@ -376,6 +393,22 @@
             this.typeDeleteGridView.TabIndex = 10;
             this.typeDeleteGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.typeDeleteGridView_CellContentClick);
             // 
+            // typeDeleteGridViewId
+            // 
+            this.typeDeleteGridViewId.DataPropertyName = "id";
+            this.typeDeleteGridViewId.HeaderText = "id";
+            this.typeDeleteGridViewId.Name = "typeDeleteGridViewId";
+            this.typeDeleteGridViewId.ReadOnly = true;
+            this.typeDeleteGridViewId.Width = 32;
+            // 
+            // typeDeleteGridViewName
+            // 
+            this.typeDeleteGridViewName.DataPropertyName = "name";
+            this.typeDeleteGridViewName.HeaderText = "name";
+            this.typeDeleteGridViewName.Name = "typeDeleteGridViewName";
+            this.typeDeleteGridViewName.ReadOnly = true;
+            this.typeDeleteGridViewName.Width = 300;
+            // 
             // deleteTypeButton
             // 
             this.deleteTypeButton.Location = new System.Drawing.Point(20, 425);
@@ -406,7 +439,7 @@
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
+            this.Column1.Width = 32;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -414,40 +447,7 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 332;
-            // 
-            // typeModifyGridViewId
-            // 
-            this.typeModifyGridViewId.DataPropertyName = "id";
-            this.typeModifyGridViewId.HeaderText = "id";
-            this.typeModifyGridViewId.MinimumWidth = 32;
-            this.typeModifyGridViewId.Name = "typeModifyGridViewId";
-            this.typeModifyGridViewId.ReadOnly = true;
-            this.typeModifyGridViewId.Width = 32;
-            // 
-            // typeModifyGridViewName
-            // 
-            this.typeModifyGridViewName.DataPropertyName = "name";
-            this.typeModifyGridViewName.HeaderText = "name";
-            this.typeModifyGridViewName.Name = "typeModifyGridViewName";
-            this.typeModifyGridViewName.ReadOnly = true;
-            this.typeModifyGridViewName.Width = 300;
-            // 
-            // typeDeleteGridViewId
-            // 
-            this.typeDeleteGridViewId.DataPropertyName = "id";
-            this.typeDeleteGridViewId.HeaderText = "id";
-            this.typeDeleteGridViewId.Name = "typeDeleteGridViewId";
-            this.typeDeleteGridViewId.ReadOnly = true;
-            this.typeDeleteGridViewId.Width = 32;
-            // 
-            // typeDeleteGridViewName
-            // 
-            this.typeDeleteGridViewName.DataPropertyName = "name";
-            this.typeDeleteGridViewName.HeaderText = "name";
-            this.typeDeleteGridViewName.Name = "typeDeleteGridViewName";
-            this.typeDeleteGridViewName.ReadOnly = true;
-            this.typeDeleteGridViewName.Width = 300;
+            this.nameDataGridViewTextBoxColumn.Width = 300;
             // 
             // Types
             // 
@@ -507,11 +507,11 @@
         private System.Windows.Forms.Label labelTypeSearchName;
         private System.Windows.Forms.TextBox inputTypeSearchName;
         private System.Windows.Forms.Button searchTypeButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeModifyGridViewId;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeModifyGridViewName;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDeleteGridViewId;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDeleteGridViewName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
     }
 }

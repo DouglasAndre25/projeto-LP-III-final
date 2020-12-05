@@ -59,5 +59,39 @@ namespace PokeHand
                 throw error;
             }
         }
+
+        public SqlDataReader DQLCommand(string command, SqlParameter[] parameters)
+        {
+            SqlDataReader reader;
+            SqlCommand sqlCommand = new SqlCommand(command, this.connection);
+            foreach (SqlParameter parameter in parameters)
+            {
+                sqlCommand.Parameters.Add(parameter.GetColumn(), parameter.GetType());
+                sqlCommand.Parameters[parameter.GetColumn()].Value = parameter.GetValue();
+            }
+
+            try
+            {
+                this.OpenConnection();
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show(error.Message, "Erro ao abrir a conexão com o Banco de Dados",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw error;
+            }
+
+            try
+            {
+                reader = sqlCommand.ExecuteReader();
+                return reader;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Erro ao executar o comando SQL",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw error;
+            }
+        }
     }
 }

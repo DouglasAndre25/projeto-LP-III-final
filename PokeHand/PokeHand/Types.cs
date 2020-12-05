@@ -66,54 +66,26 @@ namespace PokeHand {
 
         private void searchTypeButton_Click(object sender, EventArgs e)
         {
-            SqlConnection connection;
-            SqlCommand command;
-            SqlDataReader reader;
 
-            string connectionString = Properties.Settings.Default.PokeHandConnectionString;
-            connection = new SqlConnection(connectionString);
-
-            command = new SqlCommand(
-                "SELECT name FROM type WHERE name LIKE '%[" + "@name" + "]%'", connection
-            );
-
-            command.Parameters.Add("@name", System.Data.SqlDbType.NVarChar);
-            command.Parameters["@name"].Value = inputTypeAddName.Text;
-
-
-            try 
+            try
             {
-
                 try
                 {
-                    connection.Open();
+                    SqlParameter[] parameters = {};
+                    SqlDataReader reader = sqlService.DQLCommand(
+                        $"SELECT id, name FROM type WHERE name LIKE '%{inputTypeSearchName.Text}%'", parameters
+                    );
+                    PokeHandDataSet.typeDataTable dataTable = new PokeHandDataSet.typeDataTable();
+                    dataTable.Load(reader);
+                    typeSearchGridView.DataSource = dataTable;
                 }
-                catch(Exception error)
-                {
-                    MessageBox.Show(error.Message, "Erro ao abrir a conexão com o Banco de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                try
-                {
-                    reader = command.ExecuteReader();
-                    
-                    DataTable dt = new DataTable();
-
-                    typeSearchGridView.DataSource = dt;                    
-                }
-                catch(Exception error)
-                {
-                    MessageBox.Show(error.Message, "Erro ao executar o comando SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
+                catch (Exception error) { }
             }
-            finally 
+            finally
             {
-                connection.Close();
+                sqlService.CloseConnection();
+                inputTypeSearchName.Clear();
             }
-
            
         }
 
@@ -178,5 +150,6 @@ namespace PokeHand {
             }
 
         }
+
     }
 }
