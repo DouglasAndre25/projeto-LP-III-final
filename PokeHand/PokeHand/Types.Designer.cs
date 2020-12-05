@@ -40,6 +40,8 @@
             this.labelTypeSearchName = new System.Windows.Forms.Label();
             this.inputTypeSearchName = new System.Windows.Forms.TextBox();
             this.typeSearchGridView = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokeHandDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokeHandDataSet = new PokeHand.PokeHandDataSet();
@@ -62,8 +64,6 @@
             this.attackBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.attackTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.attackTableAdapter();
             this.typeTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.typeTableAdapter();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typesControl.SuspendLayout();
             this.searchType.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -178,6 +178,22 @@
             this.typeSearchGridView.ReadOnly = true;
             this.typeSearchGridView.Size = new System.Drawing.Size(375, 322);
             this.typeSearchGridView.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "id";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 32;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 300;
             // 
             // typeBindingSource
             // 
@@ -432,22 +448,6 @@
             // typeTableAdapter
             // 
             this.typeTableAdapter.ClearBeforeFill = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "id";
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 32;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 300;
             // 
             // Types
             // 

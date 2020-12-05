@@ -90,6 +90,7 @@
             this.attacksButton.TabIndex = 1;
             this.attacksButton.Text = "Ataques";
             this.attacksButton.UseVisualStyleBackColor = true;
+            this.attacksButton.Click += new System.EventHandler(this.attacksButton_Click);
             // 
             // pokemonsButton
             // 
@@ -99,6 +100,7 @@
             this.pokemonsButton.TabIndex = 0;
             this.pokemonsButton.Text = "Pokémons";
             this.pokemonsButton.UseVisualStyleBackColor = true;
+            this.pokemonsButton.Click += new System.EventHandler(this.pokemonsButton_Click);
             // 
             // dataSection
             // 

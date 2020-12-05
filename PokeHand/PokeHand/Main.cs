@@ -21,5 +21,15 @@ namespace PokeHand
         {
             new Types().Show();
         }
+
+        private void attacksButton_Click(object sender, EventArgs e)
+        {
+            new Attacks().Show();
+        }
+
+        private void pokemonsButton_Click(object sender, EventArgs e)
+        {
+            new Pokemons().Show();
+        }
     }
 }
