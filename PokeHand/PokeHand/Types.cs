@@ -50,7 +50,7 @@ namespace PokeHand {
                     SqlParameter[] parameters = {
                         new SqlParameter("@name", System.Data.SqlDbType.NVarChar, inputTypeAddName.Text)
                     };
-                    sqlService.InsertCommand("INSERT1 INTO type (name) VALUES (@name)", parameters);
+                    sqlService.DMLCommand("INSERT INTO type (name) VALUES (@name)", parameters);
                     MessageBox.Show("Tipo Cadastrado!", "Tipo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -125,56 +125,28 @@ namespace PokeHand {
 
         private void modifyTypeButton_Click(object sender, EventArgs e)
         {
-            SqlConnection connection;
-            SqlCommand command;
-
-            string connectionString = Properties.Settings.Default.PokeHandConnectionString;
-            connection = new SqlConnection(connectionString);
-
-            command = new SqlCommand(
-                "UPDATE type SET name=@name WHERE id=@id", connection
-            );
-
-            command.Parameters.Add("@name", System.Data.SqlDbType.NVarChar);
-            command.Parameters["@name"].Value = inputTypeModifyName.Text;
-
-            command.Parameters.Add("@id", System.Data.SqlDbType.NVarChar);
-            command.Parameters["@id"].Value = this.modifyTypeSelectedIndex;
 
             try
             {
-
                 try
                 {
-                    connection.Open();
-                }
-                catch(Exception error) 
-                {
-                    MessageBox.Show(error.Message, "Erro ao abrir a conexão com o Banco de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                    SqlParameter[] parameters = {
+                        new SqlParameter("@name", System.Data.SqlDbType.NVarChar, inputTypeModifyName.Text),
+                        new SqlParameter("@id", System.Data.SqlDbType.NVarChar, this.modifyTypeSelectedIndex)
+                    };
+                    sqlService.DMLCommand("UPDATE type SET name=@name WHERE id=@id", parameters);
 
-                try
-                {
-                    command.ExecuteNonQuery();
+                    MessageBox.Show("Tipo Alterado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch(Exception error)
-                {
-                    MessageBox.Show(error.Message, "Erro ao executar o comando SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
+                catch(Exception error) { }
             }
             finally
             {
-                connection.Close();
-
-                MessageBox.Show("Tipo Alterado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                sqlService.CloseConnection();
                 inputTypeModifyName.Clear();
-
                 this.UpdateTypes();
             }
+
 
         }
 
@@ -185,51 +157,26 @@ namespace PokeHand {
 
         private void deleteTypeButton_Click(object sender, EventArgs e)
         {
-            SqlConnection connection;
-            SqlCommand command;
-
-            string connectionString = Properties.Settings.Default.PokeHandConnectionString;
-            connection = new SqlConnection(connectionString);
-
-            command = new SqlCommand(
-                "DELETE FROM type WHERE id = @id", connection
-            );
-
-            command.Parameters.Add("@id", System.Data.SqlDbType.NVarChar);
-            command.Parameters["@id"].Value = this.deleteTypeSelectedIndex;
 
             try
             {
-
                 try
                 {
-                    connection.Open();
+                    SqlParameter[] parameters =
+                    {
+                        new SqlParameter("@id", System.Data.SqlDbType.NVarChar, this.deleteTypeSelectedIndex)
+                    };
+                    sqlService.DMLCommand("DELETE FROM type WHERE id = @id", parameters);
+                    MessageBox.Show("Tipo excluído!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception error)
-                {
-                    MessageBox.Show(error.Message, "Erro ao abrir a conexão com o Banco de Dados", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                try
-                {
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception error)
-                {
-                    MessageBox.Show(error.Message, "Erro ao executar o comando SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
+                catch(Exception error) { }
             }
             finally
             {
-                connection.Close();
-
-                MessageBox.Show("Tipo excluído!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                sqlService.CloseConnection();
                 this.UpdateTypes();
             }
+
         }
     }
 }
