@@ -21,9 +21,16 @@ CREATE TABLE pokemon (
     name NVARCHAR(50) NOT NULL,
     weight REAL NOT NULL,
     height REAL NOT NULL,
-    sprite Image,
     description NVARCHAR(MAX),
     CONSTRAINT pk_pokemon PRIMARY KEY (id)
+);
+GO
+
+-- Tabela tipo
+CREATE TABLE type (
+    id INT IDENTITY(1,1),
+    name NVARCHAR(50) NOT NULL,
+    CONSTRAINT pk_type PRIMARY KEY (ID)
 );
 GO
 
@@ -34,15 +41,9 @@ CREATE TABLE attack (
     damage REAL NOT NULL,
     power_point INT NOT NULL,
     accuracy REAL NOT NULL,
-    CONSTRAINT pk_attack PRIMARY KEY (id)
-);
-GO
-
--- Tabela tipo
-CREATE TABLE type (
-    id INT IDENTITY(1,1),
-    name NVARCHAR(50) NOT NULL,
-    CONSTRAINT pk_type PRIMARY KEY (ID)
+    type_id INT NOT NULL,
+    CONSTRAINT pk_attack PRIMARY KEY (id),
+    CONSTRAINT fk_attack_id8 FOREIGN KEY (type_id) REFERENCES type (id)
 );
 GO
 
@@ -59,27 +60,6 @@ CREATE TABLE trainer_pokemon (
 );
 GO
 
--- Tabela tipo_pokemon
-CREATE TABLE type_pokemon (
-    id INT IDENTITY(1,1),
-    pokemon_id INT NOT NULL,
-    type_id INT NOT NULL,
-    CONSTRAINT pk_type_pokemon PRIMARY KEY (id),
-    CONSTRAINT fk_pokemon_id2 FOREIGN KEY (pokemon_id) REFERENCES pokemon (id),
-    CONSTRAINT fk_type_id FOREIGN KEY (type_id) REFERENCES type (id)
-);
-GO
-
--- Tabela pokemon_fraqueza
-CREATE TABLE pokemon_weakness (
-    id INT IDENTITY(1,1),
-    pokemon_id INT NOT NULL,
-    type_id INT NOT NULL,
-    CONSTRAINT pk_pokemon_weakness PRIMARY KEY (id),
-    CONSTRAINT fk_pokemon_id3 FOREIGN KEY (pokemon_id) REFERENCES pokemon (id),
-    CONSTRAINT fk_type_id1 FOREIGN KEY (type_id) REFERENCES type (id)
-);
-GO
 
 -- Tabela ataque_pokemon
 CREATE TABLE attack_pokemon (
@@ -89,27 +69,5 @@ CREATE TABLE attack_pokemon (
     CONSTRAINT pk_attack_pokemon PRIMARY KEY (id),
     CONSTRAINT fk_pokemon_id4 FOREIGN KEY (pokemon_id) REFERENCES pokemon (id),
     CONSTRAINT fk_attack_id1 FOREIGN KEY (attack_id) REFERENCES attack (id),
-);
-GO
-
--- Tabela tipo_efetivo
-CREATE TABLE type_effective (
-    id INT IDENTITY(1,1),
-    attack_id INT NOT NULL,
-    type_id INT NOT NULL,
-    CONSTRAINT pk_type_effective PRIMARY KEY (id),
-    CONSTRAINT fk_attack_id2 FOREIGN KEY (attack_id) REFERENCES attack (id),
-    CONSTRAINT fk_type_id2 FOREIGN KEY (type_id) REFERENCES type (id)
-);
-GO
-
--- Tabela tipo_ataque
-CREATE TABLE type_attack (
-    id INT IDENTITY(1,1),
-    attack_id INT NOT NULL,
-    type_id INT NOT NULL,
-    CONSTRAINT pk_type_attack PRIMARY KEY (id),
-    CONSTRAINT fk_attack_id3 FOREIGN KEY (attack_id) REFERENCES attack (id),
-    CONSTRAINT fk_type_id3 FOREIGN KEY (type_id) REFERENCES type (id)
 );
 GO
