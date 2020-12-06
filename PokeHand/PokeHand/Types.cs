@@ -23,6 +23,8 @@ namespace PokeHand {
         }
 
         private void Types_Load(object sender, EventArgs e) {
+            // TODO: This line of code loads data into the 'pokeHandDataSet.DataTable1' table. You can move, or remove it, as needed.
+            this.dataTable1TableAdapter.Fill(this.pokeHandDataSet.DataTable1);
             // TODO: This line of code loads data into the 'pokeHandDataSet.type' table. You can move, or remove it, as needed.
             this.typeTableAdapter.Fill(this.pokeHandDataSet.type);
             // TODO: This line of code loads data into the 'pokeHandDataSet.attack' table. You can move, or remove it, as needed.
