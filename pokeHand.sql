@@ -70,6 +70,17 @@ CREATE TABLE type_pokemon (
 );
 GO
 
+-- Tabela pokemon_fraqueza
+CREATE TABLE pokemon_weakness (
+    id INT IDENTITY(1,1),
+    pokemon_id INT NOT NULL,
+    type_id INT NOT NULL,
+    CONSTRAINT pk_pokemon_weakness PRIMARY KEY (id),
+    CONSTRAINT fk_pokemon_id3 FOREIGN KEY (pokemon_id) REFERENCES pokemon (id),
+    CONSTRAINT fk_type_id1 FOREIGN KEY (type_id) REFERENCES type (id)
+);
+GO
+
 -- Tabela ataque_pokemon
 CREATE TABLE attack_pokemon (
     id INT IDENTITY(1,1),
@@ -78,6 +89,17 @@ CREATE TABLE attack_pokemon (
     CONSTRAINT pk_attack_pokemon PRIMARY KEY (id),
     CONSTRAINT fk_pokemon_id4 FOREIGN KEY (pokemon_id) REFERENCES pokemon (id),
     CONSTRAINT fk_attack_id1 FOREIGN KEY (attack_id) REFERENCES attack (id),
+);
+GO
+
+-- Tabela tipo_efetivo
+CREATE TABLE type_effective (
+    id INT IDENTITY(1,1),
+    attack_id INT NOT NULL,
+    type_id INT NOT NULL,
+    CONSTRAINT pk_type_effective PRIMARY KEY (id),
+    CONSTRAINT fk_attack_id2 FOREIGN KEY (attack_id) REFERENCES attack (id),
+    CONSTRAINT fk_type_id2 FOREIGN KEY (type_id) REFERENCES type (id)
 );
 GO
 
