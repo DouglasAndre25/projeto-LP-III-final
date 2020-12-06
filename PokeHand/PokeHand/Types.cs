@@ -43,6 +43,17 @@ namespace PokeHand {
 
         private void addTypeButton_Click(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrWhiteSpace(inputTypeAddName.Text))
+            {
+                typeErrorProvider.SetError(inputTypeAddName, "O Campo nome é obrigatório e não deve ser vazio.");
+                return;
+            }
+            else
+            {
+                typeErrorProvider.Clear();
+            }
+
             try
             {
                 try
@@ -89,14 +100,31 @@ namespace PokeHand {
            
         }
 
-        private void typeModifyGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void typeModifyGridView_SelectionChanged(object sender, EventArgs e)
         {
-            this.modifyTypeSelectedIndex = this.typeModifyGridView.Rows[e.RowIndex].Cells["typeModifyGridViewId"].Value.ToString();
-            inputTypeModifyName.Text = this.typeModifyGridView.Rows[e.RowIndex].Cells["typeModifyGridViewName"].Value.ToString();
+            if (this.typeModifyGridView.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                this.modifyTypeSelectedIndex = this.typeModifyGridView.SelectedRows[0].Cells["typeModifyGridViewId"].Value.ToString();
+                inputTypeModifyName.Text = this.typeModifyGridView.SelectedRows[0].Cells["typeModifyGridViewName"].Value.ToString();
+            }
         }
 
         private void modifyTypeButton_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(inputTypeModifyName.Text))
+            {
+                typeErrorProvider.SetError(inputTypeModifyName, "O Campo nome é obrigatório e não deve ser vazio.");
+                return;
+            }
+            else
+            {
+                typeErrorProvider.Clear();
+            }
+
 
             try
             {
@@ -121,10 +149,16 @@ namespace PokeHand {
 
 
         }
-
-        private void typeDeleteGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void typeDeleteGridView_SelectionChanged(object sender, EventArgs e)
         {
-            this.deleteTypeSelectedIndex = this.typeDeleteGridView.Rows[e.RowIndex].Cells["typeDeleteGridViewId"].Value.ToString();
+            if (this.typeDeleteGridView.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                this.deleteTypeSelectedIndex = this.typeDeleteGridView.SelectedRows[0].Cells["typeDeleteGridViewId"].Value.ToString();
+            }
         }
 
         private void deleteTypeButton_Click(object sender, EventArgs e)
@@ -150,6 +184,5 @@ namespace PokeHand {
             }
 
         }
-
     }
 }

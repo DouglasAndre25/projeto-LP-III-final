@@ -16,5 +16,17 @@ namespace PokeHand
         {
             InitializeComponent();
         }
+
+        private void Attacks_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'pokeHandDataSet.type' table. You can move, or remove it, as needed.
+            this.typeTableAdapter.Fill(this.pokeHandDataSet.type);
+
+        }
+
+        private void addAttackButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
