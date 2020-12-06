@@ -58,18 +58,10 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="PokeHandDataSet1.cs">
-      <DependentUpon>PokeHandDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="PokeHandDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PokeHandDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PokeHandDataSet11.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PokeHandDataSet11.xsd</DependentUpon>
     </Compile>
     <Compile Include="Pokemons.cs">
       <SubType>Form</SubType>
@@ -114,17 +106,6 @@
     </None>
     <None Include="PokeHandDataSet1.xss">
       <DependentUpon>PokeHandDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="PokeHandDataSet11.xsc">
-      <DependentUpon>PokeHandDataSet11.xsd</DependentUpon>
-    </None>
-    <None Include="PokeHandDataSet11.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PokeHandDataSet11.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PokeHandDataSet11.xss">
-      <DependentUpon>PokeHandDataSet11.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

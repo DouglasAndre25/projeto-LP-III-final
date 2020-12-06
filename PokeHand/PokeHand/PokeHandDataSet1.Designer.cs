@@ -44,8 +44,6 @@ namespace PokeHand {
         
         private type_pokemonDataTable tabletype_pokemon;
         
-        private AttackTypeCustomDataTable tableAttackTypeCustom;
-        
         private global::System.Data.DataRelation relationfk_attack_id1;
         
         private global::System.Data.DataRelation relationfk_pokemon_id4;
@@ -69,12 +67,6 @@ namespace PokeHand {
         private global::System.Data.DataRelation relationfk_pokemon_id2;
         
         private global::System.Data.DataRelation relationfk_type_id;
-        
-        private global::System.Data.DataRelation relationfk_attack_id11;
-        
-        private global::System.Data.DataRelation relationfk_attack_id31;
-        
-        private global::System.Data.DataRelation relationfk_attack_id21;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -133,9 +125,6 @@ namespace PokeHand {
                 }
                 if ((ds.Tables["type_pokemon"] != null)) {
                     base.Tables.Add(new type_pokemonDataTable(ds.Tables["type_pokemon"]));
-                }
-                if ((ds.Tables["AttackTypeCustom"] != null)) {
-                    base.Tables.Add(new AttackTypeCustomDataTable(ds.Tables["AttackTypeCustom"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -257,16 +246,6 @@ namespace PokeHand {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public AttackTypeCustomDataTable AttackTypeCustom {
-            get {
-                return this.tableAttackTypeCustom;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -362,9 +341,6 @@ namespace PokeHand {
                 if ((ds.Tables["type_pokemon"] != null)) {
                     base.Tables.Add(new type_pokemonDataTable(ds.Tables["type_pokemon"]));
                 }
-                if ((ds.Tables["AttackTypeCustom"] != null)) {
-                    base.Tables.Add(new AttackTypeCustomDataTable(ds.Tables["AttackTypeCustom"]));
-                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -458,12 +434,6 @@ namespace PokeHand {
                     this.tabletype_pokemon.InitVars();
                 }
             }
-            this.tableAttackTypeCustom = ((AttackTypeCustomDataTable)(base.Tables["AttackTypeCustom"]));
-            if ((initTable == true)) {
-                if ((this.tableAttackTypeCustom != null)) {
-                    this.tableAttackTypeCustom.InitVars();
-                }
-            }
             this.relationfk_attack_id1 = this.Relations["fk_attack_id1"];
             this.relationfk_pokemon_id4 = this.Relations["fk_pokemon_id4"];
             this.relationfk_pokemon_id3 = this.Relations["fk_pokemon_id3"];
@@ -476,9 +446,6 @@ namespace PokeHand {
             this.relationfk_type_id2 = this.Relations["fk_type_id2"];
             this.relationfk_pokemon_id2 = this.Relations["fk_pokemon_id2"];
             this.relationfk_type_id = this.Relations["fk_type_id"];
-            this.relationfk_attack_id11 = this.Relations["fk_attack_id11"];
-            this.relationfk_attack_id31 = this.Relations["fk_attack_id31"];
-            this.relationfk_attack_id21 = this.Relations["fk_attack_id21"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -509,8 +476,6 @@ namespace PokeHand {
             base.Tables.Add(this.tabletype_effective);
             this.tabletype_pokemon = new type_pokemonDataTable();
             base.Tables.Add(this.tabletype_pokemon);
-            this.tableAttackTypeCustom = new AttackTypeCustomDataTable();
-            base.Tables.Add(this.tableAttackTypeCustom);
             this.relationfk_attack_id1 = new global::System.Data.DataRelation("fk_attack_id1", new global::System.Data.DataColumn[] {
                         this.tableattack.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableattack_pokemon.attack_idColumn}, false);
@@ -559,18 +524,6 @@ namespace PokeHand {
                         this.tabletype.idColumn}, new global::System.Data.DataColumn[] {
                         this.tabletype_pokemon.type_idColumn}, false);
             this.Relations.Add(this.relationfk_type_id);
-            this.relationfk_attack_id11 = new global::System.Data.DataRelation("fk_attack_id11", new global::System.Data.DataColumn[] {
-                        this.tableAttackTypeCustom.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableattack_pokemon.attack_idColumn}, false);
-            this.Relations.Add(this.relationfk_attack_id11);
-            this.relationfk_attack_id31 = new global::System.Data.DataRelation("fk_attack_id31", new global::System.Data.DataColumn[] {
-                        this.tableAttackTypeCustom.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabletype_attack.attack_idColumn}, false);
-            this.Relations.Add(this.relationfk_attack_id31);
-            this.relationfk_attack_id21 = new global::System.Data.DataRelation("fk_attack_id21", new global::System.Data.DataColumn[] {
-                        this.tableAttackTypeCustom.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabletype_effective.attack_idColumn}, false);
-            this.Relations.Add(this.relationfk_attack_id21);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -630,12 +583,6 @@ namespace PokeHand {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializetype_pokemon() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeAttackTypeCustom() {
             return false;
         }
         
@@ -723,9 +670,6 @@ namespace PokeHand {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void type_pokemonRowChangeEventHandler(object sender, type_pokemonRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void AttackTypeCustomRowChangeEventHandler(object sender, AttackTypeCustomRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3793,345 +3737,6 @@ namespace PokeHand {
         }
         
         /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class AttackTypeCustomDataTable : global::System.Data.TypedTableBase<AttackTypeCustomRow> {
-            
-            private global::System.Data.DataColumn columnid;
-            
-            private global::System.Data.DataColumn columnname;
-            
-            private global::System.Data.DataColumn columndamage;
-            
-            private global::System.Data.DataColumn columnpower_point;
-            
-            private global::System.Data.DataColumn columnaccuracy;
-            
-            private global::System.Data.DataColumn columntype;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AttackTypeCustomDataTable() {
-                this.TableName = "AttackTypeCustom";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal AttackTypeCustomDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected AttackTypeCustomDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
-                get {
-                    return this.columnid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn nameColumn {
-                get {
-                    return this.columnname;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn damageColumn {
-                get {
-                    return this.columndamage;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn power_pointColumn {
-                get {
-                    return this.columnpower_point;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn accuracyColumn {
-                get {
-                    return this.columnaccuracy;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn typeColumn {
-                get {
-                    return this.columntype;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AttackTypeCustomRow this[int index] {
-                get {
-                    return ((AttackTypeCustomRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AttackTypeCustomRowChangeEventHandler AttackTypeCustomRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AttackTypeCustomRowChangeEventHandler AttackTypeCustomRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AttackTypeCustomRowChangeEventHandler AttackTypeCustomRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AttackTypeCustomRowChangeEventHandler AttackTypeCustomRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddAttackTypeCustomRow(AttackTypeCustomRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AttackTypeCustomRow AddAttackTypeCustomRow(string name, float damage, int power_point, float accuracy, string type) {
-                AttackTypeCustomRow rowAttackTypeCustomRow = ((AttackTypeCustomRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        name,
-                        damage,
-                        power_point,
-                        accuracy,
-                        type};
-                rowAttackTypeCustomRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowAttackTypeCustomRow);
-                return rowAttackTypeCustomRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AttackTypeCustomRow FindByid(int id) {
-                return ((AttackTypeCustomRow)(this.Rows.Find(new object[] {
-                            id})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                AttackTypeCustomDataTable cln = ((AttackTypeCustomDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new AttackTypeCustomDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnid = base.Columns["id"];
-                this.columnname = base.Columns["name"];
-                this.columndamage = base.Columns["damage"];
-                this.columnpower_point = base.Columns["power_point"];
-                this.columnaccuracy = base.Columns["accuracy"];
-                this.columntype = base.Columns["type"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
-                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnname);
-                this.columndamage = new global::System.Data.DataColumn("damage", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndamage);
-                this.columnpower_point = new global::System.Data.DataColumn("power_point", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpower_point);
-                this.columnaccuracy = new global::System.Data.DataColumn("accuracy", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnaccuracy);
-                this.columntype = new global::System.Data.DataColumn("type", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntype);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid}, true));
-                this.columnid.AutoIncrement = true;
-                this.columnid.AutoIncrementSeed = -1;
-                this.columnid.AutoIncrementStep = -1;
-                this.columnid.AllowDBNull = false;
-                this.columnid.ReadOnly = true;
-                this.columnid.Unique = true;
-                this.columnname.AllowDBNull = false;
-                this.columnname.MaxLength = 50;
-                this.columndamage.AllowDBNull = false;
-                this.columnpower_point.AllowDBNull = false;
-                this.columnaccuracy.AllowDBNull = false;
-                this.columntype.AllowDBNull = false;
-                this.columntype.MaxLength = 50;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AttackTypeCustomRow NewAttackTypeCustomRow() {
-                return ((AttackTypeCustomRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AttackTypeCustomRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(AttackTypeCustomRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.AttackTypeCustomRowChanged != null)) {
-                    this.AttackTypeCustomRowChanged(this, new AttackTypeCustomRowChangeEvent(((AttackTypeCustomRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.AttackTypeCustomRowChanging != null)) {
-                    this.AttackTypeCustomRowChanging(this, new AttackTypeCustomRowChangeEvent(((AttackTypeCustomRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.AttackTypeCustomRowDeleted != null)) {
-                    this.AttackTypeCustomRowDeleted(this, new AttackTypeCustomRowChangeEvent(((AttackTypeCustomRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.AttackTypeCustomRowDeleting != null)) {
-                    this.AttackTypeCustomRowDeleting(this, new AttackTypeCustomRowChangeEvent(((AttackTypeCustomRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveAttackTypeCustomRow(AttackTypeCustomRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PokeHandDataSet ds = new PokeHandDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "AttackTypeCustomDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class attackRow : global::System.Data.DataRow {
@@ -4300,17 +3905,6 @@ namespace PokeHand {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["fk_pokemon_id4"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AttackTypeCustomRow AttackTypeCustomRow {
-                get {
-                    return ((AttackTypeCustomRow)(this.GetParentRow(this.Table.ParentRelations["fk_attack_id11"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["fk_attack_id11"]);
                 }
             }
         }
@@ -4855,17 +4449,6 @@ namespace PokeHand {
                     this.SetParentRow(value, this.Table.ParentRelations["fk_type_id3"]);
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AttackTypeCustomRow AttackTypeCustomRow {
-                get {
-                    return ((AttackTypeCustomRow)(this.GetParentRow(this.Table.ParentRelations["fk_attack_id31"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["fk_attack_id31"]);
-                }
-            }
         }
         
         /// <summary>
@@ -4936,17 +4519,6 @@ namespace PokeHand {
                     this.SetParentRow(value, this.Table.ParentRelations["fk_type_id2"]);
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AttackTypeCustomRow AttackTypeCustomRow {
-                get {
-                    return ((AttackTypeCustomRow)(this.GetParentRow(this.Table.ParentRelations["fk_attack_id21"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["fk_attack_id21"]);
-                }
-            }
         }
         
         /// <summary>
@@ -5015,120 +4587,6 @@ namespace PokeHand {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["fk_type_id"]);
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class AttackTypeCustomRow : global::System.Data.DataRow {
-            
-            private AttackTypeCustomDataTable tableAttackTypeCustom;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal AttackTypeCustomRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableAttackTypeCustom = ((AttackTypeCustomDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int id {
-                get {
-                    return ((int)(this[this.tableAttackTypeCustom.idColumn]));
-                }
-                set {
-                    this[this.tableAttackTypeCustom.idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string name {
-                get {
-                    return ((string)(this[this.tableAttackTypeCustom.nameColumn]));
-                }
-                set {
-                    this[this.tableAttackTypeCustom.nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public float damage {
-                get {
-                    return ((float)(this[this.tableAttackTypeCustom.damageColumn]));
-                }
-                set {
-                    this[this.tableAttackTypeCustom.damageColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int power_point {
-                get {
-                    return ((int)(this[this.tableAttackTypeCustom.power_pointColumn]));
-                }
-                set {
-                    this[this.tableAttackTypeCustom.power_pointColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public float accuracy {
-                get {
-                    return ((float)(this[this.tableAttackTypeCustom.accuracyColumn]));
-                }
-                set {
-                    this[this.tableAttackTypeCustom.accuracyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string type {
-                get {
-                    return ((string)(this[this.tableAttackTypeCustom.typeColumn]));
-                }
-                set {
-                    this[this.tableAttackTypeCustom.typeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public attack_pokemonRow[] Getattack_pokemonRows() {
-                if ((this.Table.ChildRelations["fk_attack_id11"] == null)) {
-                    return new attack_pokemonRow[0];
-                }
-                else {
-                    return ((attack_pokemonRow[])(base.GetChildRows(this.Table.ChildRelations["fk_attack_id11"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public type_attackRow[] Gettype_attackRows() {
-                if ((this.Table.ChildRelations["fk_attack_id31"] == null)) {
-                    return new type_attackRow[0];
-                }
-                else {
-                    return ((type_attackRow[])(base.GetChildRows(this.Table.ChildRelations["fk_attack_id31"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public type_effectiveRow[] Gettype_effectiveRows() {
-                if ((this.Table.ChildRelations["fk_attack_id21"] == null)) {
-                    return new type_effectiveRow[0];
-                }
-                else {
-                    return ((type_effectiveRow[])(base.GetChildRows(this.Table.ChildRelations["fk_attack_id21"])));
                 }
             }
         }
@@ -5459,40 +4917,6 @@ namespace PokeHand {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public type_pokemonRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class AttackTypeCustomRowChangeEvent : global::System.EventArgs {
-            
-            private AttackTypeCustomRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AttackTypeCustomRowChangeEvent(AttackTypeCustomRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AttackTypeCustomRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -8758,180 +8182,6 @@ SELECT id, pokemon_id, type_id FROM type_pokemon WHERE (id = @id)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(int pokemon_id, int type_id, int Original_id, int Original_pokemon_id, int Original_type_id) {
             return this.Update(pokemon_id, type_id, Original_id, Original_pokemon_id, Original_type_id, Original_id);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class AttackTypeCustomAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public AttackTypeCustomAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "AttackTypeCustom";
-            tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("name", "name");
-            tableMapping.ColumnMappings.Add("damage", "damage");
-            tableMapping.ColumnMappings.Add("power_point", "power_point");
-            tableMapping.ColumnMappings.Add("accuracy", "accuracy");
-            tableMapping.ColumnMappings.Add("type", "type");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::PokeHand.Properties.Settings.Default.PokeHandConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "select attack.id, attack.name, attack.damage, attack.power_point, attack.accuracy" +
-                ", type.name as type from attack\r\ninner join type_attack on type_attack.attack_id" +
-                " = attack.id\r\ninner join type on type.id = type_attack.type_id;";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PokeHandDataSet.AttackTypeCustomDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PokeHandDataSet.AttackTypeCustomDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            PokeHandDataSet.AttackTypeCustomDataTable dataTable = new PokeHandDataSet.AttackTypeCustomDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
         }
     }
     
