@@ -12,6 +12,9 @@ namespace PokeHand
 {
     public partial class Attacks : Form
     {
+
+        private SqlService sqlService;
+
         public Attacks()
         {
             InitializeComponent();
@@ -27,6 +30,14 @@ namespace PokeHand
         private void addAttackButton_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                MessageBox.Show("a");
+            }
+            finally
+            {
+                this.sqlService.CloseConnection();
+            }
         }
     }
 }

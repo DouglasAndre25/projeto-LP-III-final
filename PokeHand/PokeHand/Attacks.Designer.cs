@@ -33,6 +33,7 @@
             this.attacksControl = new System.Windows.Forms.TabControl();
             this.searchAttack = new System.Windows.Forms.TabPage();
             this.addAttack = new System.Windows.Forms.TabPage();
+            this.addAttackButton = new System.Windows.Forms.Button();
             this.labelAttackAddType = new System.Windows.Forms.Label();
             this.inputAttackAddType = new System.Windows.Forms.ListBox();
             this.typeBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -48,11 +49,24 @@
             this.modifyAttack = new System.Windows.Forms.TabPage();
             this.deleteAttack = new System.Windows.Forms.TabPage();
             this.typeTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.typeTableAdapter();
-            this.addAttackButton = new System.Windows.Forms.Button();
+            this.modifyAttackButton = new System.Windows.Forms.Button();
+            this.labelAttackModifyType = new System.Windows.Forms.Label();
+            this.inputAttackModifyType = new System.Windows.Forms.ListBox();
+            this.inputAttackModifyAccuracy = new System.Windows.Forms.TextBox();
+            this.labelAttackModifyPP = new System.Windows.Forms.Label();
+            this.inputAttackModifyPP = new System.Windows.Forms.TextBox();
+            this.labelAttackModifyDamage = new System.Windows.Forms.Label();
+            this.inputAttackModifyDamage = new System.Windows.Forms.TextBox();
+            this.labelAttackModifyName = new System.Windows.Forms.Label();
+            this.inputAttackModifyName = new System.Windows.Forms.TextBox();
+            this.labelAttackModifyAccuracy = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.attacksControl.SuspendLayout();
             this.addAttack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokeHandDataSet)).BeginInit();
+            this.modifyAttack.SuspendLayout();
+            this.deleteAttack.SuspendLayout();
             this.SuspendLayout();
             // 
             // attacksControl
@@ -97,6 +111,17 @@
             this.addAttack.TabIndex = 1;
             this.addAttack.Text = "Adicionar Ataque";
             this.addAttack.UseVisualStyleBackColor = true;
+            // 
+            // addAttackButton
+            // 
+            this.addAttackButton.Location = new System.Drawing.Point(23, 204);
+            this.addAttackButton.Margin = new System.Windows.Forms.Padding(20);
+            this.addAttackButton.Name = "addAttackButton";
+            this.addAttackButton.Size = new System.Drawing.Size(75, 23);
+            this.addAttackButton.TabIndex = 14;
+            this.addAttackButton.Text = "Adicionar";
+            this.addAttackButton.UseVisualStyleBackColor = true;
+            this.addAttackButton.Click += new System.EventHandler(this.addAttackButton_Click);
             // 
             // labelAttackAddType
             // 
@@ -208,6 +233,17 @@
             // 
             // modifyAttack
             // 
+            this.modifyAttack.Controls.Add(this.labelAttackModifyAccuracy);
+            this.modifyAttack.Controls.Add(this.modifyAttackButton);
+            this.modifyAttack.Controls.Add(this.labelAttackModifyType);
+            this.modifyAttack.Controls.Add(this.inputAttackModifyType);
+            this.modifyAttack.Controls.Add(this.inputAttackModifyAccuracy);
+            this.modifyAttack.Controls.Add(this.labelAttackModifyPP);
+            this.modifyAttack.Controls.Add(this.inputAttackModifyPP);
+            this.modifyAttack.Controls.Add(this.labelAttackModifyDamage);
+            this.modifyAttack.Controls.Add(this.inputAttackModifyDamage);
+            this.modifyAttack.Controls.Add(this.labelAttackModifyName);
+            this.modifyAttack.Controls.Add(this.inputAttackModifyName);
             this.modifyAttack.Location = new System.Drawing.Point(4, 22);
             this.modifyAttack.Name = "modifyAttack";
             this.modifyAttack.Size = new System.Drawing.Size(742, 474);
@@ -217,6 +253,7 @@
             // 
             // deleteAttack
             // 
+            this.deleteAttack.Controls.Add(this.button1);
             this.deleteAttack.Location = new System.Drawing.Point(4, 22);
             this.deleteAttack.Name = "deleteAttack";
             this.deleteAttack.Size = new System.Drawing.Size(742, 474);
@@ -228,16 +265,123 @@
             // 
             this.typeTableAdapter.ClearBeforeFill = true;
             // 
-            // addAttackButton
+            // modifyAttackButton
             // 
-            this.addAttackButton.Location = new System.Drawing.Point(23, 204);
-            this.addAttackButton.Margin = new System.Windows.Forms.Padding(20);
-            this.addAttackButton.Name = "addAttackButton";
-            this.addAttackButton.Size = new System.Drawing.Size(75, 23);
-            this.addAttackButton.TabIndex = 14;
-            this.addAttackButton.Text = "Adicionar";
-            this.addAttackButton.UseVisualStyleBackColor = true;
-            this.addAttackButton.Click += new System.EventHandler(this.addAttackButton_Click);
+            this.modifyAttackButton.Location = new System.Drawing.Point(20, 438);
+            this.modifyAttackButton.Margin = new System.Windows.Forms.Padding(20);
+            this.modifyAttackButton.Name = "modifyAttackButton";
+            this.modifyAttackButton.Size = new System.Drawing.Size(75, 23);
+            this.modifyAttackButton.TabIndex = 24;
+            this.modifyAttackButton.Text = "Modificar";
+            this.modifyAttackButton.UseVisualStyleBackColor = true;
+            // 
+            // labelAttackModifyType
+            // 
+            this.labelAttackModifyType.AutoSize = true;
+            this.labelAttackModifyType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAttackModifyType.Location = new System.Drawing.Point(375, 257);
+            this.labelAttackModifyType.Margin = new System.Windows.Forms.Padding(20, 20, 20, 2);
+            this.labelAttackModifyType.Name = "labelAttackModifyType";
+            this.labelAttackModifyType.Size = new System.Drawing.Size(39, 16);
+            this.labelAttackModifyType.TabIndex = 23;
+            this.labelAttackModifyType.Text = "Tipo:";
+            // 
+            // inputAttackModifyType
+            // 
+            this.inputAttackModifyType.DataSource = this.typeBindingSource;
+            this.inputAttackModifyType.DisplayMember = "name";
+            this.inputAttackModifyType.FormattingEnabled = true;
+            this.inputAttackModifyType.Location = new System.Drawing.Point(378, 277);
+            this.inputAttackModifyType.Name = "inputAttackModifyType";
+            this.inputAttackModifyType.Size = new System.Drawing.Size(341, 82);
+            this.inputAttackModifyType.TabIndex = 22;
+            this.inputAttackModifyType.ValueMember = "id";
+            // 
+            // inputAttackModifyAccuracy
+            // 
+            this.inputAttackModifyAccuracy.Location = new System.Drawing.Point(375, 389);
+            this.inputAttackModifyAccuracy.Margin = new System.Windows.Forms.Padding(20, 2, 20, 20);
+            this.inputAttackModifyAccuracy.Name = "inputAttackModifyAccuracy";
+            this.inputAttackModifyAccuracy.Size = new System.Drawing.Size(344, 20);
+            this.inputAttackModifyAccuracy.TabIndex = 21;
+            // 
+            // labelAttackModifyPP
+            // 
+            this.labelAttackModifyPP.AutoSize = true;
+            this.labelAttackModifyPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAttackModifyPP.Location = new System.Drawing.Point(20, 369);
+            this.labelAttackModifyPP.Margin = new System.Windows.Forms.Padding(20, 20, 20, 2);
+            this.labelAttackModifyPP.Name = "labelAttackModifyPP";
+            this.labelAttackModifyPP.Size = new System.Drawing.Size(29, 16);
+            this.labelAttackModifyPP.TabIndex = 20;
+            this.labelAttackModifyPP.Text = "PP:";
+            // 
+            // inputAttackModifyPP
+            // 
+            this.inputAttackModifyPP.Location = new System.Drawing.Point(20, 389);
+            this.inputAttackModifyPP.Margin = new System.Windows.Forms.Padding(20, 2, 20, 20);
+            this.inputAttackModifyPP.Name = "inputAttackModifyPP";
+            this.inputAttackModifyPP.Size = new System.Drawing.Size(344, 20);
+            this.inputAttackModifyPP.TabIndex = 19;
+            // 
+            // labelAttackModifyDamage
+            // 
+            this.labelAttackModifyDamage.AutoSize = true;
+            this.labelAttackModifyDamage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAttackModifyDamage.Location = new System.Drawing.Point(20, 312);
+            this.labelAttackModifyDamage.Margin = new System.Windows.Forms.Padding(20, 20, 20, 2);
+            this.labelAttackModifyDamage.Name = "labelAttackModifyDamage";
+            this.labelAttackModifyDamage.Size = new System.Drawing.Size(44, 16);
+            this.labelAttackModifyDamage.TabIndex = 18;
+            this.labelAttackModifyDamage.Text = "Dano:";
+            // 
+            // inputAttackModifyDamage
+            // 
+            this.inputAttackModifyDamage.Location = new System.Drawing.Point(20, 332);
+            this.inputAttackModifyDamage.Margin = new System.Windows.Forms.Padding(20, 2, 20, 20);
+            this.inputAttackModifyDamage.Name = "inputAttackModifyDamage";
+            this.inputAttackModifyDamage.Size = new System.Drawing.Size(344, 20);
+            this.inputAttackModifyDamage.TabIndex = 17;
+            // 
+            // labelAttackModifyName
+            // 
+            this.labelAttackModifyName.AutoSize = true;
+            this.labelAttackModifyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAttackModifyName.Location = new System.Drawing.Point(20, 257);
+            this.labelAttackModifyName.Margin = new System.Windows.Forms.Padding(20, 20, 20, 2);
+            this.labelAttackModifyName.Name = "labelAttackModifyName";
+            this.labelAttackModifyName.Size = new System.Drawing.Size(48, 16);
+            this.labelAttackModifyName.TabIndex = 16;
+            this.labelAttackModifyName.Text = "Nome:";
+            // 
+            // inputAttackModifyName
+            // 
+            this.inputAttackModifyName.Location = new System.Drawing.Point(20, 277);
+            this.inputAttackModifyName.Margin = new System.Windows.Forms.Padding(20, 2, 20, 20);
+            this.inputAttackModifyName.Name = "inputAttackModifyName";
+            this.inputAttackModifyName.Size = new System.Drawing.Size(344, 20);
+            this.inputAttackModifyName.TabIndex = 15;
+            // 
+            // labelAttackModifyAccuracy
+            // 
+            this.labelAttackModifyAccuracy.AutoSize = true;
+            this.labelAttackModifyAccuracy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAttackModifyAccuracy.Location = new System.Drawing.Point(375, 369);
+            this.labelAttackModifyAccuracy.Margin = new System.Windows.Forms.Padding(20, 20, 20, 2);
+            this.labelAttackModifyAccuracy.Name = "labelAttackModifyAccuracy";
+            this.labelAttackModifyAccuracy.Size = new System.Drawing.Size(65, 16);
+            this.labelAttackModifyAccuracy.TabIndex = 25;
+            this.labelAttackModifyAccuracy.Text = "Precisão:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(20, 431);
+            this.button1.Margin = new System.Windows.Forms.Padding(20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Modificar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Attacks
             // 
@@ -254,6 +398,9 @@
             this.addAttack.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokeHandDataSet)).EndInit();
+            this.modifyAttack.ResumeLayout(false);
+            this.modifyAttack.PerformLayout();
+            this.deleteAttack.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -279,5 +426,17 @@
         private PokeHandDataSetTableAdapters.typeTableAdapter typeTableAdapter;
         private System.Windows.Forms.Label labelAttackAddType;
         private System.Windows.Forms.Button addAttackButton;
+        private System.Windows.Forms.Label labelAttackModifyAccuracy;
+        private System.Windows.Forms.Button modifyAttackButton;
+        private System.Windows.Forms.Label labelAttackModifyType;
+        private System.Windows.Forms.ListBox inputAttackModifyType;
+        private System.Windows.Forms.TextBox inputAttackModifyAccuracy;
+        private System.Windows.Forms.Label labelAttackModifyPP;
+        private System.Windows.Forms.TextBox inputAttackModifyPP;
+        private System.Windows.Forms.Label labelAttackModifyDamage;
+        private System.Windows.Forms.TextBox inputAttackModifyDamage;
+        private System.Windows.Forms.Label labelAttackModifyName;
+        private System.Windows.Forms.TextBox inputAttackModifyName;
+        private System.Windows.Forms.Button button1;
     }
 }
