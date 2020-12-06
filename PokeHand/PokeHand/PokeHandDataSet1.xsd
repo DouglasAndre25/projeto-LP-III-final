@@ -558,6 +558,29 @@ SELECT id, pokemon_id, type_id FROM type_pokemon WHERE (id = @id)</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AttackTypeCustomAdapter" GeneratorDataComponentClassName="AttackTypeCustomAdapter" Name="AttackTypeCustom" UserDataComponentName="AttackTypeCustomAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PokeHandConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select attack.id, attack.name, attack.damage, attack.power_point, attack.accuracy, type.name as type from attack
+inner join type_attack on type_attack.attack_id = attack.id
+inner join type on type.id = type_attack.type_id;</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="damage" DataSetColumn="damage" />
+              <Mapping SourceColumn="power_point" DataSetColumn="power_point" />
+              <Mapping SourceColumn="accuracy" DataSetColumn="accuracy" />
+              <Mapping SourceColumn="type" DataSetColumn="type" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -699,6 +722,30 @@ SELECT id, pokemon_id, type_id FROM type_pokemon WHERE (id = @id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="AttackTypeCustom" msprop:Generator_TableClassName="AttackTypeCustomDataTable" msprop:Generator_TableVarName="tableAttackTypeCustom" msprop:Generator_TablePropName="AttackTypeCustom" msprop:Generator_RowDeletingName="AttackTypeCustomRowDeleting" msprop:Generator_RowChangingName="AttackTypeCustomRowChanging" msprop:Generator_RowEvHandlerName="AttackTypeCustomRowChangeEventHandler" msprop:Generator_RowDeletedName="AttackTypeCustomRowDeleted" msprop:Generator_UserTableName="AttackTypeCustom" msprop:Generator_RowChangedName="AttackTypeCustomRowChanged" msprop:Generator_RowEvArgName="AttackTypeCustomRowChangeEvent" msprop:Generator_RowClassName="AttackTypeCustomRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="damage" msprop:Generator_ColumnVarNameInTable="columndamage" msprop:Generator_ColumnPropNameInRow="damage" msprop:Generator_ColumnPropNameInTable="damageColumn" msprop:Generator_UserColumnName="damage" type="xs:float" />
+              <xs:element name="power_point" msprop:Generator_ColumnVarNameInTable="columnpower_point" msprop:Generator_ColumnPropNameInRow="power_point" msprop:Generator_ColumnPropNameInTable="power_pointColumn" msprop:Generator_UserColumnName="power_point" type="xs:int" />
+              <xs:element name="accuracy" msprop:Generator_ColumnVarNameInTable="columnaccuracy" msprop:Generator_ColumnPropNameInRow="accuracy" msprop:Generator_ColumnPropNameInTable="accuracyColumn" msprop:Generator_UserColumnName="accuracy" type="xs:float" />
+              <xs:element name="type" msprop:Generator_ColumnVarNameInTable="columntype" msprop:Generator_ColumnPropNameInRow="type" msprop:Generator_ColumnPropNameInTable="typeColumn" msprop:Generator_UserColumnName="type">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -741,6 +788,10 @@ SELECT id, pokemon_id, type_id FROM type_pokemon WHERE (id = @id)</CommandText>
       <xs:selector xpath=".//mstns:type_pokemon" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
+    <xs:unique name="AttackTypeCustom_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AttackTypeCustom" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
@@ -756,6 +807,9 @@ SELECT id, pokemon_id, type_id FROM type_pokemon WHERE (id = @id)</CommandText>
       <msdata:Relationship name="fk_type_id2" msdata:parent="type" msdata:child="type_effective" msdata:parentkey="id" msdata:childkey="type_id" msprop:Generator_UserChildTable="type_effective" msprop:Generator_ChildPropName="Gettype_effectiveRows" msprop:Generator_UserRelationName="fk_type_id2" msprop:Generator_ParentPropName="typeRow" msprop:Generator_RelationVarName="relationfk_type_id2" msprop:Generator_UserParentTable="type" />
       <msdata:Relationship name="fk_pokemon_id2" msdata:parent="pokemon" msdata:child="type_pokemon" msdata:parentkey="id" msdata:childkey="pokemon_id" msprop:Generator_UserChildTable="type_pokemon" msprop:Generator_ChildPropName="Gettype_pokemonRows" msprop:Generator_UserRelationName="fk_pokemon_id2" msprop:Generator_ParentPropName="pokemonRow" msprop:Generator_RelationVarName="relationfk_pokemon_id2" msprop:Generator_UserParentTable="pokemon" />
       <msdata:Relationship name="fk_type_id" msdata:parent="type" msdata:child="type_pokemon" msdata:parentkey="id" msdata:childkey="type_id" msprop:Generator_UserChildTable="type_pokemon" msprop:Generator_ChildPropName="Gettype_pokemonRows" msprop:Generator_UserRelationName="fk_type_id" msprop:Generator_ParentPropName="typeRow" msprop:Generator_RelationVarName="relationfk_type_id" msprop:Generator_UserParentTable="type" />
+      <msdata:Relationship name="fk_attack_id11" msdata:parent="AttackTypeCustom" msdata:child="attack_pokemon" msdata:parentkey="id" msdata:childkey="attack_id" msprop:Generator_UserChildTable="attack_pokemon" msprop:Generator_ChildPropName="Getattack_pokemonRows" msprop:Generator_UserRelationName="fk_attack_id11" msprop:Generator_RelationVarName="relationfk_attack_id11" msprop:Generator_UserParentTable="AttackTypeCustom" msprop:Generator_ParentPropName="AttackTypeCustomRow" />
+      <msdata:Relationship name="fk_attack_id31" msdata:parent="AttackTypeCustom" msdata:child="type_attack" msdata:parentkey="id" msdata:childkey="attack_id" msprop:Generator_UserChildTable="type_attack" msprop:Generator_ChildPropName="Gettype_attackRows" msprop:Generator_UserRelationName="fk_attack_id31" msprop:Generator_RelationVarName="relationfk_attack_id31" msprop:Generator_UserParentTable="AttackTypeCustom" msprop:Generator_ParentPropName="AttackTypeCustomRow" />
+      <msdata:Relationship name="fk_attack_id21" msdata:parent="AttackTypeCustom" msdata:child="type_effective" msdata:parentkey="id" msdata:childkey="attack_id" msprop:Generator_UserChildTable="type_effective" msprop:Generator_ChildPropName="Gettype_effectiveRows" msprop:Generator_UserRelationName="fk_attack_id21" msprop:Generator_RelationVarName="relationfk_attack_id21" msprop:Generator_UserParentTable="AttackTypeCustom" msprop:Generator_ParentPropName="AttackTypeCustomRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

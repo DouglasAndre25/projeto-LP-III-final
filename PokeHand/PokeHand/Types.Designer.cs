@@ -141,6 +141,7 @@
             // 
             this.inputTypeSearchName.Location = new System.Drawing.Point(10, 40);
             this.inputTypeSearchName.Margin = new System.Windows.Forms.Padding(20, 2, 20, 20);
+            this.inputTypeSearchName.MinimumSize = new System.Drawing.Size(4, 4);
             this.inputTypeSearchName.Name = "inputTypeSearchName";
             this.inputTypeSearchName.Size = new System.Drawing.Size(365, 20);
             this.inputTypeSearchName.TabIndex = 2;
