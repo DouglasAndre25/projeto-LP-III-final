@@ -164,5 +164,6 @@ namespace PokeHand
                 this.UpdateAttack();
             }
         }
+
     }
 }
