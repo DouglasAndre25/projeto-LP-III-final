@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Attacks));
-            this.attacksControl = new System.Windows.Forms.TabControl();
+            this.table = new System.Windows.Forms.TabControl();
             this.searchAttack = new System.Windows.Forms.TabPage();
             this.addAttack = new System.Windows.Forms.TabPage();
             this.addAttackButton = new System.Windows.Forms.Button();
@@ -47,8 +47,9 @@
             this.labelAttackAddName = new System.Windows.Forms.Label();
             this.inputAttackAddName = new System.Windows.Forms.TextBox();
             this.modifyAttack = new System.Windows.Forms.TabPage();
-            this.deleteAttack = new System.Windows.Forms.TabPage();
-            this.typeTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.typeTableAdapter();
+            this.dataGridViewModifyAttack = new System.Windows.Forms.DataGridView();
+            this.attackTypeBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.labelAttackModifyAccuracy = new System.Windows.Forms.Label();
             this.modifyAttackButton = new System.Windows.Forms.Button();
             this.labelAttackModifyType = new System.Windows.Forms.Label();
             this.inputAttackModifyType = new System.Windows.Forms.ListBox();
@@ -59,30 +60,73 @@
             this.inputAttackModifyDamage = new System.Windows.Forms.TextBox();
             this.labelAttackModifyName = new System.Windows.Forms.Label();
             this.inputAttackModifyName = new System.Windows.Forms.TextBox();
-            this.labelAttackModifyAccuracy = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.attacksControl.SuspendLayout();
+            this.deleteAttack = new System.Windows.Forms.TabPage();
+            this.attackTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.attackTypeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.attackTypeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.attackTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.typeTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.typeTableAdapter();
+            this.attackTypeTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.attackTypeTableAdapter();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accuracy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.damage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.powerPoint = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewSearchAttack = new System.Windows.Forms.DataGridView();
+            this.attackTypeBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precisãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.danoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigotipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewExcludeAttack = new System.Windows.Forms.DataGridView();
+            this.attackTypeBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.excludeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precisãoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.danoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pPDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigotipoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonExcludeAttack = new System.Windows.Forms.Button();
+            this.table.SuspendLayout();
+            this.searchAttack.SuspendLayout();
             this.addAttack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokeHandDataSet)).BeginInit();
             this.modifyAttack.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModifyAttack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource4)).BeginInit();
             this.deleteAttack.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchAttack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExcludeAttack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource6)).BeginInit();
             this.SuspendLayout();
             // 
-            // attacksControl
+            // table
             // 
-            this.attacksControl.Controls.Add(this.searchAttack);
-            this.attacksControl.Controls.Add(this.addAttack);
-            this.attacksControl.Controls.Add(this.modifyAttack);
-            this.attacksControl.Controls.Add(this.deleteAttack);
-            this.attacksControl.Location = new System.Drawing.Point(17, 30);
-            this.attacksControl.Name = "attacksControl";
-            this.attacksControl.SelectedIndex = 0;
-            this.attacksControl.Size = new System.Drawing.Size(750, 500);
-            this.attacksControl.TabIndex = 1;
+            this.table.Controls.Add(this.searchAttack);
+            this.table.Controls.Add(this.addAttack);
+            this.table.Controls.Add(this.modifyAttack);
+            this.table.Controls.Add(this.deleteAttack);
+            this.table.Location = new System.Drawing.Point(17, 30);
+            this.table.Name = "table";
+            this.table.SelectedIndex = 0;
+            this.table.Size = new System.Drawing.Size(750, 500);
+            this.table.TabIndex = 1;
             // 
             // searchAttack
             // 
+            this.searchAttack.Controls.Add(this.dataGridViewSearchAttack);
             this.searchAttack.Location = new System.Drawing.Point(4, 22);
             this.searchAttack.Name = "searchAttack";
             this.searchAttack.Padding = new System.Windows.Forms.Padding(3);
@@ -233,6 +277,7 @@
             // 
             // modifyAttack
             // 
+            this.modifyAttack.Controls.Add(this.dataGridViewModifyAttack);
             this.modifyAttack.Controls.Add(this.labelAttackModifyAccuracy);
             this.modifyAttack.Controls.Add(this.modifyAttackButton);
             this.modifyAttack.Controls.Add(this.labelAttackModifyType);
@@ -251,19 +296,41 @@
             this.modifyAttack.Text = "Modificar Ataque";
             this.modifyAttack.UseVisualStyleBackColor = true;
             // 
-            // deleteAttack
+            // dataGridViewModifyAttack
             // 
-            this.deleteAttack.Controls.Add(this.button1);
-            this.deleteAttack.Location = new System.Drawing.Point(4, 22);
-            this.deleteAttack.Name = "deleteAttack";
-            this.deleteAttack.Size = new System.Drawing.Size(742, 474);
-            this.deleteAttack.TabIndex = 3;
-            this.deleteAttack.Text = "Excluir Ataque";
-            this.deleteAttack.UseVisualStyleBackColor = true;
+            this.dataGridViewModifyAttack.AutoGenerateColumns = false;
+            this.dataGridViewModifyAttack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewModifyAttack.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.name,
+            this.accuracy,
+            this.damage,
+            this.powerPoint,
+            this.type,
+            this.typeId});
+            this.dataGridViewModifyAttack.DataSource = this.attackTypeBindingSource4;
+            this.dataGridViewModifyAttack.Location = new System.Drawing.Point(23, 33);
+            this.dataGridViewModifyAttack.MultiSelect = false;
+            this.dataGridViewModifyAttack.Name = "dataGridViewModifyAttack";
+            this.dataGridViewModifyAttack.Size = new System.Drawing.Size(644, 150);
+            this.dataGridViewModifyAttack.TabIndex = 26;
+            this.dataGridViewModifyAttack.SelectionChanged += new System.EventHandler(this.dataGridViewModifyAttack_SelectionChanged);
             // 
-            // typeTableAdapter
+            // attackTypeBindingSource4
             // 
-            this.typeTableAdapter.ClearBeforeFill = true;
+            this.attackTypeBindingSource4.DataMember = "attackType";
+            this.attackTypeBindingSource4.DataSource = this.pokeHandDataSet;
+            // 
+            // labelAttackModifyAccuracy
+            // 
+            this.labelAttackModifyAccuracy.AutoSize = true;
+            this.labelAttackModifyAccuracy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAttackModifyAccuracy.Location = new System.Drawing.Point(375, 369);
+            this.labelAttackModifyAccuracy.Margin = new System.Windows.Forms.Padding(20, 20, 20, 2);
+            this.labelAttackModifyAccuracy.Name = "labelAttackModifyAccuracy";
+            this.labelAttackModifyAccuracy.Size = new System.Drawing.Size(65, 16);
+            this.labelAttackModifyAccuracy.TabIndex = 25;
+            this.labelAttackModifyAccuracy.Text = "Precisão:";
             // 
             // modifyAttackButton
             // 
@@ -274,6 +341,7 @@
             this.modifyAttackButton.TabIndex = 24;
             this.modifyAttackButton.Text = "Modificar";
             this.modifyAttackButton.UseVisualStyleBackColor = true;
+            this.modifyAttackButton.Click += new System.EventHandler(this.modifyAttackButton_Click);
             // 
             // labelAttackModifyType
             // 
@@ -362,52 +430,275 @@
             this.inputAttackModifyName.Size = new System.Drawing.Size(344, 20);
             this.inputAttackModifyName.TabIndex = 15;
             // 
-            // labelAttackModifyAccuracy
+            // deleteAttack
             // 
-            this.labelAttackModifyAccuracy.AutoSize = true;
-            this.labelAttackModifyAccuracy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAttackModifyAccuracy.Location = new System.Drawing.Point(375, 369);
-            this.labelAttackModifyAccuracy.Margin = new System.Windows.Forms.Padding(20, 20, 20, 2);
-            this.labelAttackModifyAccuracy.Name = "labelAttackModifyAccuracy";
-            this.labelAttackModifyAccuracy.Size = new System.Drawing.Size(65, 16);
-            this.labelAttackModifyAccuracy.TabIndex = 25;
-            this.labelAttackModifyAccuracy.Text = "Precisão:";
+            this.deleteAttack.Controls.Add(this.dataGridViewExcludeAttack);
+            this.deleteAttack.Controls.Add(this.buttonExcludeAttack);
+            this.deleteAttack.Location = new System.Drawing.Point(4, 22);
+            this.deleteAttack.Name = "deleteAttack";
+            this.deleteAttack.Size = new System.Drawing.Size(742, 474);
+            this.deleteAttack.TabIndex = 3;
+            this.deleteAttack.Text = "Excluir Ataque";
+            this.deleteAttack.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // attackTypeBindingSource
             // 
-            this.button1.Location = new System.Drawing.Point(20, 431);
-            this.button1.Margin = new System.Windows.Forms.Padding(20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Modificar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.attackTypeBindingSource.DataMember = "attackType";
+            this.attackTypeBindingSource.DataSource = this.pokeHandDataSet;
+            // 
+            // attackTypeBindingSource3
+            // 
+            this.attackTypeBindingSource3.DataMember = "attackType";
+            this.attackTypeBindingSource3.DataSource = this.pokeHandDataSet;
+            // 
+            // attackTypeBindingSource2
+            // 
+            this.attackTypeBindingSource2.DataMember = "attackType";
+            this.attackTypeBindingSource2.DataSource = this.pokeHandDataSet;
+            // 
+            // attackTypeBindingSource1
+            // 
+            this.attackTypeBindingSource1.DataMember = "attackType";
+            this.attackTypeBindingSource1.DataSource = this.pokeHandDataSet;
+            // 
+            // typeTableAdapter
+            // 
+            this.typeTableAdapter.ClearBeforeFill = true;
+            // 
+            // attackTypeTableAdapter
+            // 
+            this.attackTypeTableAdapter.ClearBeforeFill = true;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "nome";
+            this.name.HeaderText = "nome";
+            this.name.Name = "name";
+            // 
+            // accuracy
+            // 
+            this.accuracy.DataPropertyName = "precisão";
+            this.accuracy.HeaderText = "precisão";
+            this.accuracy.Name = "accuracy";
+            // 
+            // damage
+            // 
+            this.damage.DataPropertyName = "dano";
+            this.damage.HeaderText = "dano";
+            this.damage.Name = "damage";
+            // 
+            // powerPoint
+            // 
+            this.powerPoint.DataPropertyName = "PP";
+            this.powerPoint.HeaderText = "PP";
+            this.powerPoint.Name = "powerPoint";
+            // 
+            // type
+            // 
+            this.type.DataPropertyName = "tipo";
+            this.type.HeaderText = "tipo";
+            this.type.Name = "type";
+            // 
+            // typeId
+            // 
+            this.typeId.DataPropertyName = "codigo_tipo";
+            this.typeId.HeaderText = "codigo_tipo";
+            this.typeId.Name = "typeId";
+            this.typeId.ReadOnly = true;
+            this.typeId.Visible = false;
+            // 
+            // dataGridViewSearchAttack
+            // 
+            this.dataGridViewSearchAttack.AutoGenerateColumns = false;
+            this.dataGridViewSearchAttack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSearchAttack.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.precisãoDataGridViewTextBoxColumn,
+            this.danoDataGridViewTextBoxColumn,
+            this.pPDataGridViewTextBoxColumn,
+            this.tipoDataGridViewTextBoxColumn,
+            this.codigotipoDataGridViewTextBoxColumn});
+            this.dataGridViewSearchAttack.DataSource = this.attackTypeBindingSource5;
+            this.dataGridViewSearchAttack.Location = new System.Drawing.Point(25, 60);
+            this.dataGridViewSearchAttack.Name = "dataGridViewSearchAttack";
+            this.dataGridViewSearchAttack.Size = new System.Drawing.Size(644, 150);
+            this.dataGridViewSearchAttack.TabIndex = 0;
+            // 
+            // attackTypeBindingSource5
+            // 
+            this.attackTypeBindingSource5.DataMember = "attackType";
+            this.attackTypeBindingSource5.DataSource = this.pokeHandDataSet;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            // 
+            // precisãoDataGridViewTextBoxColumn
+            // 
+            this.precisãoDataGridViewTextBoxColumn.DataPropertyName = "precisão";
+            this.precisãoDataGridViewTextBoxColumn.HeaderText = "precisão";
+            this.precisãoDataGridViewTextBoxColumn.Name = "precisãoDataGridViewTextBoxColumn";
+            // 
+            // danoDataGridViewTextBoxColumn
+            // 
+            this.danoDataGridViewTextBoxColumn.DataPropertyName = "dano";
+            this.danoDataGridViewTextBoxColumn.HeaderText = "dano";
+            this.danoDataGridViewTextBoxColumn.Name = "danoDataGridViewTextBoxColumn";
+            // 
+            // pPDataGridViewTextBoxColumn
+            // 
+            this.pPDataGridViewTextBoxColumn.DataPropertyName = "PP";
+            this.pPDataGridViewTextBoxColumn.HeaderText = "PP";
+            this.pPDataGridViewTextBoxColumn.Name = "pPDataGridViewTextBoxColumn";
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            // 
+            // codigotipoDataGridViewTextBoxColumn
+            // 
+            this.codigotipoDataGridViewTextBoxColumn.DataPropertyName = "codigo_tipo";
+            this.codigotipoDataGridViewTextBoxColumn.HeaderText = "codigo_tipo";
+            this.codigotipoDataGridViewTextBoxColumn.Name = "codigotipoDataGridViewTextBoxColumn";
+            this.codigotipoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigotipoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dataGridViewExcludeAttack
+            // 
+            this.dataGridViewExcludeAttack.AutoGenerateColumns = false;
+            this.dataGridViewExcludeAttack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewExcludeAttack.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.excludeId,
+            this.nomeDataGridViewTextBoxColumn1,
+            this.precisãoDataGridViewTextBoxColumn1,
+            this.danoDataGridViewTextBoxColumn1,
+            this.pPDataGridViewTextBoxColumn1,
+            this.tipoDataGridViewTextBoxColumn1,
+            this.codigotipoDataGridViewTextBoxColumn1});
+            this.dataGridViewExcludeAttack.DataSource = this.attackTypeBindingSource6;
+            this.dataGridViewExcludeAttack.Location = new System.Drawing.Point(20, 43);
+            this.dataGridViewExcludeAttack.MultiSelect = false;
+            this.dataGridViewExcludeAttack.Name = "dataGridViewExcludeAttack";
+            this.dataGridViewExcludeAttack.Size = new System.Drawing.Size(697, 126);
+            this.dataGridViewExcludeAttack.TabIndex = 26;
+            this.dataGridViewExcludeAttack.SelectionChanged += new System.EventHandler(this.dataGridViewExcludeAttack_SelectionChanged);
+            // 
+            // attackTypeBindingSource6
+            // 
+            this.attackTypeBindingSource6.DataMember = "attackType";
+            this.attackTypeBindingSource6.DataSource = this.pokeHandDataSet;
+            // 
+            // excludeId
+            // 
+            this.excludeId.DataPropertyName = "id";
+            this.excludeId.HeaderText = "id";
+            this.excludeId.Name = "excludeId";
+            this.excludeId.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn1
+            // 
+            this.nomeDataGridViewTextBoxColumn1.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn1.HeaderText = "nome";
+            this.nomeDataGridViewTextBoxColumn1.Name = "nomeDataGridViewTextBoxColumn1";
+            // 
+            // precisãoDataGridViewTextBoxColumn1
+            // 
+            this.precisãoDataGridViewTextBoxColumn1.DataPropertyName = "precisão";
+            this.precisãoDataGridViewTextBoxColumn1.HeaderText = "precisão";
+            this.precisãoDataGridViewTextBoxColumn1.Name = "precisãoDataGridViewTextBoxColumn1";
+            // 
+            // danoDataGridViewTextBoxColumn1
+            // 
+            this.danoDataGridViewTextBoxColumn1.DataPropertyName = "dano";
+            this.danoDataGridViewTextBoxColumn1.HeaderText = "dano";
+            this.danoDataGridViewTextBoxColumn1.Name = "danoDataGridViewTextBoxColumn1";
+            // 
+            // pPDataGridViewTextBoxColumn1
+            // 
+            this.pPDataGridViewTextBoxColumn1.DataPropertyName = "PP";
+            this.pPDataGridViewTextBoxColumn1.HeaderText = "PP";
+            this.pPDataGridViewTextBoxColumn1.Name = "pPDataGridViewTextBoxColumn1";
+            // 
+            // tipoDataGridViewTextBoxColumn1
+            // 
+            this.tipoDataGridViewTextBoxColumn1.DataPropertyName = "tipo";
+            this.tipoDataGridViewTextBoxColumn1.HeaderText = "tipo";
+            this.tipoDataGridViewTextBoxColumn1.Name = "tipoDataGridViewTextBoxColumn1";
+            // 
+            // codigotipoDataGridViewTextBoxColumn1
+            // 
+            this.codigotipoDataGridViewTextBoxColumn1.DataPropertyName = "codigo_tipo";
+            this.codigotipoDataGridViewTextBoxColumn1.HeaderText = "codigo_tipo";
+            this.codigotipoDataGridViewTextBoxColumn1.Name = "codigotipoDataGridViewTextBoxColumn1";
+            this.codigotipoDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.codigotipoDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // buttonExcludeAttack
+            // 
+            this.buttonExcludeAttack.Location = new System.Drawing.Point(20, 431);
+            this.buttonExcludeAttack.Margin = new System.Windows.Forms.Padding(20);
+            this.buttonExcludeAttack.Name = "buttonExcludeAttack";
+            this.buttonExcludeAttack.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcludeAttack.TabIndex = 25;
+            this.buttonExcludeAttack.Text = "Excluir";
+            this.buttonExcludeAttack.UseVisualStyleBackColor = true;
+            this.buttonExcludeAttack.Click += new System.EventHandler(this.buttonExcludeAttack_Click);
             // 
             // Attacks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.attacksControl);
+            this.Controls.Add(this.table);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Attacks";
             this.Text = "Ataques";
             this.Load += new System.EventHandler(this.Attacks_Load);
-            this.attacksControl.ResumeLayout(false);
+            this.table.ResumeLayout(false);
+            this.searchAttack.ResumeLayout(false);
             this.addAttack.ResumeLayout(false);
             this.addAttack.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokeHandDataSet)).EndInit();
             this.modifyAttack.ResumeLayout(false);
             this.modifyAttack.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModifyAttack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource4)).EndInit();
             this.deleteAttack.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchAttack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExcludeAttack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource6)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl attacksControl;
+        private System.Windows.Forms.TabControl table;
         private System.Windows.Forms.TabPage searchAttack;
         private System.Windows.Forms.TabPage addAttack;
         private System.Windows.Forms.TabPage modifyAttack;
@@ -437,6 +728,38 @@
         private System.Windows.Forms.TextBox inputAttackModifyDamage;
         private System.Windows.Forms.Label labelAttackModifyName;
         private System.Windows.Forms.TextBox inputAttackModifyName;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource attackTypeBindingSource;
+        private PokeHandDataSetTableAdapters.attackTypeTableAdapter attackTypeTableAdapter;
+        private System.Windows.Forms.BindingSource attackTypeBindingSource1;
+        private System.Windows.Forms.BindingSource attackTypeBindingSource2;
+        private System.Windows.Forms.BindingSource attackTypeBindingSource3;
+        private System.Windows.Forms.BindingSource attackTypeBindingSource4;
+        private System.Windows.Forms.DataGridView dataGridViewModifyAttack;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn accuracy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn damage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn powerPoint;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeId;
+        private System.Windows.Forms.DataGridView dataGridViewSearchAttack;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precisãoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn danoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigotipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource attackTypeBindingSource5;
+        private System.Windows.Forms.DataGridView dataGridViewExcludeAttack;
+        private System.Windows.Forms.DataGridViewTextBoxColumn excludeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precisãoDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn danoDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pPDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigotipoDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource attackTypeBindingSource6;
+        private System.Windows.Forms.Button buttonExcludeAttack;
     }
 }
