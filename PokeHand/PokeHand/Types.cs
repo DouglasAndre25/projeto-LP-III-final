@@ -41,29 +41,6 @@ namespace PokeHand {
             inputTypeAddName.Focus();
         }
 
-        private void addTypeButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                try
-                {
-                    SqlParameter[] parameters = {
-                        new SqlParameter("@name", System.Data.SqlDbType.NVarChar, inputTypeAddName.Text)
-                    };
-                    sqlService.DMLCommand("INSERT INTO type (name) VALUES (@name)", parameters);
-                    MessageBox.Show("Tipo Cadastrado!", "Tipo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch(Exception error) { }
-            }
-            finally
-            {
-                sqlService.CloseConnection();
-                this.UpdateTypes();
-                this.ClearFields();
-            }
-        }
-
         private void searchTypeButton_Click(object sender, EventArgs e)
         {
 
@@ -89,14 +66,62 @@ namespace PokeHand {
            
         }
 
-        private void typeModifyGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void addTypeButton_Click(object sender, EventArgs e)
         {
-            this.modifyTypeSelectedIndex = this.typeModifyGridView.Rows[e.RowIndex].Cells["typeModifyGridViewId"].Value.ToString();
-            inputTypeModifyName.Text = this.typeModifyGridView.Rows[e.RowIndex].Cells["typeModifyGridViewName"].Value.ToString();
+            if(string.IsNullOrWhiteSpace(inputTypeAddName.Text))
+            {
+                typeErrorProvider.SetError(inputTypeAddName, "O Campo nome é obrigatório e não deve ser vazio.");
+                return;
+            } else
+            {
+                typeErrorProvider.Clear();
+            }
+
+            try
+            {
+                try
+                {
+                    SqlParameter[] parameters = {
+                        new SqlParameter("@name", System.Data.SqlDbType.NVarChar, inputTypeAddName.Text)
+                    };
+                    sqlService.DMLCommand("INSERT INTO type (name) VALUES (@name)", parameters);
+                    MessageBox.Show("Tipo Cadastrado!", "Tipo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception error) { }
+            }
+            finally
+            {
+                sqlService.CloseConnection();
+                this.UpdateTypes();
+                this.ClearFields();
+            }
+        }
+
+        private void typeModifyGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (this.typeModifyGridView.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                this.modifyTypeSelectedIndex = this.typeModifyGridView.SelectedRows[0].Cells["typeModifyGridViewId"].Value.ToString();
+                inputTypeModifyName.Text = this.typeModifyGridView.SelectedRows[0].Cells["typeModifyGridViewName"].Value.ToString();
+            }
         }
 
         private void modifyTypeButton_Click(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrWhiteSpace(inputTypeModifyName.Text))
+            {
+                typeErrorProvider.SetError(inputTypeModifyName, "O Campo nome é obrigatório e não deve ser vazio.");
+                return;
+            }
+            else
+            {
+                typeErrorProvider.Clear();
+            }
 
             try
             {
@@ -117,14 +142,21 @@ namespace PokeHand {
                 sqlService.CloseConnection();
                 inputTypeModifyName.Clear();
                 this.UpdateTypes();
+                this.modifyTypeSelectedIndex = null;
             }
-
-
         }
 
-        private void typeDeleteGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void typeDeleteGridView_SelectionChanged(object sender, EventArgs e)
         {
-            this.deleteTypeSelectedIndex = this.typeDeleteGridView.Rows[e.RowIndex].Cells["typeDeleteGridViewId"].Value.ToString();
+            if (this.typeDeleteGridView.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                this.deleteTypeSelectedIndex = this.typeDeleteGridView.SelectedRows[0].Cells["typeDeleteGridViewId"].Value.ToString();
+            }
+
         }
 
         private void deleteTypeButton_Click(object sender, EventArgs e)
@@ -151,5 +183,9 @@ namespace PokeHand {
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.UpdateTypes();
+        }
     }
 }

@@ -64,6 +64,7 @@
             this.attackBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.attackTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.attackTableAdapter();
             this.typeTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.typeTableAdapter();
+            this.typeErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.typesControl.SuspendLayout();
             this.searchType.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -77,6 +78,7 @@
             this.deleteType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeDeleteGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // typesControl
@@ -174,6 +176,7 @@
             this.typeSearchGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.typeSearchGridView.Location = new System.Drawing.Point(23, 129);
             this.typeSearchGridView.Margin = new System.Windows.Forms.Padding(20);
+            this.typeSearchGridView.MultiSelect = false;
             this.typeSearchGridView.Name = "typeSearchGridView";
             this.typeSearchGridView.ReadOnly = true;
             this.typeSearchGridView.Size = new System.Drawing.Size(375, 322);
@@ -295,6 +298,7 @@
             this.typeModifyGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.typeModifyGridView.Location = new System.Drawing.Point(20, 20);
             this.typeModifyGridView.Margin = new System.Windows.Forms.Padding(20);
+            this.typeModifyGridView.MultiSelect = false;
             this.typeModifyGridView.Name = "typeModifyGridView";
             this.typeModifyGridView.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -307,7 +311,7 @@
             this.typeModifyGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.typeModifyGridView.Size = new System.Drawing.Size(375, 259);
             this.typeModifyGridView.TabIndex = 6;
-            this.typeModifyGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.typeModifyGridView_CellContentClick);
+            this.typeModifyGridView.SelectionChanged += new System.EventHandler(this.typeModifyGridView_SelectionChanged);
             // 
             // typeModifyGridViewId
             // 
@@ -395,6 +399,7 @@
             this.typeDeleteGridView.DefaultCellStyle = dataGridViewCellStyle7;
             this.typeDeleteGridView.Location = new System.Drawing.Point(20, 20);
             this.typeDeleteGridView.Margin = new System.Windows.Forms.Padding(20);
+            this.typeDeleteGridView.MultiSelect = false;
             this.typeDeleteGridView.Name = "typeDeleteGridView";
             this.typeDeleteGridView.ReadOnly = true;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -407,7 +412,7 @@
             this.typeDeleteGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.typeDeleteGridView.Size = new System.Drawing.Size(375, 365);
             this.typeDeleteGridView.TabIndex = 10;
-            this.typeDeleteGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.typeDeleteGridView_CellContentClick);
+            this.typeDeleteGridView.SelectionChanged += new System.EventHandler(this.typeDeleteGridView_SelectionChanged);
             // 
             // typeDeleteGridViewId
             // 
@@ -449,6 +454,10 @@
             // 
             this.typeTableAdapter.ClearBeforeFill = true;
             // 
+            // typeErrorProvider
+            // 
+            this.typeErrorProvider.ContainerControl = this;
+            // 
             // Types
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,6 +485,7 @@
             this.deleteType.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.typeDeleteGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -513,5 +523,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDeleteGridViewName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ErrorProvider typeErrorProvider;
     }
 }
