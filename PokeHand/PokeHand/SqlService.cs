@@ -39,7 +39,7 @@ namespace PokeHand
 
             try
             {
-                this.OpenConnection();
+                if (this.connection.State == System.Data.ConnectionState.Closed)  this.OpenConnection();
             }
             catch (Exception error)
             {
@@ -72,7 +72,7 @@ namespace PokeHand
 
             try
             {
-                this.OpenConnection();
+                if(this.connection.State == System.Data.ConnectionState.Closed) this.OpenConnection();
             }
             catch(Exception error)
             {
