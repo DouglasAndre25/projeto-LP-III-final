@@ -1349,8 +1349,6 @@ namespace PokeHand {
             
             private global::System.Data.DataColumn columnheight;
             
-            private global::System.Data.DataColumn columnsprite;
-            
             private global::System.Data.DataColumn columndescription;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1420,14 +1418,6 @@ namespace PokeHand {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn spriteColumn {
-                get {
-                    return this.columnsprite;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn descriptionColumn {
                 get {
                     return this.columndescription;
@@ -1471,14 +1461,13 @@ namespace PokeHand {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public pokemonRow AddpokemonRow(string name, float weight, float height, byte[] sprite, string description) {
+            public pokemonRow AddpokemonRow(string name, float weight, float height, string description) {
                 pokemonRow rowpokemonRow = ((pokemonRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         name,
                         weight,
                         height,
-                        sprite,
                         description};
                 rowpokemonRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowpokemonRow);
@@ -1513,7 +1502,6 @@ namespace PokeHand {
                 this.columnname = base.Columns["name"];
                 this.columnweight = base.Columns["weight"];
                 this.columnheight = base.Columns["height"];
-                this.columnsprite = base.Columns["sprite"];
                 this.columndescription = base.Columns["description"];
             }
             
@@ -1528,8 +1516,6 @@ namespace PokeHand {
                 base.Columns.Add(this.columnweight);
                 this.columnheight = new global::System.Data.DataColumn("height", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnheight);
-                this.columnsprite = new global::System.Data.DataColumn("sprite", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsprite);
                 this.columndescription = new global::System.Data.DataColumn("description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndescription);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -4380,22 +4366,6 @@ namespace PokeHand {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public byte[] sprite {
-                get {
-                    try {
-                        return ((byte[])(this[this.tablepokemon.spriteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'sprite\' in table \'pokemon\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablepokemon.spriteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string description {
                 get {
                     try {
@@ -4408,18 +4378,6 @@ namespace PokeHand {
                 set {
                     this[this.tablepokemon.descriptionColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsspriteNull() {
-                return this.IsNull(this.tablepokemon.spriteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetspriteNull() {
-                this[this.tablepokemon.spriteColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6261,7 +6219,6 @@ SELECT id, pokemon_id, attack_id FROM attack_pokemon WHERE (id = @id)";
             tableMapping.ColumnMappings.Add("name", "name");
             tableMapping.ColumnMappings.Add("weight", "weight");
             tableMapping.ColumnMappings.Add("height", "height");
-            tableMapping.ColumnMappings.Add("sprite", "sprite");
             tableMapping.ColumnMappings.Add("description", "description");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -6275,24 +6232,22 @@ SELECT id, pokemon_id, attack_id FROM attack_pokemon WHERE (id = @id)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_height", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "height", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[pokemon] ([name], [weight], [height], [sprite], [description])" +
-                " VALUES (@name, @weight, @height, @sprite, @description);\r\nSELECT id, name, weig" +
-                "ht, height, sprite, description FROM pokemon WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[pokemon] ([name], [weight], [height], [description]) VALUES (@" +
+                "name, @weight, @height, @description);\r\nSELECT id, name, weight, height, descrip" +
+                "tion FROM pokemon WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@weight", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "weight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@height", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "height", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sprite", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sprite", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[pokemon] SET [name] = @name, [weight] = @weight, [height] = @height, [sprite] = @sprite, [description] = @description WHERE (([id] = @Original_id) AND ([name] = @Original_name) AND ([weight] = @Original_weight) AND ([height] = @Original_height));
-SELECT id, name, weight, height, sprite, description FROM pokemon WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[pokemon] SET [name] = @name, [weight] = @weight, [height] = @height, [description] = @description WHERE (([id] = @Original_id) AND ([name] = @Original_name) AND ([weight] = @Original_weight) AND ([height] = @Original_height));
+SELECT id, name, weight, height, description FROM pokemon WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@weight", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "weight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@height", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "height", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sprite", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sprite", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -6311,11 +6266,15 @@ SELECT id, name, weight, height, sprite, description FROM pokemon WHERE (id = @i
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, name, weight, height, sprite, description FROM dbo.pokemon";
+            this._commandCollection[0].CommandText = "SELECT id, name, weight, height, description FROM dbo.pokemon";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT id, name, weight, height, description FROM dbo.pokemon";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6340,6 +6299,19 @@ SELECT id, name, weight, height, sprite, description FROM pokemon WHERE (id = @i
             PokeHandDataSet.pokemonDataTable dataTable = new PokeHandDataSet.pokemonDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(PokeHandDataSet.pokemonDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6405,7 +6377,7 @@ SELECT id, name, weight, height, sprite, description FROM pokemon WHERE (id = @i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string name, float weight, float height, byte[] sprite, string description) {
+        public virtual int Insert(string name, float weight, float height, string description) {
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
@@ -6414,17 +6386,11 @@ SELECT id, name, weight, height, sprite, description FROM pokemon WHERE (id = @i
             }
             this.Adapter.InsertCommand.Parameters[1].Value = ((float)(weight));
             this.Adapter.InsertCommand.Parameters[2].Value = ((float)(height));
-            if ((sprite == null)) {
+            if ((description == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((byte[])(sprite));
-            }
-            if ((description == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(description));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(description));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6446,7 +6412,7 @@ SELECT id, name, weight, height, sprite, description FROM pokemon WHERE (id = @i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name, float weight, float height, byte[] sprite, string description, int Original_id, string Original_name, float Original_weight, float Original_height, int id) {
+        public virtual int Update(string name, float weight, float height, string description, int Original_id, string Original_name, float Original_weight, float Original_height, int id) {
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
@@ -6455,28 +6421,22 @@ SELECT id, name, weight, height, sprite, description FROM pokemon WHERE (id = @i
             }
             this.Adapter.UpdateCommand.Parameters[1].Value = ((float)(weight));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((float)(height));
-            if ((sprite == null)) {
+            if ((description == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((byte[])(sprite));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(description));
             }
-            if ((description == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(description));
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_id));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id));
             if ((Original_name == null)) {
                 throw new global::System.ArgumentNullException("Original_name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_name));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_name));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((float)(Original_weight));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((float)(Original_height));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(id));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((float)(Original_weight));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((float)(Original_height));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6497,8 +6457,8 @@ SELECT id, name, weight, height, sprite, description FROM pokemon WHERE (id = @i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name, float weight, float height, byte[] sprite, string description, int Original_id, string Original_name, float Original_weight, float Original_height) {
-            return this.Update(name, weight, height, sprite, description, Original_id, Original_name, Original_weight, Original_height, Original_id);
+        public virtual int Update(string name, float weight, float height, string description, int Original_id, string Original_name, float Original_weight, float Original_height) {
+            return this.Update(name, weight, height, description, Original_id, Original_name, Original_weight, Original_height, Original_id);
         }
     }
     

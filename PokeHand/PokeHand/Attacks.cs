@@ -156,7 +156,10 @@ namespace PokeHand
                     sqlService.DMLCommand("DELETE FROM attack WHERE id = @id", parameters);
                     MessageBox.Show("Ataque excluído!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception error) { }
+                catch (Exception error) 
+                {
+                    MessageBox.Show(error.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             finally
             {

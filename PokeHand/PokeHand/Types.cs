@@ -65,7 +65,10 @@ namespace PokeHand {
                     MessageBox.Show("Tipo Cadastrado!", "Tipo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch(Exception error) { }
+                catch(Exception error) 
+                {
+                    MessageBox.Show(error.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             finally
             {
@@ -90,7 +93,10 @@ namespace PokeHand {
                     dataTable.Load(reader);
                     typeSearchGridView.DataSource = dataTable;
                 }
-                catch (Exception error) { }
+                catch (Exception error) 
+                {
+                    MessageBox.Show(error.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             finally
             {
@@ -138,7 +144,10 @@ namespace PokeHand {
 
                     MessageBox.Show("Tipo Alterado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch(Exception error) { }
+                catch(Exception error) 
+                {
+                    MessageBox.Show(error.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             finally
             {
@@ -175,7 +184,10 @@ namespace PokeHand {
                     sqlService.DMLCommand("DELETE FROM type WHERE id = @id", parameters);
                     MessageBox.Show("Tipo excluído!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch(Exception error) { }
+                catch(Exception error) 
+                {
+                    MessageBox.Show(error.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             finally
             {
