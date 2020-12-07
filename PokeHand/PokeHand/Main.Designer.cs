@@ -72,6 +72,7 @@
             this.modifyProfileButton.TabIndex = 1;
             this.modifyProfileButton.Text = "Modificar Pefil";
             this.modifyProfileButton.UseVisualStyleBackColor = true;
+            this.modifyProfileButton.Click += new System.EventHandler(this.modifyProfileButton_Click);
             // 
             // viewProfileButton
             // 
@@ -81,6 +82,7 @@
             this.viewProfileButton.TabIndex = 0;
             this.viewProfileButton.Text = "Meu Perfil";
             this.viewProfileButton.UseVisualStyleBackColor = true;
+            this.viewProfileButton.Click += new System.EventHandler(this.viewProfileButton_Click);
             // 
             // attacksButton
             // 

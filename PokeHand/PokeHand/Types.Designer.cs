@@ -40,33 +40,33 @@
             this.labelTypeSearchName = new System.Windows.Forms.Label();
             this.inputTypeSearchName = new System.Windows.Forms.TextBox();
             this.typeSearchGridView = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokeHandDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokeHandDataSet = new PokeHand.PokeHandDataSet();
             this.addType = new System.Windows.Forms.TabPage();
             this.addTypeButton = new System.Windows.Forms.Button();
-            this.labelTypeAddName = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.inputTypeAddName = new System.Windows.Forms.TextBox();
+            this.labelTypeAddName = new System.Windows.Forms.Label();
             this.modifyType = new System.Windows.Forms.TabPage();
             this.typeModifyGridView = new System.Windows.Forms.DataGridView();
+            this.typeModifyGridViewId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeModifyGridViewName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modifyTypeButton = new System.Windows.Forms.Button();
-            this.labelTypeModifyName = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.inputTypeModifyName = new System.Windows.Forms.TextBox();
+            this.labelTypeModifyName = new System.Windows.Forms.Label();
             this.deleteType = new System.Windows.Forms.TabPage();
             this.typeDeleteGridView = new System.Windows.Forms.DataGridView();
+            this.typeDeleteGridViewId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDeleteGridViewName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deleteTypeButton = new System.Windows.Forms.Button();
             this.attackBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.attackTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.attackTableAdapter();
             this.typeTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.typeTableAdapter();
             this.typeErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.typeModifyGridViewId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeModifyGridViewName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDeleteGridViewId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDeleteGridViewName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typesControl.SuspendLayout();
             this.searchType.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -75,14 +75,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pokeHandDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokeHandDataSet)).BeginInit();
             this.addType.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.modifyType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeModifyGridView)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.deleteType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeDeleteGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeErrorProvider)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // typesControl
@@ -186,6 +186,22 @@
             this.typeSearchGridView.Size = new System.Drawing.Size(702, 322);
             this.typeSearchGridView.TabIndex = 0;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "id";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 32;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 626;
+            // 
             // typeBindingSource
             // 
             this.typeBindingSource.DataMember = "type";
@@ -224,6 +240,26 @@
             this.addTypeButton.UseVisualStyleBackColor = true;
             this.addTypeButton.Click += new System.EventHandler(this.addTypeButton_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.inputTypeAddName);
+            this.groupBox2.Controls.Add(this.labelTypeAddName);
+            this.groupBox2.Location = new System.Drawing.Point(23, 20);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(20);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(696, 82);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Novo Tipo";
+            // 
+            // inputTypeAddName
+            // 
+            this.inputTypeAddName.Location = new System.Drawing.Point(10, 45);
+            this.inputTypeAddName.Margin = new System.Windows.Forms.Padding(20, 2, 20, 20);
+            this.inputTypeAddName.Name = "inputTypeAddName";
+            this.inputTypeAddName.Size = new System.Drawing.Size(663, 20);
+            this.inputTypeAddName.TabIndex = 0;
+            // 
             // labelTypeAddName
             // 
             this.labelTypeAddName.AutoSize = true;
@@ -234,14 +270,6 @@
             this.labelTypeAddName.Size = new System.Drawing.Size(48, 16);
             this.labelTypeAddName.TabIndex = 1;
             this.labelTypeAddName.Text = "Nome:";
-            // 
-            // inputTypeAddName
-            // 
-            this.inputTypeAddName.Location = new System.Drawing.Point(10, 45);
-            this.inputTypeAddName.Margin = new System.Windows.Forms.Padding(20, 2, 20, 20);
-            this.inputTypeAddName.Name = "inputTypeAddName";
-            this.inputTypeAddName.Size = new System.Drawing.Size(663, 20);
-            this.inputTypeAddName.TabIndex = 0;
             // 
             // modifyType
             // 
@@ -299,6 +327,23 @@
             this.typeModifyGridView.TabIndex = 6;
             this.typeModifyGridView.SelectionChanged += new System.EventHandler(this.typeModifyGridView_SelectionChanged);
             // 
+            // typeModifyGridViewId
+            // 
+            this.typeModifyGridViewId.DataPropertyName = "id";
+            this.typeModifyGridViewId.HeaderText = "ID";
+            this.typeModifyGridViewId.MinimumWidth = 32;
+            this.typeModifyGridViewId.Name = "typeModifyGridViewId";
+            this.typeModifyGridViewId.ReadOnly = true;
+            this.typeModifyGridViewId.Width = 32;
+            // 
+            // typeModifyGridViewName
+            // 
+            this.typeModifyGridViewName.DataPropertyName = "name";
+            this.typeModifyGridViewName.HeaderText = "Nome";
+            this.typeModifyGridViewName.Name = "typeModifyGridViewName";
+            this.typeModifyGridViewName.ReadOnly = true;
+            this.typeModifyGridViewName.Width = 626;
+            // 
             // modifyTypeButton
             // 
             this.modifyTypeButton.Location = new System.Drawing.Point(20, 399);
@@ -310,6 +355,26 @@
             this.modifyTypeButton.UseVisualStyleBackColor = true;
             this.modifyTypeButton.Click += new System.EventHandler(this.modifyTypeButton_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.inputTypeModifyName);
+            this.groupBox3.Controls.Add(this.labelTypeModifyName);
+            this.groupBox3.Location = new System.Drawing.Point(20, 302);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(20);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(702, 82);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Tipo Selecionado";
+            // 
+            // inputTypeModifyName
+            // 
+            this.inputTypeModifyName.Location = new System.Drawing.Point(13, 39);
+            this.inputTypeModifyName.Margin = new System.Windows.Forms.Padding(20, 2, 20, 20);
+            this.inputTypeModifyName.Name = "inputTypeModifyName";
+            this.inputTypeModifyName.Size = new System.Drawing.Size(666, 20);
+            this.inputTypeModifyName.TabIndex = 3;
+            // 
             // labelTypeModifyName
             // 
             this.labelTypeModifyName.AutoSize = true;
@@ -320,14 +385,6 @@
             this.labelTypeModifyName.Size = new System.Drawing.Size(48, 16);
             this.labelTypeModifyName.TabIndex = 4;
             this.labelTypeModifyName.Text = "Nome:";
-            // 
-            // inputTypeModifyName
-            // 
-            this.inputTypeModifyName.Location = new System.Drawing.Point(13, 39);
-            this.inputTypeModifyName.Margin = new System.Windows.Forms.Padding(20, 2, 20, 20);
-            this.inputTypeModifyName.Name = "inputTypeModifyName";
-            this.inputTypeModifyName.Size = new System.Drawing.Size(666, 20);
-            this.inputTypeModifyName.TabIndex = 3;
             // 
             // deleteType
             // 
@@ -383,6 +440,22 @@
             this.typeDeleteGridView.TabIndex = 10;
             this.typeDeleteGridView.SelectionChanged += new System.EventHandler(this.typeDeleteGridView_SelectionChanged);
             // 
+            // typeDeleteGridViewId
+            // 
+            this.typeDeleteGridViewId.DataPropertyName = "id";
+            this.typeDeleteGridViewId.HeaderText = "ID";
+            this.typeDeleteGridViewId.Name = "typeDeleteGridViewId";
+            this.typeDeleteGridViewId.ReadOnly = true;
+            this.typeDeleteGridViewId.Width = 32;
+            // 
+            // typeDeleteGridViewName
+            // 
+            this.typeDeleteGridViewName.DataPropertyName = "name";
+            this.typeDeleteGridViewName.HeaderText = "Nome";
+            this.typeDeleteGridViewName.Name = "typeDeleteGridViewName";
+            this.typeDeleteGridViewName.ReadOnly = true;
+            this.typeDeleteGridViewName.Width = 626;
+            // 
             // deleteTypeButton
             // 
             this.deleteTypeButton.Location = new System.Drawing.Point(20, 425);
@@ -411,84 +484,11 @@
             // 
             this.typeErrorProvider.ContainerControl = this;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.inputTypeAddName);
-            this.groupBox2.Controls.Add(this.labelTypeAddName);
-            this.groupBox2.Location = new System.Drawing.Point(23, 20);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(20);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(696, 82);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Novo Tipo";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.inputTypeModifyName);
-            this.groupBox3.Controls.Add(this.labelTypeModifyName);
-            this.groupBox3.Location = new System.Drawing.Point(20, 302);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(20);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(702, 82);
-            this.groupBox3.TabIndex = 7;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Tipo Selecionado";
-            // 
-            // typeModifyGridViewId
-            // 
-            this.typeModifyGridViewId.DataPropertyName = "id";
-            this.typeModifyGridViewId.HeaderText = "ID";
-            this.typeModifyGridViewId.MinimumWidth = 32;
-            this.typeModifyGridViewId.Name = "typeModifyGridViewId";
-            this.typeModifyGridViewId.ReadOnly = true;
-            this.typeModifyGridViewId.Width = 32;
-            // 
-            // typeModifyGridViewName
-            // 
-            this.typeModifyGridViewName.DataPropertyName = "name";
-            this.typeModifyGridViewName.HeaderText = "Nome";
-            this.typeModifyGridViewName.Name = "typeModifyGridViewName";
-            this.typeModifyGridViewName.ReadOnly = true;
-            this.typeModifyGridViewName.Width = 626;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "id";
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 32;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 626;
-            // 
-            // typeDeleteGridViewId
-            // 
-            this.typeDeleteGridViewId.DataPropertyName = "id";
-            this.typeDeleteGridViewId.HeaderText = "ID";
-            this.typeDeleteGridViewId.Name = "typeDeleteGridViewId";
-            this.typeDeleteGridViewId.ReadOnly = true;
-            this.typeDeleteGridViewId.Width = 32;
-            // 
-            // typeDeleteGridViewName
-            // 
-            this.typeDeleteGridViewName.DataPropertyName = "name";
-            this.typeDeleteGridViewName.HeaderText = "Nome";
-            this.typeDeleteGridViewName.Name = "typeDeleteGridViewName";
-            this.typeDeleteGridViewName.ReadOnly = true;
-            this.typeDeleteGridViewName.Width = 626;
-            // 
             // Types
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 561);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.typesControl);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -504,16 +504,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pokeHandDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokeHandDataSet)).EndInit();
             this.addType.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.modifyType.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.typeModifyGridView)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.deleteType.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.typeDeleteGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeErrorProvider)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }

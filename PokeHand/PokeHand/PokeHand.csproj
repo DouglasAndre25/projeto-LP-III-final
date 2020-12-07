@@ -58,6 +58,12 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifyProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyProfile.Designer.cs">
+      <DependentUpon>ModifyProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="PokeHandDataSet1.cs">
       <DependentUpon>PokeHandDataSet1.xsd</DependentUpon>
     </Compile>
@@ -82,11 +88,20 @@
     <Compile Include="Types.Designer.cs">
       <DependentUpon>Types.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewProfile.Designer.cs">
+      <DependentUpon>ViewProfile.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Attacks.resx">
       <DependentUpon>Attacks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyProfile.resx">
+      <DependentUpon>ModifyProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pokemons.resx">
       <DependentUpon>Pokemons.cs</DependentUpon>
@@ -98,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Types.resx">
       <DependentUpon>Types.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProfile.resx">
+      <DependentUpon>ViewProfile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="PokeHandDataSet1.xsc">
       <DependentUpon>PokeHandDataSet1.xsd</DependentUpon>

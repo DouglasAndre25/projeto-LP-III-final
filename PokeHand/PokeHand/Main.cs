@@ -31,5 +31,15 @@ namespace PokeHand
         {
             new Pokemons().Show();
         }
+
+        private void modifyProfileButton_Click(object sender, EventArgs e)
+        {
+            new ModifyProfile().Show();
+        }
+
+        private void viewProfileButton_Click(object sender, EventArgs e)
+        {
+            new ViewProfile().Show();
+        }
     }
 }
