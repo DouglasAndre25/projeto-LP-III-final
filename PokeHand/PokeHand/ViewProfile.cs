@@ -42,7 +42,6 @@ namespace PokeHand
                     if (reader.HasRows)
                     {
                         reader.Read();
-                        MessageBox.Show(reader["name"].ToString());
                         inputProfileName.Text = reader["name"].ToString();
                         inputProfileAge.Text = reader["age"].ToString();
                         inputProfileVocation.Text = reader["vocation"].ToString();
@@ -123,6 +122,5 @@ namespace PokeHand
                 sqlService.CloseConnection();
             }
         }
-
     }
 }

@@ -141,12 +141,12 @@ namespace PokeHand
 
                     }
 
-                    MessageBox.Show("Pokemon Cadastrado!", "Pokemon",
+                    MessageBox.Show("Pokemon cadastrado com sucesso!", "Sucesso",
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch(Exception error)
                 {
-                    MessageBox.Show(error.Message, "Pokemon",
+                    MessageBox.Show(error.Message, "ERRO",
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -187,10 +187,11 @@ namespace PokeHand
                         parameters
                     );
 
-                    MessageBox.Show("Pokemon excluído!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Pokemon excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception error) {
-                    MessageBox.Show(error.Message);
+                    MessageBox.Show(error.Message, "ERRO",
+                       MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             finally
@@ -346,12 +347,12 @@ namespace PokeHand
                         sqlService.DMLCommand(pokemonAttackSql, insertAttackPokemonParameters);
                     }
 
-                    MessageBox.Show("Pokemon Alterado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Pokemon alterado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 catch(Exception error) 
                 {
-                    MessageBox.Show(error.Message);
+                    MessageBox.Show(error.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             finally

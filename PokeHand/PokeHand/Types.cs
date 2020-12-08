@@ -46,7 +46,7 @@ namespace PokeHand {
 
             if (string.IsNullOrWhiteSpace(inputTypeAddName.Text))
             {
-                typeErrorProvider.SetError(inputTypeAddName, "O Campo nome é obrigatório e não deve ser vazio.");
+                typeErrorProvider.SetError(inputTypeAddName, "O Campo obrigatório.");
                 return;
             }
             else
@@ -59,10 +59,10 @@ namespace PokeHand {
                 try
                 {
                     SqlParameter[] parameters = {
-                        new SqlParameter("@name", System.Data.SqlDbType.NVarChar, inputTypeAddName.Text)
+                        new SqlParameter("@name", SqlDbType.NVarChar, inputTypeAddName.Text)
                     };
                     sqlService.DMLCommand("INSERT INTO type (name) VALUES (@name)", parameters);
-                    MessageBox.Show("Tipo Cadastrado!", "Tipo",
+                    MessageBox.Show("Tipo cadastrado com sucesso!", "Sucesso",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch(Exception error) 
@@ -123,7 +123,7 @@ namespace PokeHand {
         {
             if (string.IsNullOrWhiteSpace(inputTypeModifyName.Text))
             {
-                typeErrorProvider.SetError(inputTypeModifyName, "O Campo nome é obrigatório e não deve ser vazio.");
+                typeErrorProvider.SetError(inputTypeModifyName, "Campo obrigatório.");
                 return;
             }
             else
@@ -142,7 +142,7 @@ namespace PokeHand {
                     };
                     sqlService.DMLCommand("UPDATE type SET name=@name WHERE id=@id", parameters);
 
-                    MessageBox.Show("Tipo Alterado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tipo alterado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch(Exception error) 
                 {
@@ -158,6 +158,7 @@ namespace PokeHand {
 
 
         }
+
         private void typeDeleteGridView_SelectionChanged(object sender, EventArgs e)
         {
             if (this.typeDeleteGridView.SelectedRows.Count == 0)
@@ -182,7 +183,7 @@ namespace PokeHand {
                         new SqlParameter("@id", System.Data.SqlDbType.NVarChar, this.deleteTypeSelectedIndex)
                     };
                     sqlService.DMLCommand("DELETE FROM type WHERE id = @id", parameters);
-                    MessageBox.Show("Tipo excluído!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tipo excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch(Exception error) 
                 {

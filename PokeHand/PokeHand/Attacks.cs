@@ -86,7 +86,6 @@ namespace PokeHand
 
             try
             {
-                MessageBox.Show(inputAttackAddType.SelectedValue.ToString());
 
                 SqlParameter[] parameters =
                 {
@@ -97,12 +96,12 @@ namespace PokeHand
                     new SqlParameter("@typeId", System.Data.SqlDbType.Int, Convert.ToInt32(inputAttackAddType.SelectedValue))
                 };
                 sqlService.DMLCommand("INSERT INTO attack (name, damage, power_point, accuracy, type_id) VALUES (@name, @damage, @pp, @accuracy, @typeId)", parameters);
-                MessageBox.Show("Ataque salvo!", "Ataque",
+                MessageBox.Show("Ataque adicionado com sucesso!", "Sucesso",
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception error) {
-                MessageBox.Show(error.Message, "Ataque",
-                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(error.Message, "ERRO",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -222,11 +221,11 @@ namespace PokeHand
                     };
                     sqlService.DMLCommand("UPDATE attack SET name=@name, damage=@damage, power_point=@pp, accuracy=@accuracy, type_id=@type WHERE id=@id", parameters);
 
-                    MessageBox.Show("Tipo Alterado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ataque alterado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception error)
                 {
-                    MessageBox.Show(error.Message, "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(error.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             finally
@@ -260,7 +259,7 @@ namespace PokeHand
                         new SqlParameter("@id", System.Data.SqlDbType.NVarChar, this.deleteAttackSelectedIndex)
                     };
                     sqlService.DMLCommand("DELETE FROM attack WHERE id = @id", parameters);
-                    MessageBox.Show("Ataque excluído!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ataque excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception error) 
                 {
