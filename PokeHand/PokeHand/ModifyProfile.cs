@@ -401,32 +401,44 @@ namespace PokeHand
                 modifyProfileErrorProvider.SetError(pokemonDataGrid6, "");
             }
 
-            /**
-            var map = new Dictionary<DataGridView, string>();
-            map.Add(pokemonDataGrid1, pokemonDataGrid1.SelectedRows[0].Cells["pokemonId1"].Value.ToString());
-            map.Add(pokemonDataGrid2, pokemonDataGrid2.SelectedRows[0].Cells["pokemonId2"].Value.ToString());
-            map.Add(pokemonDataGrid3, pokemonDataGrid3.SelectedRows[0].Cells["pokemonId3"].Value.ToString());
-            map.Add(pokemonDataGrid4, pokemonDataGrid4.SelectedRows[0].Cells["pokemonId4"].Value.ToString());
-            map.Add(pokemonDataGrid5, pokemonDataGrid5.SelectedRows[0].Cells["pokemonId5"].Value.ToString());
-            map.Add(pokemonDataGrid6, pokemonDataGrid6.SelectedRows[0].Cells["pokemonId6"].Value.ToString());
-
-            foreach(var grid in map)
-            {
-                foreach(var grid2 in map)
-                {
-                    if(grid2.Value == grid.Value)
-                    {
-                        modifyProfileErrorProvider.SetError(grid.Key, "Não selecionar o mesmo pokemon");
-                        modifyProfileErrorProvider.SetError(grid2.Key, "Não selecionar o mesmo pokemon");
-                    }
-                }
-            }
-            **/
 
             if (hasErrors)
+            {
                 return;
+            }
             else
-                modifyProfileErrorProvider.Clear();
+            {
+                var map = new dictionary<datagridview, string>();
+                map.add(pokemondatagrid1, pokemondatagrid1.selectedrows[0].cells["pokemonid1"].value.tostring());
+                map.add(pokemondatagrid2, pokemondatagrid2.selectedrows[0].cells["pokemonid2"].value.tostring());
+                map.add(pokemondatagrid3, pokemondatagrid3.selectedrows[0].cells["pokemonid3"].value.tostring());
+                map.add(pokemondatagrid4, pokemondatagrid4.selectedrows[0].cells["pokemonid4"].value.tostring());
+                map.add(pokemondatagrid5, pokemondatagrid5.selectedrows[0].cells["pokemonid5"].value.tostring());
+                map.add(pokemondatagrid6, pokemondatagrid6.selectedrows[0].cells["pokemonid6"].value.tostring());
+
+                var ids = new dictionary<string, bool>();
+
+                foreach(var grid in map)
+                {
+                    if (ids.containskey(grid.value))
+                    {
+                        messagebox.show(grid.key.name);
+                        modifyprofileerrorprovider.seterror(grid.key, "não selecionar o mesmo pokemon");
+                        haserrors = true;
+                    }
+                    else
+                    {
+                        messagebox.show(grid.value);
+                        ids.add(grid.value, true);
+                    }
+                }
+
+
+                if (hasErrors)
+                    return;
+                else
+                    modifyProfileErrorProvider.Clear();
+            }
 
             try
             {
@@ -446,6 +458,7 @@ namespace PokeHand
                         ;
 
                     sqlService.DMLCommand(insertSQL, emptyParameters);
+                    MessageBox.Show("ih passou");
                 }
                 catch (Exception error)
                 {

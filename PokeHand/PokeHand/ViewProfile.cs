@@ -46,11 +46,17 @@ namespace PokeHand
                         inputProfileName.Text = reader["name"].ToString();
                         inputProfileAge.Text = reader["age"].ToString();
                         inputProfileVocation.Text = reader["vocation"].ToString();
+                        reader.Close();
                     }
                     else
                     {
+                        MessageBox.Show(
+                            "Você ainda não tem perfil populado, recomenda-se ir à tela de modificação primeiro", 
+                            "Perfil vazio", 
+                            MessageBoxButtons.OK, 
+                            MessageBoxIcon.Warning
+                        );
                     }
-                    reader.Close();
                 }
                 catch(Exception error)
                 {
@@ -117,5 +123,6 @@ namespace PokeHand
                 sqlService.CloseConnection();
             }
         }
+
     }
 }

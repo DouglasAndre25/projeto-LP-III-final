@@ -64,9 +64,6 @@
     <Compile Include="ModifyProfile.Designer.cs">
       <DependentUpon>ModifyProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="PokeHandDataSet1.cs">
-      <DependentUpon>PokeHandDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="PokeHandDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -45,6 +45,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pokemonSearchAttacksDataGrid = new System.Windows.Forms.DataGridView();
+            this.searchAttackId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precisãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.danoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigotipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.attackTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokeHandDataSet = new PokeHand.PokeHandDataSet();
             this.inputPokemonSearchHeight = new System.Windows.Forms.TextBox();
@@ -59,13 +66,6 @@
             this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable1TableAdapter = new PokeHand.PokeHandDataSetTableAdapters.DataTable1TableAdapter();
             this.attackTypeTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.attackTypeTableAdapter();
-            this.searchAttackId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precisãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.danoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigotipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.pokemon.SuspendLayout();
             this.pokemonDetails.SuspendLayout();
@@ -246,6 +246,63 @@
             this.pokemonSearchAttacksDataGrid.Size = new System.Drawing.Size(421, 175);
             this.pokemonSearchAttacksDataGrid.TabIndex = 10;
             // 
+            // searchAttackId
+            // 
+            this.searchAttackId.DataPropertyName = "id";
+            this.searchAttackId.HeaderText = "ID";
+            this.searchAttackId.Name = "searchAttackId";
+            this.searchAttackId.ReadOnly = true;
+            this.searchAttackId.Visible = false;
+            this.searchAttackId.Width = 32;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 137;
+            // 
+            // precisãoDataGridViewTextBoxColumn
+            // 
+            this.precisãoDataGridViewTextBoxColumn.DataPropertyName = "precisão";
+            this.precisãoDataGridViewTextBoxColumn.HeaderText = "Precisão";
+            this.precisãoDataGridViewTextBoxColumn.Name = "precisãoDataGridViewTextBoxColumn";
+            this.precisãoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precisãoDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // danoDataGridViewTextBoxColumn
+            // 
+            this.danoDataGridViewTextBoxColumn.DataPropertyName = "dano";
+            this.danoDataGridViewTextBoxColumn.HeaderText = "Dano";
+            this.danoDataGridViewTextBoxColumn.Name = "danoDataGridViewTextBoxColumn";
+            this.danoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.danoDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // pPDataGridViewTextBoxColumn
+            // 
+            this.pPDataGridViewTextBoxColumn.DataPropertyName = "PP";
+            this.pPDataGridViewTextBoxColumn.HeaderText = "PP";
+            this.pPDataGridViewTextBoxColumn.Name = "pPDataGridViewTextBoxColumn";
+            this.pPDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pPDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // codigotipoDataGridViewTextBoxColumn
+            // 
+            this.codigotipoDataGridViewTextBoxColumn.DataPropertyName = "codigo_tipo";
+            this.codigotipoDataGridViewTextBoxColumn.HeaderText = "codigo_tipo";
+            this.codigotipoDataGridViewTextBoxColumn.Name = "codigotipoDataGridViewTextBoxColumn";
+            this.codigotipoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigotipoDataGridViewTextBoxColumn.Visible = false;
+            // 
             // attackTypeBindingSource
             // 
             this.attackTypeBindingSource.DataMember = "attackType";
@@ -360,63 +417,6 @@
             // attackTypeTableAdapter
             // 
             this.attackTypeTableAdapter.ClearBeforeFill = true;
-            // 
-            // searchAttackId
-            // 
-            this.searchAttackId.DataPropertyName = "id";
-            this.searchAttackId.HeaderText = "ID";
-            this.searchAttackId.Name = "searchAttackId";
-            this.searchAttackId.ReadOnly = true;
-            this.searchAttackId.Visible = false;
-            this.searchAttackId.Width = 32;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 137;
-            // 
-            // precisãoDataGridViewTextBoxColumn
-            // 
-            this.precisãoDataGridViewTextBoxColumn.DataPropertyName = "precisão";
-            this.precisãoDataGridViewTextBoxColumn.HeaderText = "Precisão";
-            this.precisãoDataGridViewTextBoxColumn.Name = "precisãoDataGridViewTextBoxColumn";
-            this.precisãoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.precisãoDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // danoDataGridViewTextBoxColumn
-            // 
-            this.danoDataGridViewTextBoxColumn.DataPropertyName = "dano";
-            this.danoDataGridViewTextBoxColumn.HeaderText = "Dano";
-            this.danoDataGridViewTextBoxColumn.Name = "danoDataGridViewTextBoxColumn";
-            this.danoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.danoDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // pPDataGridViewTextBoxColumn
-            // 
-            this.pPDataGridViewTextBoxColumn.DataPropertyName = "PP";
-            this.pPDataGridViewTextBoxColumn.HeaderText = "PP";
-            this.pPDataGridViewTextBoxColumn.Name = "pPDataGridViewTextBoxColumn";
-            this.pPDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pPDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "tipo";
-            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // codigotipoDataGridViewTextBoxColumn
-            // 
-            this.codigotipoDataGridViewTextBoxColumn.DataPropertyName = "codigo_tipo";
-            this.codigotipoDataGridViewTextBoxColumn.HeaderText = "codigo_tipo";
-            this.codigotipoDataGridViewTextBoxColumn.Name = "codigotipoDataGridViewTextBoxColumn";
-            this.codigotipoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigotipoDataGridViewTextBoxColumn.Visible = false;
             // 
             // ViewProfile
             // 
