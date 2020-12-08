@@ -148,7 +148,6 @@ namespace PokeHand
                 inputAttackModifyAccuracy.Text = this.dataGridViewModifyAttack.SelectedRows[0].Cells["accuracy"].Value.ToString();
                 inputAttackModifyPP.Text = this.dataGridViewModifyAttack.SelectedRows[0].Cells["powerPoint"].Value.ToString();
                 inputAttackModifyType.SelectedValue = this.dataGridViewModifyAttack.SelectedRows[0].Cells["typeId"].Value.ToString();
-
             }
         }
 
@@ -219,7 +218,7 @@ namespace PokeHand
                         new SqlParameter("@damage", System.Data.SqlDbType.Int, Convert.ToInt32(inputAttackModifyDamage.Text)),
                         new SqlParameter("@pp", System.Data.SqlDbType.Int, Convert.ToInt32(inputAttackModifyPP.Text)),
                         new SqlParameter("@accuracy", System.Data.SqlDbType.Int, Convert.ToInt32(inputAttackModifyAccuracy.Text)),
-                        new SqlParameter("@type", System.Data.SqlDbType.Int, Convert.ToInt32(inputAttackModifyType.SelectedValue)),
+                        new SqlParameter("@type", System.Data.SqlDbType.Int, Convert.ToInt32(inputAttackModifyType.SelectedValue.ToString())),
                         new SqlParameter("@id", System.Data.SqlDbType.NVarChar, Convert.ToInt32(this.modifyAttackSelectedIndex))
                     };
                     sqlService.DMLCommand("UPDATE attack SET name=@name, damage=@damage, power_point=@pp, accuracy=@accuracy, type_id=@type WHERE id=@id", parameters);

@@ -9333,7 +9333,7 @@ SELECT id, pokemon_id, type_id FROM type_pokemon WHERE (id = @id)";
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT attack.id, attack.name as nome, attack.accuracy as precisão, attack.damage" +
                 " as dano, attack.power_point as PP, type.name as tipo, type.id as codigo_tipo\r\nF" +
-                "ROM attack\r\nINNER JOIN type on type.id = attack.id;";
+                "ROM attack\r\nINNER JOIN type on type.id = attack.type_id;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9503,9 +9503,9 @@ SELECT id, pokemon_id, type_id FROM type_pokemon WHERE (id = @id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT pokemon.id, pokemon.name, trainer_pokemon.level, trainer_pokemon.life\n\r\nFR" +
-                "OM trainer_pokemon\n\r\nINNER JOIN pokemon ON pokemon.id = trainer_pokemon.pokemon_" +
-                "id\r\n\nWHERE trainer_pokemon.trainer_id = 1;";
+            this._commandCollection[0].CommandText = "SELECT pokemon.id, pokemon.name, trainer_pokemon.level, trainer_pokemon.life\r\n\r\nF" +
+                "ROM trainer_pokemon\r\n\r\nINNER JOIN pokemon ON pokemon.id = trainer_pokemon.pokemo" +
+                "n_id\r\n\r\nWHERE trainer_pokemon.trainer_id = 1;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
