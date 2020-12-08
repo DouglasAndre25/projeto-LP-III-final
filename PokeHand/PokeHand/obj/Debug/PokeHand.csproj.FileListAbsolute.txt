@@ -26,3 +26,5 @@ C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Deb
 C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.Pokemons.resources
 C:\Users\Kauan Rocha\Documents\GitHub\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.ModifyProfile.resources
 C:\Users\Kauan Rocha\Documents\GitHub\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.ViewProfile.resources
+C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.ModifyProfile.resources
+C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.ViewProfile.resources
