@@ -20,10 +20,17 @@ namespace PokeHand
         {
             InitializeComponent();
             sqlService = new SqlService();
-            this.VerifyProfile();
         }
 
-        private void VerifyProfile()
+        private void ModifyProfile_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'pokeHandDataSet.pokemon' table. You can move, or remove it, as needed.
+            this.pokemonTableAdapter.Fill(this.pokeHandDataSet.pokemon);
+            this.VerifyData();
+
+        }
+
+        private void VerifyData()
         {
 
             try
@@ -46,6 +53,16 @@ namespace PokeHand
                         reader.Close();
                         sqlService.DMLCommand("INSERT INTO trainer (name, age, vocation) VALUES ('', 0, '');", parameters);
                     }
+
+
+                    SqlDataReader pokemonsReader = sqlService.DQLCommand(
+                        "SELECT pokemon.id, trainer_pokemon.level, trainer_pokemon.life " +
+                        "FROM trainer_pokemon " +
+                        "INNER JOIN pokemon ON pokemon.id = trainer_pokemon.pokemon_id " +
+                        "WHERE trainer_pokemon.trainer_id = 1; ",
+                        parameters
+                    );  
+                    pokemonsReader.Close();
                 }
                 catch(Exception error)
                 {
@@ -84,5 +101,37 @@ namespace PokeHand
                 sqlService.CloseConnection();
             }
         }
+
+        private void pokemonsSubmitButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                try
+                {
+                    SqlParameter[] emptyParameters = { };
+                    sqlService.DMLCommand("DELETE FROM trainer_pokemon WHERE trainer_id = 1;", emptyParameters);
+
+                    string insertSQL = "INSERT INTO trainer_pokemon (level, life, pokemon_id, trainer_id) VALUES";
+                    for (int i = 0; i < 6; i++)
+                    {
+                        // insertSQL += $" ({trainerPokemons[i].getPokemonLevel()}, {trainerPokemons[i].getPokemonLife()}, {trainerPokemons[i].getPokemonId()}, 1),";
+                    }
+                    insertSQL = insertSQL.Remove(insertSQL.Length - 1, 1) + ";";
+                    sqlService.DMLCommand(insertSQL, emptyParameters);
+                }
+                catch(Exception error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+
+            }
+            finally
+            {
+                sqlService.CloseConnection();
+            }
+        }
+
+       
     }
 }
