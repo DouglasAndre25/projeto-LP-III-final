@@ -88,7 +88,7 @@
             this.attackTypeBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.modifyAttackButton = new System.Windows.Forms.Button();
             this.inputAttackModifyType = new System.Windows.Forms.ListBox();
-            this.typeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.typeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.inputAttackModifyDamage = new System.Windows.Forms.TextBox();
             this.labelAttackModifyAccuracy = new System.Windows.Forms.Label();
@@ -110,6 +110,7 @@
             this.codigotipoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.attackTypeBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.buttonExcludeAttack = new System.Windows.Forms.Button();
+            this.typeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.attackTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.attackTypeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.attackTypeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
@@ -119,7 +120,6 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.attacksErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.typeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.table.SuspendLayout();
             this.searchAttack.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -135,11 +135,12 @@
             this.modifyAttack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModifyAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.deleteAttack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExcludeAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource2)).BeginInit();
@@ -147,7 +148,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attacksErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // table
@@ -738,10 +738,10 @@
             this.inputAttackModifyType.TabIndex = 22;
             this.inputAttackModifyType.ValueMember = "id";
             // 
-            // typeBindingSource1
+            // typeBindingSource2
             // 
-            this.typeBindingSource1.DataMember = "type";
-            this.typeBindingSource1.DataSource = this.pokeHandDataSet;
+            this.typeBindingSource2.DataMember = "type";
+            this.typeBindingSource2.DataSource = this.pokeHandDataSet;
             // 
             // groupBox1
             // 
@@ -956,6 +956,11 @@
             this.buttonExcludeAttack.UseVisualStyleBackColor = true;
             this.buttonExcludeAttack.Click += new System.EventHandler(this.buttonExcludeAttack_Click);
             // 
+            // typeBindingSource1
+            // 
+            this.typeBindingSource1.DataMember = "type";
+            this.typeBindingSource1.DataSource = this.pokeHandDataSet;
+            // 
             // attackTypeBindingSource
             // 
             this.attackTypeBindingSource.DataMember = "attackType";
@@ -992,11 +997,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // typeBindingSource2
-            // 
-            this.typeBindingSource2.DataMember = "type";
-            this.typeBindingSource2.DataSource = this.pokeHandDataSet;
-            // 
             // Attacks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1027,12 +1027,13 @@
             this.modifyAttack.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModifyAttack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.deleteAttack.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExcludeAttack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attackTypeBindingSource2)).EndInit();
@@ -1040,7 +1041,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attacksErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }

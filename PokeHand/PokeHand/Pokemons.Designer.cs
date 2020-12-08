@@ -101,6 +101,7 @@
             this.pokeHandDataSet1 = new PokeHand.PokeHandDataSet();
             this.attackTypeTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.attackTypeTableAdapter();
             this.pokemonTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.pokemonTableAdapter();
+            this.pokemonErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.pokemonsControl.SuspendLayout();
             this.searchPokemon.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -119,6 +120,7 @@
             this.deletePokemon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deletePokemonGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokeHandDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // pokemonsControl
@@ -850,6 +852,10 @@
             // 
             this.pokemonTableAdapter.ClearBeforeFill = true;
             // 
+            // pokemonErrorProvider
+            // 
+            this.pokemonErrorProvider.ContainerControl = this;
+            // 
             // Pokemons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -881,6 +887,7 @@
             this.deletePokemon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.deletePokemonGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokeHandDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokemonErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -958,5 +965,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.ErrorProvider pokemonErrorProvider;
     }
 }

@@ -56,6 +56,54 @@ namespace PokeHand
 
         private void addPokemonButton_Click(object sender, EventArgs e)
         {
+            pokemonErrorProvider.Clear();
+            bool hasErrors = false;
+            if(string.IsNullOrWhiteSpace(inputPokemonAddName.Text))
+            {
+                pokemonErrorProvider.SetError(inputPokemonAddName, "Campo obrigatório.");
+                hasErrors = true;
+            } else
+            {
+                pokemonErrorProvider.SetError(inputPokemonAddName, "");
+            }
+
+            if (string.IsNullOrWhiteSpace(inputPokemonAddWeight.Text) || !double.TryParse(inputPokemonAddWeight.Text, out _))
+            {
+                string errorMessage = string.IsNullOrWhiteSpace(inputPokemonAddWeight.Text) ? "Campo obrigatório." : "Deve ser um número.";
+                pokemonErrorProvider.SetError(inputPokemonAddWeight, errorMessage);
+                hasErrors = true;
+            }
+            else
+            {
+                pokemonErrorProvider.SetError(inputPokemonAddWeight, "");
+            }
+
+            if (string.IsNullOrWhiteSpace(inputPokemonAddHeight.Text) || !double.TryParse(inputPokemonAddHeight.Text, out _))
+            {
+                string errorMessage = string.IsNullOrWhiteSpace(inputPokemonAddHeight.Text) ? "Campo obrigatório." : "Deve ser um número.";
+                pokemonErrorProvider.SetError(inputPokemonAddHeight, errorMessage);
+                hasErrors = true;
+            }
+            else
+            {
+                pokemonErrorProvider.SetError(inputPokemonAddHeight, "");
+            }
+
+            if(pokemonAddDataGridView.SelectedRows.Count == 0)
+            {
+                pokemonErrorProvider.SetError(pokemonAddDataGridView, "Selecione ao menos 1 ataque");
+                hasErrors = true;
+            }
+            else
+            {
+                pokemonErrorProvider.SetError(pokemonAddDataGridView, "");
+            }
+
+            if (hasErrors)
+                return;
+            else
+                pokemonErrorProvider.Clear();
+
             try
             {
                 try
@@ -206,11 +254,62 @@ namespace PokeHand
             finally
             {
                 sqlService.CloseConnection();
+                pokemonErrorProvider.Clear();
             }
         }
 
         private void modifyPokemonButton_Click(object sender, EventArgs e)
         {
+
+            pokemonErrorProvider.Clear();
+            bool hasErrors = false;
+            if (string.IsNullOrWhiteSpace(inputPokemonModifyName.Text))
+            {
+                pokemonErrorProvider.SetError(inputPokemonModifyName, "Campo obrigatório.");
+                hasErrors = true;
+            }
+            else
+            {
+                pokemonErrorProvider.SetError(inputPokemonModifyName, "");
+            }
+
+            if (string.IsNullOrWhiteSpace(inputPokemonModifyWeight.Text) || !double.TryParse(inputPokemonModifyWeight.Text, out _))
+            {
+                string errorMessage = string.IsNullOrWhiteSpace(inputPokemonModifyWeight.Text) ? "Campo obrigatório." : "Deve ser um número.";
+                pokemonErrorProvider.SetError(inputPokemonModifyWeight, errorMessage);
+                hasErrors = true;
+            }
+            else
+            {
+                pokemonErrorProvider.SetError(inputPokemonModifyWeight, "");
+            }
+
+            if (string.IsNullOrWhiteSpace(inputPokemonModifyHeight.Text) || !double.TryParse(inputPokemonModifyHeight.Text, out _))
+            {
+                string errorMessage = string.IsNullOrWhiteSpace(inputPokemonModifyHeight.Text) ? "Campo obrigatório." : "Deve ser um número.";
+                pokemonErrorProvider.SetError(inputPokemonModifyHeight, errorMessage);
+                hasErrors = true;
+            }
+            else
+            {
+                pokemonErrorProvider.SetError(inputPokemonModifyHeight, "");
+            }
+
+            if (pokemonModifyAttacksDataGrid.SelectedRows.Count == 0)
+            {
+                pokemonErrorProvider.SetError(pokemonModifyAttacksDataGrid, "Selecione ao menos 1 ataque");
+                hasErrors = true;
+            }
+            else
+            {
+                pokemonErrorProvider.SetError(pokemonModifyAttacksDataGrid, "");
+            }
+
+            if (hasErrors)
+                return;
+            else
+                pokemonErrorProvider.Clear();
+
             try
             {
                 try

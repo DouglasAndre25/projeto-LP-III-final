@@ -79,8 +79,6 @@ namespace PokeHand
                 attacksErrorProvider.SetError(inputAttackAddAccuracy, "");
             }
 
-
-
             if (hasErrors)
                 return;
             else
@@ -148,6 +146,7 @@ namespace PokeHand
                 inputAttackModifyAccuracy.Text = this.dataGridViewModifyAttack.SelectedRows[0].Cells["accuracy"].Value.ToString();
                 inputAttackModifyPP.Text = this.dataGridViewModifyAttack.SelectedRows[0].Cells["powerPoint"].Value.ToString();
                 inputAttackModifyType.SelectedValue = this.dataGridViewModifyAttack.SelectedRows[0].Cells["typeId"].Value.ToString();
+                attacksErrorProvider.Clear();
             }
         }
 
@@ -285,7 +284,7 @@ namespace PokeHand
                     string sqlQuery = "" +
                         "SELECT attack.id, attack.name as nome, attack.accuracy as precisão, attack.damage as dano, attack.power_point as PP, type.name as tipo, type.id as codigo_tipo " +
                         "FROM attack " +
-                        "INNER JOIN type.id = attack.id ";
+                        "INNER JOIN type on type.id = attack.type_id ";
 
                     int filterCount = 0;
                     if(!string.IsNullOrEmpty(inputTypeSearchName.Text))
@@ -327,8 +326,6 @@ namespace PokeHand
                         filterCount++;
                     }
 
-
-                    MessageBox.Show(sqlQuery);
                     SqlDataReader reader = sqlService.DQLCommand(
                         sqlQuery, parameters
                     );
@@ -346,5 +343,6 @@ namespace PokeHand
                 sqlService.CloseConnection();
             }
         }
+
     }
 }
