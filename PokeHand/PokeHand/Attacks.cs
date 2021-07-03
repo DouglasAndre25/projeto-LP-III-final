@@ -37,7 +37,7 @@ namespace PokeHand
         {
             attacksErrorProvider.Clear();
             bool hasErrors = false;
-            if(string.IsNullOrWhiteSpace(inputAttackAddName.Text))
+            if (string.IsNullOrWhiteSpace(inputAttackAddName.Text))
             {
                 attacksErrorProvider.SetError(inputAttackAddName, "Campo obrigatório.");
                 hasErrors = true;
@@ -47,9 +47,9 @@ namespace PokeHand
                 attacksErrorProvider.SetError(inputAttackAddName, "");
             }
 
-            if (string.IsNullOrWhiteSpace(inputAttackAddDamage.Text) || !double.TryParse(inputAttackAddDamage.Text, out _))
+            if (!string.IsNullOrWhiteSpace(inputAttackAddDamage.Text) && !double.TryParse(inputAttackAddDamage.Text, out _))
             {
-                string errorMessage = string.IsNullOrWhiteSpace(inputAttackAddDamage.Text) ? "Campo obrigatório." : "Deve ser um double.";
+                string errorMessage = "Deve ser um double.";
                 attacksErrorProvider.SetError(inputAttackAddDamage, errorMessage);
                 hasErrors = true;
             }  else
@@ -57,9 +57,9 @@ namespace PokeHand
                 attacksErrorProvider.SetError(inputAttackAddDamage, "");
             }
 
-            if (string.IsNullOrWhiteSpace(inputAttackAddPowerPoint.Text) || !int.TryParse(inputAttackAddPowerPoint.Text, out _))
+            if (!string.IsNullOrWhiteSpace(inputAttackAddPowerPoint.Text) && !int.TryParse(inputAttackAddPowerPoint.Text, out _))
             {
-                string errorMessage = string.IsNullOrWhiteSpace(inputAttackAddPowerPoint.Text) ? "Campo obrigatório." : "Deve ser um número.";
+                string errorMessage =  "Deve ser um número.";
                 attacksErrorProvider.SetError(inputAttackAddPowerPoint, errorMessage);
                 hasErrors = true;
             }
@@ -68,9 +68,9 @@ namespace PokeHand
                 attacksErrorProvider.SetError(inputAttackAddPowerPoint, "");
             }
 
-            if (string.IsNullOrWhiteSpace(inputAttackAddAccuracy.Text) || !double.TryParse(inputAttackAddAccuracy.Text, out _))
+            if (!string.IsNullOrWhiteSpace(inputAttackAddAccuracy.Text) && !double.TryParse(inputAttackAddAccuracy.Text, out _))
             {
-                string errorMessage = string.IsNullOrWhiteSpace(inputAttackAddAccuracy.Text) ? "Campo obrigatório." : "Deve ser um double.";
+                string errorMessage = "Deve ser um double.";
                 attacksErrorProvider.SetError(inputAttackAddAccuracy, errorMessage);
                 hasErrors = true;
             }
@@ -86,18 +86,48 @@ namespace PokeHand
 
             try
             {
-
-                SqlParameter[] parameters =
+                List<SqlParameter> defaultValues = new List<SqlParameter>();
+                List<string> defaultTables = new List<string>();
+                List<string> defaultNames = new List<string>();
+                if(!string.IsNullOrWhiteSpace(inputAttackAddDamage.Text))
                 {
-                    new SqlParameter("@name", System.Data.SqlDbType.NVarChar, inputAttackAddName.Text),
-                    new SqlParameter("@damage", System.Data.SqlDbType.Real, Convert.ToDouble(inputAttackAddDamage.Text)),
-                    new SqlParameter("@pp", System.Data.SqlDbType.Int, Convert.ToInt32(inputAttackAddPowerPoint.Text)),
-                    new SqlParameter("@accuracy", System.Data.SqlDbType.Real, Convert.ToDouble(inputAttackAddAccuracy.Text)),
-                    new SqlParameter("@typeId", System.Data.SqlDbType.Int, Convert.ToInt32(inputAttackAddType.SelectedValue))
-                };
-                sqlService.DMLCommand("INSERT INTO attack (name, damage, power_point, accuracy, type_id) VALUES (@name, @damage, @pp, @accuracy, @typeId)", parameters);
+                    defaultValues.Add(new SqlParameter("@damage", System.Data.SqlDbType.Real, Convert.ToDouble(inputAttackAddAccuracy.Text)));
+                    defaultTables.Add("damage");
+                    defaultNames.Add("@damage");
+                }
+                if(!string.IsNullOrWhiteSpace(inputAttackAddPowerPoint.Text))
+                {
+                    defaultValues.Add(new SqlParameter("@pp", System.Data.SqlDbType.Int, Convert.ToInt32(inputAttackAddPowerPoint.Text)));
+                    defaultTables.Add("power_point");
+                    defaultNames.Add("@pp");
+                }
+                if(!string.IsNullOrWhiteSpace(inputAttackAddAccuracy.Text))
+                {
+                    defaultValues.Add(new SqlParameter("@accuracy", System.Data.SqlDbType.Real, Convert.ToDouble(inputAttackAddAccuracy.Text)));
+                    defaultTables.Add("accuracy");
+                    defaultNames.Add("@accuracy");
+                }
+
+                defaultValues.Add(new SqlParameter("@name", System.Data.SqlDbType.NVarChar, inputAttackAddName.Text));
+                defaultTables.Add("name");
+                defaultNames.Add("@name");
+                
+                defaultValues.Add(new SqlParameter("@typeId", System.Data.SqlDbType.Int, Convert.ToInt32(inputAttackAddType.SelectedValue)));
+                defaultTables.Add("type_id");
+                defaultNames.Add("@typeId");
+
+                SqlParameter[] parameters = defaultValues.ToArray();
+
+                string query = "INSERT INTO attack (" +
+                    String.Join(", ", defaultTables) + ") VALUES (" +
+                    String.Join(", ", defaultNames) + ")";
+
+                MessageBox.Show(query, "Sucesso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                sqlService.DMLCommand(query, parameters);
                 MessageBox.Show("Ataque adicionado com sucesso!", "Sucesso",
-                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception error) {
                 MessageBox.Show(error.Message, "ERRO",
@@ -129,6 +159,18 @@ namespace PokeHand
             inputAttackModifyName.Clear();
             inputAttackModifyPP.Clear();
             inputAttackModifyName.Focus();
+        }
+
+        private void ClearFilters()
+        {
+            inputTypeSearchName.Clear();
+            inputAccuracyGreater.Clear();
+            inputAccuracyLess.Clear();
+            inputDamageGreater.Clear();
+            inputDamageLess.Clear();
+            inputPPGreater.Clear();
+            inputPPLess.Clear();
+            inputTypeSearchName.Focus();
         }
 
         private void dataGridViewModifyAttack_SelectionChanged(object sender, EventArgs e)
@@ -280,57 +322,48 @@ namespace PokeHand
                 try
                 {
                     SqlParameter[] parameters = { };
-                    string sqlQuery = "" +
-                        "SELECT attack.id, attack.name as nome, attack.accuracy as precisão, attack.damage as dano, attack.power_point as PP, type.name as tipo, type.id as codigo_tipo " +
-                        "FROM attack " +
-                        "INNER JOIN type on type.id = attack.type_id ";
 
-                    int filterCount = 0;
-                    if(!string.IsNullOrEmpty(inputTypeSearchName.Text))
+                    if(string.IsNullOrWhiteSpace(inputTypeSearchName.Text))
                     {
-                        sqlQuery += filterCount == 0 ? $"WHERE attack.name LIKE '%{inputTypeSearchName.Text}%' " : $"AND attack.name LIKE '%{inputTypeSearchName.Text}%' ";
-                        filterCount++;
+                        inputTypeSearchName.Text = "''";
                     }
 
-                    if(!string.IsNullOrEmpty(inputAccuracyLess.Text))
+                    if(string.IsNullOrWhiteSpace(inputAccuracyLess.Text))
                     {
-                        sqlQuery += filterCount == 0 ? $"WHERE attack.accuracy < {inputAccuracyLess.Text} " : $"AND attack.accuracy < {inputAccuracyLess.Text} ";
-                        filterCount++;
+                        inputAccuracyLess.Text = "0";
                     }
-                    if (!string.IsNullOrEmpty(inputAccuracyGreater.Text))
+                    if (string.IsNullOrWhiteSpace(inputAccuracyGreater.Text))
                     {
-                        sqlQuery += filterCount == 0 ? $"WHERE attack.accuracy > {inputAccuracyGreater.Text} " : $"AND attack.accuracy > {inputAccuracyGreater.Text} ";
-                        filterCount++;
+                        inputAccuracyGreater.Text = "2147483647";
                     }
 
-                    if (!string.IsNullOrEmpty(inputDamageLess.Text))
+                    if (string.IsNullOrWhiteSpace(inputDamageLess.Text))
                     {
-                        sqlQuery += filterCount == 0 ? $"WHERE attack.damage < {inputDamageLess.Text} " : $"AND attack.damage < {inputDamageLess.Text} ";
-                        filterCount++;
+                        inputDamageLess.Text = "0";
                     }
-                    if (!string.IsNullOrEmpty(inputDamageGreater.Text))
+                    if (string.IsNullOrWhiteSpace(inputDamageGreater.Text))
                     {
-                        sqlQuery += filterCount == 0 ? $"WHERE attack.damage > {inputDamageGreater.Text} " : $"AND attack.damage > {inputDamageGreater.Text} ";
-                        filterCount++;
+                        inputDamageGreater.Text = "2147483647";
                     }
 
-                    if (!string.IsNullOrEmpty(inputPPLess.Text))
+                    if (string.IsNullOrWhiteSpace(inputPPLess.Text))
                     {
-                        sqlQuery += filterCount == 0 ? $"WHERE attack.power_point < {inputPPLess.Text} " : $"AND attack.power_point < {inputPPLess.Text} ";
-                        filterCount++;
+                        inputPPLess.Text = "0";
                     }
-                    if (!string.IsNullOrEmpty(inputPPGreater.Text))
+                    if (string.IsNullOrWhiteSpace(inputPPGreater.Text))
                     {
-                        sqlQuery += filterCount == 0 ? $"WHERE attack.power_point > {inputPPGreater.Text} " : $"AND attack.power_point > {inputPPGreater.Text} ";
-                        filterCount++;
+                        inputPPGreater.Text = "2147483647";
                     }
 
                     SqlDataReader reader = sqlService.DQLCommand(
-                        sqlQuery, parameters
+                        $"EXEC attack_filter @name = {inputTypeSearchName.Text}, @minDamage = {inputDamageLess.Text}, " +
+                        $"@maxDamage = {inputDamageGreater.Text}, @minPp = {inputPPLess.Text}, @maxPp = {inputPPGreater.Text}, " +
+                        $"@minAccuracy = {inputAccuracyLess.Text}, @maxAccuracy = {inputAccuracyGreater.Text}", parameters
                     );
                     PokeHandDataSet.attackTypeDataTable dataTable = new PokeHandDataSet.attackTypeDataTable();
                     dataTable.Load(reader);
                     dataGridViewSearchAttack.DataSource = dataTable;
+                    this.ClearFilters();
                 }
                 catch(Exception error)
                 {

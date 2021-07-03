@@ -87,7 +87,7 @@ namespace PokeHand {
                 {
                     SqlParameter[] parameters = {};
                     SqlDataReader reader = sqlService.DQLCommand(
-                        $"SELECT id, name FROM type WHERE name LIKE '%{inputTypeSearchName.Text}%'", parameters
+                        $"EXEC type_by_name @name = '{inputTypeSearchName.Text}'", parameters
                     );
                     PokeHandDataSet.typeDataTable dataTable = new PokeHandDataSet.typeDataTable();
                     dataTable.Load(reader);

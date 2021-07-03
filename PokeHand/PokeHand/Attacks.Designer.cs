@@ -211,9 +211,9 @@
             this.label7.Location = new System.Drawing.Point(122, 20);
             this.label7.Margin = new System.Windows.Forms.Padding(20, 20, 20, 2);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 16);
+            this.label7.Size = new System.Drawing.Size(75, 16);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Maior que:";
+            this.label7.Text = "Menor que:";
             // 
             // inputPPLess
             // 
@@ -238,9 +238,9 @@
             this.label8.Location = new System.Drawing.Point(10, 20);
             this.label8.Margin = new System.Windows.Forms.Padding(20, 20, 20, 2);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 16);
+            this.label8.Size = new System.Drawing.Size(71, 16);
             this.label8.TabIndex = 10;
-            this.label8.Text = "Menor que:";
+            this.label8.Text = "Maior que:";
             // 
             // groupBox5
             // 
@@ -262,9 +262,9 @@
             this.label5.Location = new System.Drawing.Point(122, 20);
             this.label5.Margin = new System.Windows.Forms.Padding(20, 20, 20, 2);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 16);
+            this.label5.Size = new System.Drawing.Size(75, 16);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Maior que:";
+            this.label5.Text = "Menor que:";
             // 
             // inputDamageLess
             // 
@@ -289,9 +289,9 @@
             this.label6.Location = new System.Drawing.Point(10, 20);
             this.label6.Margin = new System.Windows.Forms.Padding(20, 20, 20, 2);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 16);
+            this.label6.Size = new System.Drawing.Size(71, 16);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Menor que:";
+            this.label6.Text = "Maior que:";
             // 
             // searchAttackButton
             // 
@@ -352,9 +352,9 @@
             this.label4.Location = new System.Drawing.Point(122, 20);
             this.label4.Margin = new System.Windows.Forms.Padding(20, 20, 20, 2);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 16);
+            this.label4.Size = new System.Drawing.Size(75, 16);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Maior que:";
+            this.label4.Text = "Menor que:";
             // 
             // inputAccuracyLess
             // 
@@ -379,9 +379,9 @@
             this.label3.Location = new System.Drawing.Point(10, 20);
             this.label3.Margin = new System.Windows.Forms.Padding(20, 20, 20, 2);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 16);
+            this.label3.Size = new System.Drawing.Size(71, 16);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Menor que:";
+            this.label3.Text = "Maior que:";
             // 
             // dataGridViewSearchAttack
             // 

@@ -40,10 +40,7 @@ namespace PokeHand
                     SqlParameter[] parameters = { };
 
                     SqlDataReader pokemonsReader = sqlService.DQLCommand(
-                        "SELECT pokemon.id, trainer_pokemon.level, trainer_pokemon.life " +
-                        "FROM trainer_pokemon " +
-                        "INNER JOIN pokemon ON pokemon.id = trainer_pokemon.pokemon_id " +
-                        "WHERE trainer_pokemon.trainer_id = 1; ",
+                        "SELECT * FROM get_info_pokemon",
                         parameters
                     );
                     if (pokemonsReader.HasRows)
@@ -112,7 +109,7 @@ namespace PokeHand
                     pokemonsReader.Close();
 
 
-                    SqlDataReader reader = sqlService.DQLCommand("SELECT * FROM trainer WHERE id = '1';", parameters);
+                    SqlDataReader reader = sqlService.DQLCommand("SELECT * FROM get_trainer_data;", parameters);
 
                     if (reader.HasRows)
                     {
@@ -458,7 +455,7 @@ namespace PokeHand
                         ;
 
                     sqlService.DMLCommand(insertSQL, emptyParameters);
-                    MessageBox.Show("ih passou");
+                    MessageBox.Show("Operação concluída com sucesso!");
                 }
                 catch (Exception error)
                 {

@@ -37,7 +37,7 @@ namespace PokeHand
                 try
                 {
                     SqlParameter[] parameters = { };
-                    SqlDataReader reader = sqlService.DQLCommand("SELECT * FROM trainer WHERE id = '1';", parameters);
+                    SqlDataReader reader = sqlService.DQLCommand("SELECT * FROM get_trainer_data", parameters);
 
                     if (reader.HasRows)
                     {
@@ -45,6 +45,7 @@ namespace PokeHand
                         inputProfileName.Text = reader["name"].ToString();
                         inputProfileAge.Text = reader["age"].ToString();
                         inputProfileVocation.Text = reader["vocation"].ToString();
+                        inputProfileNickname.Text = reader["nick_name"].ToString();
                         reader.Close();
                     }
                     else
@@ -122,5 +123,6 @@ namespace PokeHand
                 sqlService.CloseConnection();
             }
         }
+
     }
 }

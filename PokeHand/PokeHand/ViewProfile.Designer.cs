@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewProfile));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.inputProfileNickname = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -79,6 +81,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.inputProfileNickname);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -93,10 +97,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Meus Dados";
             // 
+            // inputProfileNickname
+            // 
+            this.inputProfileNickname.Location = new System.Drawing.Point(672, 50);
+            this.inputProfileNickname.Margin = new System.Windows.Forms.Padding(20, 2, 20, 20);
+            this.inputProfileNickname.Name = "inputProfileNickname";
+            this.inputProfileNickname.ReadOnly = true;
+            this.inputProfileNickname.Size = new System.Drawing.Size(179, 20);
+            this.inputProfileNickname.TabIndex = 16;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(669, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Nickname";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(649, 31);
+            this.label3.Location = new System.Drawing.Point(458, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 14;
@@ -105,7 +127,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(336, 31);
+            this.label2.Location = new System.Drawing.Point(239, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 13;
@@ -122,29 +144,29 @@
             // 
             // inputProfileVocation
             // 
-            this.inputProfileVocation.Location = new System.Drawing.Point(652, 46);
+            this.inputProfileVocation.Location = new System.Drawing.Point(461, 50);
             this.inputProfileVocation.Margin = new System.Windows.Forms.Padding(20, 2, 20, 20);
             this.inputProfileVocation.Name = "inputProfileVocation";
             this.inputProfileVocation.ReadOnly = true;
-            this.inputProfileVocation.Size = new System.Drawing.Size(295, 20);
+            this.inputProfileVocation.Size = new System.Drawing.Size(179, 20);
             this.inputProfileVocation.TabIndex = 11;
             // 
             // inputProfileAge
             // 
-            this.inputProfileAge.Location = new System.Drawing.Point(339, 46);
+            this.inputProfileAge.Location = new System.Drawing.Point(242, 50);
             this.inputProfileAge.Margin = new System.Windows.Forms.Padding(20, 2, 20, 20);
             this.inputProfileAge.Name = "inputProfileAge";
             this.inputProfileAge.ReadOnly = true;
-            this.inputProfileAge.Size = new System.Drawing.Size(295, 20);
+            this.inputProfileAge.Size = new System.Drawing.Size(179, 20);
             this.inputProfileAge.TabIndex = 10;
             // 
             // inputProfileName
             // 
-            this.inputProfileName.Location = new System.Drawing.Point(23, 46);
+            this.inputProfileName.Location = new System.Drawing.Point(23, 50);
             this.inputProfileName.Margin = new System.Windows.Forms.Padding(20, 2, 20, 20);
             this.inputProfileName.Name = "inputProfileName";
             this.inputProfileName.ReadOnly = true;
-            this.inputProfileName.Size = new System.Drawing.Size(295, 20);
+            this.inputProfileName.Size = new System.Drawing.Size(179, 20);
             this.inputProfileName.TabIndex = 2;
             // 
             // pokemon
@@ -481,5 +503,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigotipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox inputProfileNickname;
+        private System.Windows.Forms.Label label9;
     }
 }

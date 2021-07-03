@@ -50,6 +50,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pokemonDataGrid6 = new System.Windows.Forms.DataGridView();
+            this.pokemonId6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pokemonBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.pokeHandDataSet = new PokeHand.PokeHandDataSet();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
@@ -59,6 +62,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pokemonDataGrid5 = new System.Windows.Forms.DataGridView();
+            this.pokemonId5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pokemonBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.pokemonBox4 = new System.Windows.Forms.GroupBox();
@@ -67,6 +73,9 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pokemonDataGrid4 = new System.Windows.Forms.DataGridView();
+            this.pokemonId4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pokemonBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.pokemonBox3 = new System.Windows.Forms.GroupBox();
@@ -75,6 +84,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pokemonDataGrid3 = new System.Windows.Forms.DataGridView();
+            this.pokemonId3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pokemonBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.pokemonBox2 = new System.Windows.Forms.GroupBox();
@@ -83,6 +95,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pokemonDataGrid2 = new System.Windows.Forms.DataGridView();
+            this.pokemonId2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pokemonBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.pokemonBox1 = new System.Windows.Forms.GroupBox();
@@ -91,29 +106,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pokemonDataGrid1 = new System.Windows.Forms.DataGridView();
+            this.pokemonId1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pokemonBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pokemonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokemonTableAdapter = new PokeHand.PokeHandDataSetTableAdapters.pokemonTableAdapter();
             this.modifyProfileErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pokemonId1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pokemonId2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pokemonId3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pokemonId4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pokemonId5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pokemonId6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teamSubmitButton.SuspendLayout();
             this.profileData.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -384,6 +384,30 @@
             this.pokemonDataGrid6.Size = new System.Drawing.Size(277, 234);
             this.pokemonDataGrid6.TabIndex = 7;
             // 
+            // pokemonId6
+            // 
+            this.pokemonId6.DataPropertyName = "id";
+            this.pokemonId6.HeaderText = "id";
+            this.pokemonId6.Name = "pokemonId6";
+            this.pokemonId6.ReadOnly = true;
+            this.pokemonId6.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn22.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.ReadOnly = true;
+            this.dataGridViewTextBoxColumn22.Width = 108;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "description";
+            this.dataGridViewTextBoxColumn25.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.ReadOnly = true;
+            this.dataGridViewTextBoxColumn25.Width = 125;
+            // 
             // pokemonBindingSource6
             // 
             this.pokemonBindingSource6.DataMember = "pokemon";
@@ -470,6 +494,30 @@
             this.pokemonDataGrid5.Size = new System.Drawing.Size(277, 234);
             this.pokemonDataGrid5.TabIndex = 6;
             // 
+            // pokemonId5
+            // 
+            this.pokemonId5.DataPropertyName = "id";
+            this.pokemonId5.HeaderText = "id";
+            this.pokemonId5.Name = "pokemonId5";
+            this.pokemonId5.ReadOnly = true;
+            this.pokemonId5.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.Width = 108;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "description";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            this.dataGridViewTextBoxColumn20.Width = 125;
+            // 
             // pokemonBindingSource5
             // 
             this.pokemonBindingSource5.DataMember = "pokemon";
@@ -550,6 +598,30 @@
             this.pokemonDataGrid4.ReadOnly = true;
             this.pokemonDataGrid4.Size = new System.Drawing.Size(277, 234);
             this.pokemonDataGrid4.TabIndex = 5;
+            // 
+            // pokemonId4
+            // 
+            this.pokemonId4.DataPropertyName = "id";
+            this.pokemonId4.HeaderText = "id";
+            this.pokemonId4.Name = "pokemonId4";
+            this.pokemonId4.ReadOnly = true;
+            this.pokemonId4.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Width = 108;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "description";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Width = 125;
             // 
             // pokemonBindingSource4
             // 
@@ -632,6 +704,30 @@
             this.pokemonDataGrid3.Size = new System.Drawing.Size(277, 234);
             this.pokemonDataGrid3.TabIndex = 4;
             // 
+            // pokemonId3
+            // 
+            this.pokemonId3.DataPropertyName = "id";
+            this.pokemonId3.HeaderText = "id";
+            this.pokemonId3.Name = "pokemonId3";
+            this.pokemonId3.ReadOnly = true;
+            this.pokemonId3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 108;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "description";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 125;
+            // 
             // pokemonBindingSource3
             // 
             this.pokemonBindingSource3.DataMember = "pokemon";
@@ -712,6 +808,30 @@
             this.pokemonDataGrid2.ReadOnly = true;
             this.pokemonDataGrid2.Size = new System.Drawing.Size(277, 234);
             this.pokemonDataGrid2.TabIndex = 3;
+            // 
+            // pokemonId2
+            // 
+            this.pokemonId2.DataPropertyName = "id";
+            this.pokemonId2.HeaderText = "id";
+            this.pokemonId2.Name = "pokemonId2";
+            this.pokemonId2.ReadOnly = true;
+            this.pokemonId2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 108;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "description";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 125;
             // 
             // pokemonBindingSource2
             // 
@@ -794,6 +914,30 @@
             this.pokemonDataGrid1.Size = new System.Drawing.Size(277, 234);
             this.pokemonDataGrid1.TabIndex = 2;
             // 
+            // pokemonId1
+            // 
+            this.pokemonId1.DataPropertyName = "id";
+            this.pokemonId1.HeaderText = "ID";
+            this.pokemonId1.Name = "pokemonId1";
+            this.pokemonId1.ReadOnly = true;
+            this.pokemonId1.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 108;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Descrição";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.Width = 125;
+            // 
             // pokemonBindingSource1
             // 
             this.pokemonBindingSource1.DataMember = "pokemon";
@@ -821,150 +965,6 @@
             // modifyProfileErrorProvider
             // 
             this.modifyProfileErrorProvider.ContainerControl = this;
-            // 
-            // pokemonId1
-            // 
-            this.pokemonId1.DataPropertyName = "id";
-            this.pokemonId1.HeaderText = "ID";
-            this.pokemonId1.Name = "pokemonId1";
-            this.pokemonId1.ReadOnly = true;
-            this.pokemonId1.Visible = false;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 108;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Descrição";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descriptionDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // pokemonId2
-            // 
-            this.pokemonId2.DataPropertyName = "id";
-            this.pokemonId2.HeaderText = "id";
-            this.pokemonId2.Name = "pokemonId2";
-            this.pokemonId2.ReadOnly = true;
-            this.pokemonId2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 108;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "description";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Descrição";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 125;
-            // 
-            // pokemonId3
-            // 
-            this.pokemonId3.DataPropertyName = "id";
-            this.pokemonId3.HeaderText = "id";
-            this.pokemonId3.Name = "pokemonId3";
-            this.pokemonId3.ReadOnly = true;
-            this.pokemonId3.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 108;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "description";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Descrição";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 125;
-            // 
-            // pokemonId4
-            // 
-            this.pokemonId4.DataPropertyName = "id";
-            this.pokemonId4.HeaderText = "id";
-            this.pokemonId4.Name = "pokemonId4";
-            this.pokemonId4.ReadOnly = true;
-            this.pokemonId4.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Width = 108;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "description";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Descrição";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Width = 125;
-            // 
-            // pokemonId5
-            // 
-            this.pokemonId5.DataPropertyName = "id";
-            this.pokemonId5.HeaderText = "id";
-            this.pokemonId5.Name = "pokemonId5";
-            this.pokemonId5.ReadOnly = true;
-            this.pokemonId5.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn17.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            this.dataGridViewTextBoxColumn17.Width = 108;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "description";
-            this.dataGridViewTextBoxColumn20.HeaderText = "Descrição";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.ReadOnly = true;
-            this.dataGridViewTextBoxColumn20.Width = 125;
-            // 
-            // pokemonId6
-            // 
-            this.pokemonId6.DataPropertyName = "id";
-            this.pokemonId6.HeaderText = "id";
-            this.pokemonId6.Name = "pokemonId6";
-            this.pokemonId6.ReadOnly = true;
-            this.pokemonId6.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn22.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.ReadOnly = true;
-            this.dataGridViewTextBoxColumn22.Width = 108;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "description";
-            this.dataGridViewTextBoxColumn25.HeaderText = "Descrição";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.ReadOnly = true;
-            this.dataGridViewTextBoxColumn25.Width = 125;
             // 
             // ModifyProfile
             // 

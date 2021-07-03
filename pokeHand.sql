@@ -54,8 +54,8 @@ GO
 -- Tabela treinador_pokemon
 CREATE TABLE trainer_pokemon (
     id INT IDENTITY(1,1),
-    life INT NOT NULL DEFAULT 0,
-    level INT NOT NULL DEFAULT 1,
+    life INT NOT NULL,
+    level INT NOT NULL,
     trainer_id INT NOT NULL,
     pokemon_id INT NOT NULL,
     CONSTRAINT pk_trainer_pokemon PRIMARY KEY (id),
@@ -74,6 +74,13 @@ CREATE TABLE attack_pokemon (
     CONSTRAINT fk_attack_id1 FOREIGN KEY (attack_id) REFERENCES attack (id) ON DELETE CASCADE,
 );
 GO
+
+CREATE TABLE poke_log(
+    id int IDENTITY(1,1),
+    description NVARCHAR(MAX) NOT NULL,
+    create_date DATETIME NOT NULL
+);
+GO;
 
 EXECUTE sp_bindrule negative_range, 'trainer.age'
 EXECUTE sp_bindrule negative_range, 'pokemon.weight'

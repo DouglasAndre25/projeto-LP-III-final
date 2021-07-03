@@ -28,3 +28,18 @@ C:\Users\Kauan Rocha\Documents\GitHub\projeto-LP-III-final\PokeHand\PokeHand\obj
 C:\Users\Kauan Rocha\Documents\GitHub\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.ViewProfile.resources
 C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.ModifyProfile.resources
 C:\Users\dougl\Documents\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.ViewProfile.resources
+C:\Users\dougl\Área de Trabalho\projetos\projeto-LP-III-final\PokeHand\PokeHand\bin\Debug\PokeHand.exe.config
+C:\Users\dougl\Área de Trabalho\projetos\projeto-LP-III-final\PokeHand\PokeHand\bin\Debug\PokeHand.exe
+C:\Users\dougl\Área de Trabalho\projetos\projeto-LP-III-final\PokeHand\PokeHand\bin\Debug\PokeHand.pdb
+C:\Users\dougl\Área de Trabalho\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.csproj.AssemblyReference.cache
+C:\Users\dougl\Área de Trabalho\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.Attacks.resources
+C:\Users\dougl\Área de Trabalho\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.MainScreen.resources
+C:\Users\dougl\Área de Trabalho\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.ModifyProfile.resources
+C:\Users\dougl\Área de Trabalho\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.Pokemons.resources
+C:\Users\dougl\Área de Trabalho\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.Properties.Resources.resources
+C:\Users\dougl\Área de Trabalho\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.Types.resources
+C:\Users\dougl\Área de Trabalho\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.ViewProfile.resources
+C:\Users\dougl\Área de Trabalho\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.csproj.GenerateResource.cache
+C:\Users\dougl\Área de Trabalho\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.csproj.CoreCompileInputs.cache
+C:\Users\dougl\Área de Trabalho\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.exe
+C:\Users\dougl\Área de Trabalho\projetos\projeto-LP-III-final\PokeHand\PokeHand\obj\Debug\PokeHand.pdb
