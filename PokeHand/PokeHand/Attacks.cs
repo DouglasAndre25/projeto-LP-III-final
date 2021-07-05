@@ -26,6 +26,10 @@ namespace PokeHand
 
         private void Attacks_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'pokeHandDataSet3.attack'. Você pode movê-la ou removê-la conforme necessário.
+            this.attackTableAdapter1.Fill(this.pokeHandDataSet3.attack);
+            // TODO: esta linha de código carrega dados na tabela 'pokeHandDataSet2.attack'. Você pode movê-la ou removê-la conforme necessário.
+            this.attackTableAdapter.Fill(this.pokeHandDataSet2.attack);
             // TODO: This line of code loads data into the 'pokeHandDataSet.attackType' table. You can move, or remove it, as needed.
             this.attackTypeTableAdapter.Fill(this.pokeHandDataSet.attackType);
             // TODO: This line of code loads data into the 'pokeHandDataSet.type' table. You can move, or remove it, as needed.
@@ -375,6 +379,5 @@ namespace PokeHand
                 sqlService.CloseConnection();
             }
         }
-
     }
 }

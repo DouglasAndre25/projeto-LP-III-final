@@ -74,7 +74,6 @@ namespace PokeHand
         {
             // TODO: esta linha de código carrega dados na tabela 'pokeHandDataSet1.poke_log'. Você pode movê-la ou removê-la conforme necessário.
             this.poke_logTableAdapter.Fill(this.pokeHandDataSet1.poke_log);
-
         }
     }
 }

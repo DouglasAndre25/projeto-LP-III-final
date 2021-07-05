@@ -119,13 +119,14 @@ namespace PokeHand
 
                     SqlParameter[] identityParameters = { };
                     SqlDataReader reader = sqlService.DQLCommand(
-                        "SELECT @@IDENTITY AS 'Identity';", identityParameters
+                        $"SELECT * FROM get_pokemon_id_by_name('{inputPokemonAddName.Text}');", identityParameters
                     );
                     
                     if(pokemonAddDataGridView.SelectedRows.Count > 0)
                     {
                         reader.Read();
-                        string pokemonId = reader["Identity"].ToString();
+                        MessageBox.Show(reader["id"].ToString());
+                        string pokemonId = reader["id"].ToString();
                         reader.Close();
 
                         string pokemonAttackSql = $"INSERT INTO attack_pokemon (attack_id, pokemon_id) VALUES";
@@ -136,7 +137,7 @@ namespace PokeHand
                         }
 
                         pokemonAttackSql = pokemonAttackSql.Remove(pokemonAttackSql.Length - 1, 1) + ";";
-
+                        MessageBox.Show(pokemonAttackSql);
                         sqlService.DMLCommand(pokemonAttackSql, identityParameters);
 
                     }

@@ -41,18 +41,18 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelUltimaMudanca = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewPokeLog = new System.Windows.Forms.DataGridView();
+            this.pokelogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pokeHandDataSet1 = new PokeHand.PokeHandDataSet1();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.poke_logTableAdapter = new PokeHand.PokeHandDataSet1TableAdapters.poke_logTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pokelogBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pokeHandDataSet1 = new PokeHand.PokeHandDataSet1();
-            this.poke_logTableAdapter = new PokeHand.PokeHandDataSet1TableAdapters.poke_logTableAdapter();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.mainSection.SuspendLayout();
             this.dataSection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPokeLog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokelogBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokeHandDataSet1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -169,23 +169,47 @@
             this.label90.TabIndex = 6;
             this.label90.Text = "Ultima Modificação feita no horário e data: ";
             // 
-            // dataGridView1
+            // dataGridViewPokeLog
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewPokeLog.AllowUserToAddRows = false;
+            this.dataGridViewPokeLog.AllowUserToDeleteRows = false;
+            this.dataGridViewPokeLog.AllowUserToOrderColumns = true;
+            this.dataGridViewPokeLog.AutoGenerateColumns = false;
+            this.dataGridViewPokeLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPokeLog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
             this.createdateDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.pokelogBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(748, 116);
-            this.dataGridView1.TabIndex = 7;
+            this.dataGridViewPokeLog.DataSource = this.pokelogBindingSource;
+            this.dataGridViewPokeLog.Location = new System.Drawing.Point(6, 19);
+            this.dataGridViewPokeLog.Name = "dataGridViewPokeLog";
+            this.dataGridViewPokeLog.ReadOnly = true;
+            this.dataGridViewPokeLog.Size = new System.Drawing.Size(748, 116);
+            this.dataGridViewPokeLog.TabIndex = 7;
+            // 
+            // pokelogBindingSource
+            // 
+            this.pokelogBindingSource.DataMember = "poke_log";
+            this.pokelogBindingSource.DataSource = this.pokeHandDataSet1;
+            // 
+            // pokeHandDataSet1
+            // 
+            this.pokeHandDataSet1.DataSetName = "PokeHandDataSet1";
+            this.pokeHandDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridViewPokeLog);
+            this.groupBox1.Location = new System.Drawing.Point(12, 408);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(774, 155);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Poke Log";
+            // 
+            // poke_logTableAdapter
+            // 
+            this.poke_logTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -200,45 +224,21 @@
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "Descrição";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descriptionDataGridViewTextBoxColumn.Width = 430;
+            this.descriptionDataGridViewTextBoxColumn.Width = 500;
             // 
             // createdateDataGridViewTextBoxColumn
             // 
             this.createdateDataGridViewTextBoxColumn.DataPropertyName = "create_date";
-            this.createdateDataGridViewTextBoxColumn.HeaderText = "Data de Criação";
+            this.createdateDataGridViewTextBoxColumn.HeaderText = "Data da Atividade";
             this.createdateDataGridViewTextBoxColumn.Name = "createdateDataGridViewTextBoxColumn";
             this.createdateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.createdateDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // pokelogBindingSource
-            // 
-            this.pokelogBindingSource.DataMember = "poke_log";
-            this.pokelogBindingSource.DataSource = this.pokeHandDataSet1;
-            // 
-            // pokeHandDataSet1
-            // 
-            this.pokeHandDataSet1.DataSetName = "PokeHandDataSet1";
-            this.pokeHandDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // poke_logTableAdapter
-            // 
-            this.poke_logTableAdapter.ClearBeforeFill = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 408);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(760, 141);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Poke Log";
+            this.createdateDataGridViewTextBoxColumn.Width = 105;
             // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(786, 563);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label90);
             this.Controls.Add(this.labelUltimaMudanca);
@@ -253,7 +253,7 @@
             this.mainSection.ResumeLayout(false);
             this.dataSection.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPokeLog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokelogBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokeHandDataSet1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -274,14 +274,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelUltimaMudanca;
         private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewPokeLog;
         private PokeHandDataSet1 pokeHandDataSet1;
         private System.Windows.Forms.BindingSource pokelogBindingSource;
         private PokeHandDataSet1TableAdapters.poke_logTableAdapter poke_logTableAdapter;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

@@ -74,6 +74,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PokeHandDataSet11.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PokeHandDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PokeHandDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PokeHandDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PokeHandDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PokeHandDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PokeHandDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PokeHandDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PokeHandDataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Pokemons.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +160,50 @@
     </None>
     <None Include="PokeHandDataSet11.xss">
       <DependentUpon>PokeHandDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="PokeHandDataSet2.xsc">
+      <DependentUpon>PokeHandDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="PokeHandDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PokeHandDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PokeHandDataSet2.xss">
+      <DependentUpon>PokeHandDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="PokeHandDataSet3.xsc">
+      <DependentUpon>PokeHandDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="PokeHandDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PokeHandDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PokeHandDataSet3.xss">
+      <DependentUpon>PokeHandDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="PokeHandDataSet4.xsc">
+      <DependentUpon>PokeHandDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="PokeHandDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PokeHandDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PokeHandDataSet4.xss">
+      <DependentUpon>PokeHandDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="PokeHandDataSet5.xsc">
+      <DependentUpon>PokeHandDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="PokeHandDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PokeHandDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PokeHandDataSet5.xss">
+      <DependentUpon>PokeHandDataSet5.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

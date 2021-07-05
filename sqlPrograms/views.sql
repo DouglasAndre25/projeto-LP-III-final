@@ -1,4 +1,4 @@
-CREATE VIEW get_info_pokemon
+CREATE OR ALTER VIEW get_info_pokemon
 AS
     SELECT pokemon.id, trainer_pokemon.level, trainer_pokemon.life
     FROM trainer_pokemon

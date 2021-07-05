@@ -374,7 +374,48 @@ INNER JOIN type on type.id = attack.type_id;</CommandText>
               <Mapping SourceColumn="tipo" DataSetColumn="tipo" />
               <Mapping SourceColumn="codigo_tipo" DataSetColumn="codigo_tipo" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="PokeHandConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT attack.id, attack.name as nome, attack.accuracy as precisão, attack.damage as dano, attack.power_point as PP, type.name as tipo, type.id as codigo_tipo
+FROM attack
+LEFT JOIN type on type.id = attack.type_id;</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PokeHandConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT attack.id, attack.name as nome, attack.accuracy as precisão, attack.damage as dano, attack.power_point as PP, type.name as tipo, type.id as codigo_tipo
+FROM attack
+LEFT JOIN type on type.id = attack.type_id;</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PokeHandConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy9" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy9" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy9">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT attack.id, attack.name as nome, attack.accuracy as precisão, attack.damage as dano, attack.power_point as PP, type.name as tipo, type.id as codigo_tipo
+FROM attack
+LEFT JOIN type on type.id = attack.type_id;</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PokeHandConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy91" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy91" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillBy91">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT attack.id, attack.name as nome, attack.accuracy as precisão, attack.damage as dano, attack.power_point as PP, type.name as tipo, type.id as codigo_tipo
+FROM attack
+LEFT JOIN type on type.id = attack.type_id;</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
             <MainSource>
@@ -406,7 +447,7 @@ WHERE trainer_pokemon.trainer_id = 1;</CommandText>
   <xs:element name="PokeHandDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PokeHandDataSet" msprop:Generator_UserDSName="PokeHandDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="attack" msprop:Generator_TableClassName="attackDataTable" msprop:Generator_TableVarName="tableattack" msprop:Generator_RowChangedName="attackRowChanged" msprop:Generator_TablePropName="attack" msprop:Generator_RowDeletingName="attackRowDeleting" msprop:Generator_RowChangingName="attackRowChanging" msprop:Generator_RowEvHandlerName="attackRowChangeEventHandler" msprop:Generator_RowDeletedName="attackRowDeleted" msprop:Generator_RowClassName="attackRow" msprop:Generator_UserTableName="attack" msprop:Generator_RowEvArgName="attackRowChangeEvent">
+        <xs:element name="attack" msprop:Generator_TableClassName="attackDataTable" msprop:Generator_TableVarName="tableattack" msprop:Generator_TablePropName="attack" msprop:Generator_RowDeletingName="attackRowDeleting" msprop:Generator_RowChangingName="attackRowChanging" msprop:Generator_RowEvHandlerName="attackRowChangeEventHandler" msprop:Generator_RowDeletedName="attackRowDeleted" msprop:Generator_UserTableName="attack" msprop:Generator_RowChangedName="attackRowChanged" msprop:Generator_RowEvArgName="attackRowChangeEvent" msprop:Generator_RowClassName="attackRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -424,7 +465,7 @@ WHERE trainer_pokemon.trainer_id = 1;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="attack_pokemon" msprop:Generator_TableClassName="attack_pokemonDataTable" msprop:Generator_TableVarName="tableattack_pokemon" msprop:Generator_RowChangedName="attack_pokemonRowChanged" msprop:Generator_TablePropName="attack_pokemon" msprop:Generator_RowDeletingName="attack_pokemonRowDeleting" msprop:Generator_RowChangingName="attack_pokemonRowChanging" msprop:Generator_RowEvHandlerName="attack_pokemonRowChangeEventHandler" msprop:Generator_RowDeletedName="attack_pokemonRowDeleted" msprop:Generator_RowClassName="attack_pokemonRow" msprop:Generator_UserTableName="attack_pokemon" msprop:Generator_RowEvArgName="attack_pokemonRowChangeEvent">
+        <xs:element name="attack_pokemon" msprop:Generator_TableClassName="attack_pokemonDataTable" msprop:Generator_TableVarName="tableattack_pokemon" msprop:Generator_TablePropName="attack_pokemon" msprop:Generator_RowDeletingName="attack_pokemonRowDeleting" msprop:Generator_RowChangingName="attack_pokemonRowChanging" msprop:Generator_RowEvHandlerName="attack_pokemonRowChangeEventHandler" msprop:Generator_RowDeletedName="attack_pokemonRowDeleted" msprop:Generator_UserTableName="attack_pokemon" msprop:Generator_RowChangedName="attack_pokemonRowChanged" msprop:Generator_RowEvArgName="attack_pokemonRowChangeEvent" msprop:Generator_RowClassName="attack_pokemonRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -433,7 +474,7 @@ WHERE trainer_pokemon.trainer_id = 1;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="pokemon" msprop:Generator_TableClassName="pokemonDataTable" msprop:Generator_TableVarName="tablepokemon" msprop:Generator_RowChangedName="pokemonRowChanged" msprop:Generator_TablePropName="pokemon" msprop:Generator_RowDeletingName="pokemonRowDeleting" msprop:Generator_RowChangingName="pokemonRowChanging" msprop:Generator_RowEvHandlerName="pokemonRowChangeEventHandler" msprop:Generator_RowDeletedName="pokemonRowDeleted" msprop:Generator_RowClassName="pokemonRow" msprop:Generator_UserTableName="pokemon" msprop:Generator_RowEvArgName="pokemonRowChangeEvent">
+        <xs:element name="pokemon" msprop:Generator_TableClassName="pokemonDataTable" msprop:Generator_TableVarName="tablepokemon" msprop:Generator_TablePropName="pokemon" msprop:Generator_RowDeletingName="pokemonRowDeleting" msprop:Generator_RowChangingName="pokemonRowChanging" msprop:Generator_RowEvHandlerName="pokemonRowChangeEventHandler" msprop:Generator_RowDeletedName="pokemonRowDeleted" msprop:Generator_UserTableName="pokemon" msprop:Generator_RowChangedName="pokemonRowChanged" msprop:Generator_RowEvArgName="pokemonRowChangeEvent" msprop:Generator_RowClassName="pokemonRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -456,7 +497,7 @@ WHERE trainer_pokemon.trainer_id = 1;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="trainer" msprop:Generator_TableClassName="trainerDataTable" msprop:Generator_TableVarName="tabletrainer" msprop:Generator_RowChangedName="trainerRowChanged" msprop:Generator_TablePropName="trainer" msprop:Generator_RowDeletingName="trainerRowDeleting" msprop:Generator_RowChangingName="trainerRowChanging" msprop:Generator_RowEvHandlerName="trainerRowChangeEventHandler" msprop:Generator_RowDeletedName="trainerRowDeleted" msprop:Generator_RowClassName="trainerRow" msprop:Generator_UserTableName="trainer" msprop:Generator_RowEvArgName="trainerRowChangeEvent">
+        <xs:element name="trainer" msprop:Generator_TableClassName="trainerDataTable" msprop:Generator_TableVarName="tabletrainer" msprop:Generator_TablePropName="trainer" msprop:Generator_RowDeletingName="trainerRowDeleting" msprop:Generator_RowChangingName="trainerRowChanging" msprop:Generator_RowEvHandlerName="trainerRowChangeEventHandler" msprop:Generator_RowDeletedName="trainerRowDeleted" msprop:Generator_UserTableName="trainer" msprop:Generator_RowChangedName="trainerRowChanged" msprop:Generator_RowEvArgName="trainerRowChangeEvent" msprop:Generator_RowClassName="trainerRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -478,7 +519,7 @@ WHERE trainer_pokemon.trainer_id = 1;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="trainer_pokemon" msprop:Generator_TableClassName="trainer_pokemonDataTable" msprop:Generator_TableVarName="tabletrainer_pokemon" msprop:Generator_RowChangedName="trainer_pokemonRowChanged" msprop:Generator_TablePropName="trainer_pokemon" msprop:Generator_RowDeletingName="trainer_pokemonRowDeleting" msprop:Generator_RowChangingName="trainer_pokemonRowChanging" msprop:Generator_RowEvHandlerName="trainer_pokemonRowChangeEventHandler" msprop:Generator_RowDeletedName="trainer_pokemonRowDeleted" msprop:Generator_RowClassName="trainer_pokemonRow" msprop:Generator_UserTableName="trainer_pokemon" msprop:Generator_RowEvArgName="trainer_pokemonRowChangeEvent">
+        <xs:element name="trainer_pokemon" msprop:Generator_TableClassName="trainer_pokemonDataTable" msprop:Generator_TableVarName="tabletrainer_pokemon" msprop:Generator_TablePropName="trainer_pokemon" msprop:Generator_RowDeletingName="trainer_pokemonRowDeleting" msprop:Generator_RowChangingName="trainer_pokemonRowChanging" msprop:Generator_RowEvHandlerName="trainer_pokemonRowChangeEventHandler" msprop:Generator_RowDeletedName="trainer_pokemonRowDeleted" msprop:Generator_UserTableName="trainer_pokemon" msprop:Generator_RowChangedName="trainer_pokemonRowChanged" msprop:Generator_RowEvArgName="trainer_pokemonRowChangeEvent" msprop:Generator_RowClassName="trainer_pokemonRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -489,7 +530,7 @@ WHERE trainer_pokemon.trainer_id = 1;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="type" msprop:Generator_TableClassName="typeDataTable" msprop:Generator_TableVarName="tabletype" msprop:Generator_RowChangedName="typeRowChanged" msprop:Generator_TablePropName="type" msprop:Generator_RowDeletingName="typeRowDeleting" msprop:Generator_RowChangingName="typeRowChanging" msprop:Generator_RowEvHandlerName="typeRowChangeEventHandler" msprop:Generator_RowDeletedName="typeRowDeleted" msprop:Generator_RowClassName="typeRow" msprop:Generator_UserTableName="type" msprop:Generator_RowEvArgName="typeRowChangeEvent">
+        <xs:element name="type" msprop:Generator_TableClassName="typeDataTable" msprop:Generator_TableVarName="tabletype" msprop:Generator_TablePropName="type" msprop:Generator_RowDeletingName="typeRowDeleting" msprop:Generator_RowChangingName="typeRowChanging" msprop:Generator_RowEvHandlerName="typeRowChangeEventHandler" msprop:Generator_RowDeletedName="typeRowDeleted" msprop:Generator_UserTableName="type" msprop:Generator_RowChangedName="typeRowChanged" msprop:Generator_RowEvArgName="typeRowChangeEvent" msprop:Generator_RowClassName="typeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -503,7 +544,7 @@ WHERE trainer_pokemon.trainer_id = 1;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="attackType" msprop:Generator_TableClassName="attackTypeDataTable" msprop:Generator_TableVarName="tableattackType" msprop:Generator_TablePropName="attackType" msprop:Generator_RowDeletingName="attackTypeRowDeleting" msprop:Generator_RowChangingName="attackTypeRowChanging" msprop:Generator_RowEvHandlerName="attackTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="attackTypeRowDeleted" msprop:Generator_UserTableName="attackType" msprop:Generator_RowChangedName="attackTypeRowChanged" msprop:Generator_RowEvArgName="attackTypeRowChangeEvent" msprop:Generator_RowClassName="attackTypeRow">
+        <xs:element name="attackType" msprop:Generator_TableClassName="attackTypeDataTable" msprop:Generator_TableVarName="tableattackType" msprop:Generator_RowChangedName="attackTypeRowChanged" msprop:Generator_TablePropName="attackType" msprop:Generator_RowDeletingName="attackTypeRowDeleting" msprop:Generator_RowChangingName="attackTypeRowChanging" msprop:Generator_RowEvHandlerName="attackTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="attackTypeRowDeleted" msprop:Generator_RowClassName="attackTypeRow" msprop:Generator_UserTableName="attackType" msprop:Generator_RowEvArgName="attackTypeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -528,7 +569,7 @@ WHERE trainer_pokemon.trainer_id = 1;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -582,14 +623,14 @@ WHERE trainer_pokemon.trainer_id = 1;</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="fk_attack_id8" msdata:parent="type" msdata:child="attack" msdata:parentkey="id" msdata:childkey="type_id" msprop:Generator_UserChildTable="attack" msprop:Generator_ChildPropName="GetattackRows" msprop:Generator_UserRelationName="fk_attack_id8" msprop:Generator_ParentPropName="typeRow" msprop:Generator_RelationVarName="relationfk_attack_id8" msprop:Generator_UserParentTable="type" />
-      <msdata:Relationship name="fk_attack_id1" msdata:parent="attack" msdata:child="attack_pokemon" msdata:parentkey="id" msdata:childkey="attack_id" msprop:Generator_UserChildTable="attack_pokemon" msprop:Generator_ChildPropName="Getattack_pokemonRows" msprop:Generator_UserRelationName="fk_attack_id1" msprop:Generator_RelationVarName="relationfk_attack_id1" msprop:Generator_UserParentTable="attack" msprop:Generator_ParentPropName="attackRow" />
-      <msdata:Relationship name="fk_pokemon_id4" msdata:parent="pokemon" msdata:child="attack_pokemon" msdata:parentkey="id" msdata:childkey="pokemon_id" msprop:Generator_UserChildTable="attack_pokemon" msprop:Generator_ChildPropName="Getattack_pokemonRows" msprop:Generator_UserRelationName="fk_pokemon_id4" msprop:Generator_ParentPropName="pokemonRow" msprop:Generator_RelationVarName="relationfk_pokemon_id4" msprop:Generator_UserParentTable="pokemon" />
-      <msdata:Relationship name="fk_pokemon_id1" msdata:parent="pokemon" msdata:child="trainer_pokemon" msdata:parentkey="id" msdata:childkey="pokemon_id" msprop:Generator_UserChildTable="trainer_pokemon" msprop:Generator_ChildPropName="Gettrainer_pokemonRows" msprop:Generator_UserRelationName="fk_pokemon_id1" msprop:Generator_RelationVarName="relationfk_pokemon_id1" msprop:Generator_UserParentTable="pokemon" msprop:Generator_ParentPropName="pokemonRow" />
-      <msdata:Relationship name="fk_trainer_id" msdata:parent="trainer" msdata:child="trainer_pokemon" msdata:parentkey="id" msdata:childkey="trainer_id" msprop:Generator_UserChildTable="trainer_pokemon" msprop:Generator_ChildPropName="Gettrainer_pokemonRows" msprop:Generator_UserRelationName="fk_trainer_id" msprop:Generator_RelationVarName="relationfk_trainer_id" msprop:Generator_UserParentTable="trainer" msprop:Generator_ParentPropName="trainerRow" />
-      <msdata:Relationship name="fk_attack_id11" msdata:parent="attackType" msdata:child="attack_pokemon" msdata:parentkey="id" msdata:childkey="attack_id" msprop:Generator_UserChildTable="attack_pokemon" msprop:Generator_ChildPropName="Getattack_pokemonRows" msprop:Generator_UserRelationName="fk_attack_id11" msprop:Generator_RelationVarName="relationfk_attack_id11" msprop:Generator_UserParentTable="attackType" msprop:Generator_ParentPropName="attackTypeRow" />
-      <msdata:Relationship name="fk_pokemon_id41" msdata:parent="DataTable1" msdata:child="attack_pokemon" msdata:parentkey="id" msdata:childkey="pokemon_id" msprop:Generator_UserChildTable="attack_pokemon" msprop:Generator_ChildPropName="Getattack_pokemonRows" msprop:Generator_UserRelationName="fk_pokemon_id41" msprop:Generator_RelationVarName="relationfk_pokemon_id41" msprop:Generator_UserParentTable="DataTable1" msprop:Generator_ParentPropName="DataTable1Row" />
-      <msdata:Relationship name="fk_pokemon_id11" msdata:parent="DataTable1" msdata:child="trainer_pokemon" msdata:parentkey="id" msdata:childkey="pokemon_id" msprop:Generator_UserChildTable="trainer_pokemon" msprop:Generator_ChildPropName="Gettrainer_pokemonRows" msprop:Generator_UserRelationName="fk_pokemon_id11" msprop:Generator_RelationVarName="relationfk_pokemon_id11" msprop:Generator_UserParentTable="DataTable1" msprop:Generator_ParentPropName="DataTable1Row" />
+      <msdata:Relationship name="fk_attack_id8" msdata:parent="type" msdata:child="attack" msdata:parentkey="id" msdata:childkey="type_id" msprop:Generator_UserChildTable="attack" msprop:Generator_ChildPropName="GetattackRows" msprop:Generator_UserRelationName="fk_attack_id8" msprop:Generator_RelationVarName="relationfk_attack_id8" msprop:Generator_UserParentTable="type" msprop:Generator_ParentPropName="typeRow" />
+      <msdata:Relationship name="fk_attack_id1" msdata:parent="attack" msdata:child="attack_pokemon" msdata:parentkey="id" msdata:childkey="attack_id" msprop:Generator_UserChildTable="attack_pokemon" msprop:Generator_ChildPropName="Getattack_pokemonRows" msprop:Generator_UserRelationName="fk_attack_id1" msprop:Generator_ParentPropName="attackRow" msprop:Generator_RelationVarName="relationfk_attack_id1" msprop:Generator_UserParentTable="attack" />
+      <msdata:Relationship name="fk_pokemon_id4" msdata:parent="pokemon" msdata:child="attack_pokemon" msdata:parentkey="id" msdata:childkey="pokemon_id" msprop:Generator_UserChildTable="attack_pokemon" msprop:Generator_ChildPropName="Getattack_pokemonRows" msprop:Generator_UserRelationName="fk_pokemon_id4" msprop:Generator_RelationVarName="relationfk_pokemon_id4" msprop:Generator_UserParentTable="pokemon" msprop:Generator_ParentPropName="pokemonRow" />
+      <msdata:Relationship name="fk_pokemon_id1" msdata:parent="pokemon" msdata:child="trainer_pokemon" msdata:parentkey="id" msdata:childkey="pokemon_id" msprop:Generator_UserChildTable="trainer_pokemon" msprop:Generator_ChildPropName="Gettrainer_pokemonRows" msprop:Generator_UserRelationName="fk_pokemon_id1" msprop:Generator_ParentPropName="pokemonRow" msprop:Generator_RelationVarName="relationfk_pokemon_id1" msprop:Generator_UserParentTable="pokemon" />
+      <msdata:Relationship name="fk_trainer_id" msdata:parent="trainer" msdata:child="trainer_pokemon" msdata:parentkey="id" msdata:childkey="trainer_id" msprop:Generator_UserChildTable="trainer_pokemon" msprop:Generator_ChildPropName="Gettrainer_pokemonRows" msprop:Generator_UserRelationName="fk_trainer_id" msprop:Generator_ParentPropName="trainerRow" msprop:Generator_RelationVarName="relationfk_trainer_id" msprop:Generator_UserParentTable="trainer" />
+      <msdata:Relationship name="fk_attack_id11" msdata:parent="attackType" msdata:child="attack_pokemon" msdata:parentkey="id" msdata:childkey="attack_id" msprop:Generator_UserChildTable="attack_pokemon" msprop:Generator_ChildPropName="Getattack_pokemonRows" msprop:Generator_UserRelationName="fk_attack_id11" msprop:Generator_ParentPropName="attackTypeRow" msprop:Generator_RelationVarName="relationfk_attack_id11" msprop:Generator_UserParentTable="attackType" />
+      <msdata:Relationship name="fk_pokemon_id41" msdata:parent="DataTable1" msdata:child="attack_pokemon" msdata:parentkey="id" msdata:childkey="pokemon_id" msprop:Generator_UserChildTable="attack_pokemon" msprop:Generator_ChildPropName="Getattack_pokemonRows" msprop:Generator_UserRelationName="fk_pokemon_id41" msprop:Generator_ParentPropName="DataTable1Row" msprop:Generator_RelationVarName="relationfk_pokemon_id41" msprop:Generator_UserParentTable="DataTable1" />
+      <msdata:Relationship name="fk_pokemon_id11" msdata:parent="DataTable1" msdata:child="trainer_pokemon" msdata:parentkey="id" msdata:childkey="pokemon_id" msprop:Generator_UserChildTable="trainer_pokemon" msprop:Generator_ChildPropName="Gettrainer_pokemonRows" msprop:Generator_UserRelationName="fk_pokemon_id11" msprop:Generator_ParentPropName="DataTable1Row" msprop:Generator_RelationVarName="relationfk_pokemon_id11" msprop:Generator_UserParentTable="DataTable1" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

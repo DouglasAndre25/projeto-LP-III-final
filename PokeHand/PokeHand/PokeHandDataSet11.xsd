@@ -32,7 +32,26 @@
               <Mapping SourceColumn="description" DataSetColumn="description" />
               <Mapping SourceColumn="create_date" DataSetColumn="create_date" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="PokeHandConnectionString (Settings)" DbObjectName="PokeHand.dbo.poke_log" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, description, create_date FROM dbo.poke_log
+ORDER BY create_date DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PokeHandConnectionString (Settings)" DbObjectName="PokeHand.dbo.poke_log" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy2">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, description, create_date FROM dbo.poke_log
+ORDER BY create_date DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -42,7 +61,7 @@
   <xs:element name="PokeHandDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PokeHandDataSet1" msprop:Generator_UserDSName="PokeHandDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="poke_log" msprop:Generator_TableClassName="poke_logDataTable" msprop:Generator_TableVarName="tablepoke_log" msprop:Generator_TablePropName="poke_log" msprop:Generator_RowDeletingName="poke_logRowDeleting" msprop:Generator_RowChangingName="poke_logRowChanging" msprop:Generator_RowEvHandlerName="poke_logRowChangeEventHandler" msprop:Generator_RowDeletedName="poke_logRowDeleted" msprop:Generator_UserTableName="poke_log" msprop:Generator_RowChangedName="poke_logRowChanged" msprop:Generator_RowEvArgName="poke_logRowChangeEvent" msprop:Generator_RowClassName="poke_logRow">
+        <xs:element name="poke_log" msprop:Generator_TableClassName="poke_logDataTable" msprop:Generator_TableVarName="tablepoke_log" msprop:Generator_RowChangedName="poke_logRowChanged" msprop:Generator_TablePropName="poke_log" msprop:Generator_RowDeletingName="poke_logRowDeleting" msprop:Generator_RowChangingName="poke_logRowChanging" msprop:Generator_RowEvHandlerName="poke_logRowChangeEventHandler" msprop:Generator_RowDeletedName="poke_logRowDeleted" msprop:Generator_RowClassName="poke_logRow" msprop:Generator_UserTableName="poke_log" msprop:Generator_RowEvArgName="poke_logRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />

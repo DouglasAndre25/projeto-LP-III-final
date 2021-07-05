@@ -5,7 +5,7 @@ GO
 
 CREATE OR ALTER PROCEDURE attack_filter 
 (
-    @name AS NVARCHAR(50) = '',
+    @name AS NVARCHAR(50),
     @minDamage AS REAL,
     @maxDamage AS REAL,
     @minPp AS REAL,
@@ -25,6 +25,3 @@ AS
     AND attack.power_point > @minPp
     AND attack.power_point < @maxPp
 GO
-
-
--- 2.147.483.647
